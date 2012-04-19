@@ -474,6 +474,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -594,6 +596,7 @@
 				7ED3E59D15400C1E008268CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED3E59E15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests" */ = {
 			isa = XCConfigurationList;
@@ -603,6 +606,7 @@
 				7ED3E5A015400C1E008268CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED3E5B115400C8E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests-CI" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +616,7 @@
 				7ED3E5B415400C8E008268CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
