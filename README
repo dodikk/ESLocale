@@ -1,0 +1,4 @@
+This library contains helper classes to produce correctly formed NSLocale, NSDateFormatter and NSCalendar objects. Such objects are required to parse data that comes from web services as current locale may not match the remote service locale.
+
+License : BSD
+
