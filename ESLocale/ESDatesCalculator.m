@@ -1,4 +1,5 @@
 #import "ESDatesCalculator.h"
+#import "ESLocaleFactory.h"
 
 @implementation ESDatesCalculator
 {
@@ -7,6 +8,10 @@
     NSDate*   _startDate ;
     NSDate*   _endDate   ;    
 }
+
+@synthesize resolution = _resolution;
+@synthesize startDate  = _startDate ;
+@synthesize endDate    = _endDate   ;
 
 
 -(id)init
@@ -22,12 +27,13 @@
     BOOL resolutionOk_ = ( 0 != resolution_  );
     BOOL startDateOk_  = ( nil != startDate_ );
     BOOL endDateOk_    = ( nil != endDate_   );
-
+    BOOL dateRangeOk_  = ( NSOrderedDescending != [ startDate_ compare: endDate_ ] );
 
     NSParameterAssert( resolutionOk_ );
     NSParameterAssert( startDateOk_  );
     NSParameterAssert( endDateOk_    );
-    if ( !resolutionOk_ || !startDateOk_ || !endDateOk_ )
+    NSParameterAssert( dateRangeOk_  );
+    if ( !resolutionOk_ || !startDateOk_ || !endDateOk_ || !dateRangeOk_ )
     {
         return nil;
     }
