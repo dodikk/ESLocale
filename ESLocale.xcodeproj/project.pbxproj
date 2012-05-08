@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
-		7EB7DADE155946E0005BF339 /* ESDatesCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.m */; };
+		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
 		7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
+		7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */; };
+		7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
 		7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
 		7ED3E58B15400C1E008268CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58A15400C1E008268CF /* UIKit.framework */; };
@@ -47,9 +49,11 @@
 
 /* Begin PBXFileReference section */
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
-		7EB7DADC155946E0005BF339 /* ESDatesCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatesCalculator.m; sourceTree = "<group>"; };
+		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
 		7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatesCalculatorTest.m; sourceTree = "<group>"; };
+		7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsFactory.h; sourceTree = "<group>"; };
+		7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsFactory.m; sourceTree = "<group>"; };
 		7ED3E57715400C1E008268CF /* libESLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libESLocale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED3E57A15400C1E008268CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7ED3E57E15400C1E008268CF /* ESLocale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESLocale-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EB7DB0D1559713C005BF339 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */,
+				7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
@@ -135,12 +148,13 @@
 		7ED3E57C15400C1E008268CF /* ESLocale */ = {
 			isa = PBXGroup;
 			children = (
-				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7ED3E57D15400C1E008268CF /* Supporting Files */,
+				7ED3E57F15400C1E008268CF /* ESLocale.h */,
+				7EB7DB0D1559713C005BF339 /* Detail */,
 				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
 				7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */,
 				7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */,
-				7EB7DADC155946E0005BF339 /* ESDatesCalculator.m */,
+				7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */,
 			);
 			path = ESLocale;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 			files = (
 				7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */,
 				7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */,
+				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +341,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */,
-				7EB7DADE155946E0005BF339 /* ESDatesCalculator.m in Sources */,
+				7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */,
+				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

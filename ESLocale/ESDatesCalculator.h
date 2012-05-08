@@ -11,4 +11,8 @@
               startDate:( NSDate* )startDate_
                 endDate:( NSDate* )endDate_;
 
+
+-(NSDate*)startOfIntervalWithIndex:( NSInteger )intervalIndex_;
+-(NSDate*)endOfIntervalWithIndex:( NSInteger )intervalIndex_;
+
 @end
