@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
-		7ED3E58B15400C1E008268CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58A15400C1E008268CF /* UIKit.framework */; };
 		7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58F15400C1E008268CF /* libESLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57715400C1E008268CF /* libESLocale.a */; };
 		7ED3E59515400C1E008268CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED3E59315400C1E008268CF /* InfoPlist.strings */; };
 		7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E59715400C1E008268CF /* ESLocaleTests.m */; };
 		7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E59715400C1E008268CF /* ESLocaleTests.m */; };
 		7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
-		7ED3E5AB15400C8E008268CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58A15400C1E008268CF /* UIKit.framework */; };
 		7ED3E5AC15400C8E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E5AD15400C8E008268CF /* libESLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57715400C1E008268CF /* libESLocale.a */; };
 		7ED3E5AF15400C8E008268CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED3E59315400C1E008268CF /* InfoPlist.strings */; };
 		7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */; };
 		7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */; };
+		7EFE7A94155BE88A000ABB49 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE7A93155BE88A000ABB49 /* libc++.dylib */; };
+		7EFE7A95155BE892000ABB49 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE7A93155BE88A000ABB49 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,7 @@
 		7ED3E5B615400C8F008268CF /* ESLocaleTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ESLocaleTests copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/lib-third-party/ESLocale/ESLocaleTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLocaleFactory.h; sourceTree = "<group>"; };
 		7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLocaleFactory.m; sourceTree = "<group>"; };
+		7EFE7A93155BE88A000ABB49 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFE7A94155BE88A000ABB49 /* libc++.dylib in Frameworks */,
 				7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */,
-				7ED3E58B15400C1E008268CF /* UIKit.framework in Frameworks */,
 				7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */,
 				7ED3E58F15400C1E008268CF /* libESLocale.a in Frameworks */,
 			);
@@ -83,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFE7A95155BE892000ABB49 /* libc++.dylib in Frameworks */,
 				7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */,
-				7ED3E5AB15400C8E008268CF /* UIKit.framework in Frameworks */,
 				7ED3E5AC15400C8E008268CF /* Foundation.framework in Frameworks */,
 				7ED3E5AD15400C8E008268CF /* libESLocale.a in Frameworks */,
 			);
@@ -96,6 +97,7 @@
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
+				7EFE7A93155BE88A000ABB49 /* libc++.dylib */,
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7ED3E57915400C1E008268CF /* Frameworks */,
@@ -364,6 +366,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -393,6 +397,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -470,6 +476,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
