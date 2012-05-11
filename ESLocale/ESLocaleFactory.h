@@ -10,4 +10,10 @@
 +(NSDateFormatter*)posixDateFormatter;
 
 
++(NSCalendar*)gregorianCalendarWithLocale:( NSLocale* )locale_;
++(NSDateFormatter*)gregorianDateFormatterWithLocale:( NSLocale* )locale_;
+
++(void)setCalendar:( NSCalendar* )calendar_
+  forDateFormatter:( NSDateFormatter* )result_;
+
 @end
