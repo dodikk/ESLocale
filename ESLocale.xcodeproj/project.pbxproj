@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7B6ABE155D6271004113A8 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7B6ABC155D6271004113A8 /* SqliteFunctions.h */; };
+		7E7B6ABF155D6271004113A8 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7B6ABD155D6271004113A8 /* SqliteFunctions.m */; };
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
 		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E7B6ABC155D6271004113A8 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
+		7E7B6ABD155D6271004113A8 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
@@ -150,9 +154,11 @@
 		7ED3E57C15400C1E008268CF /* ESLocale */ = {
 			isa = PBXGroup;
 			children = (
+				7E7B6ABC155D6271004113A8 /* SqliteFunctions.h */,
+				7E7B6ABD155D6271004113A8 /* SqliteFunctions.m */,
 				7ED3E57D15400C1E008268CF /* Supporting Files */,
-				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7EB7DB0D1559713C005BF339 /* Detail */,
+				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
 				7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */,
 				7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */,
@@ -200,6 +206,7 @@
 				7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */,
 				7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */,
 				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
+				7E7B6ABE155D6271004113A8 /* SqliteFunctions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +352,7 @@
 				7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */,
 				7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */,
 				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
+				7E7B6ABF155D6271004113A8 /* SqliteFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
