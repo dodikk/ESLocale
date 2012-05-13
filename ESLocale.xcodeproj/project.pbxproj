@@ -15,6 +15,10 @@
 		7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
 		7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */; };
 		7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
+		7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
+		7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
+		7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
 		7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
 		7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
@@ -58,13 +62,15 @@
 		7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatesCalculatorTest.m; sourceTree = "<group>"; };
 		7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsFactory.h; sourceTree = "<group>"; };
 		7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsFactory.m; sourceTree = "<group>"; };
+		7ED0D586156023F70014BE2D /* DayOfWeekTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayOfWeekTest.h; sourceTree = "<group>"; };
+		7ED0D587156023F70014BE2D /* DayOfWeekTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekTest.m; sourceTree = "<group>"; };
+		7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7ED3E57715400C1E008268CF /* libESLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libESLocale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED3E57A15400C1E008268CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7ED3E57E15400C1E008268CF /* ESLocale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESLocale-Prefix.pch"; sourceTree = "<group>"; };
 		7ED3E57F15400C1E008268CF /* ESLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESLocale.h; sourceTree = "<group>"; };
 		7ED3E58715400C1E008268CF /* ESLocaleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESLocaleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED3E58815400C1E008268CF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		7ED3E58A15400C1E008268CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7ED3E59215400C1E008268CF /* ESLocaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ESLocaleTests-Info.plist"; sourceTree = "<group>"; };
 		7ED3E59415400C1E008268CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7ED3E59615400C1E008268CF /* ESLocaleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESLocaleTests.h; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */,
 				7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */,
@@ -100,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */,
 				7ED3E5AC15400C8E008268CF /* Foundation.framework in Frameworks */,
@@ -122,7 +130,6 @@
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
-				7ED61716155BBDA200DE6328 /* libc++.dylib */,
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7ED3E57915400C1E008268CF /* Frameworks */,
@@ -144,9 +151,10 @@
 		7ED3E57915400C1E008268CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */,
+				7ED61716155BBDA200DE6328 /* libc++.dylib */,
 				7ED3E57A15400C1E008268CF /* Foundation.framework */,
 				7ED3E58815400C1E008268CF /* SenTestingKit.framework */,
-				7ED3E58A15400C1E008268CF /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +191,8 @@
 				7ED3E59715400C1E008268CF /* ESLocaleTests.m */,
 				7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */,
 				7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */,
+				7ED0D586156023F70014BE2D /* DayOfWeekTest.h */,
+				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -362,6 +372,7 @@
 			files = (
 				7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */,
 				7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
+				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +382,7 @@
 			files = (
 				7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */,
 				7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
+				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
