@@ -11,6 +11,8 @@
 		7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.m */; };
 		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
 		7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */; };
+		7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
+		7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
 		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
@@ -60,6 +62,8 @@
 		7E92BE521560FB360088E369 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
 		7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLocalizedDateFormatter.h; sourceTree = "<group>"; };
 		7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLocalizedDateFormatter.m; sourceTree = "<group>"; };
+		7E92BE5A156107770088E369 /* SqlFormatterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlFormatterTest.h; sourceTree = "<group>"; };
+		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */,
 				7ED0D586156023F70014BE2D /* DayOfWeekTest.h */,
 				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
+				7E92BE5A156107770088E369 /* SqlFormatterTest.h */,
+				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */,
 				7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
+				7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +406,7 @@
 				7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */,
 				7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
+				7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
