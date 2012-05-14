@@ -13,6 +13,10 @@
 		7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */; };
 		7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
 		7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
+		7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
+		7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
+		7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
 		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
@@ -64,6 +68,9 @@
 		7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLocalizedDateFormatter.m; sourceTree = "<group>"; };
 		7E92BE5A156107770088E369 /* SqlFormatterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlFormatterTest.h; sourceTree = "<group>"; };
 		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
+		7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarQueryTest.h; sourceTree = "<group>"; };
+		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
+		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
@@ -137,6 +144,14 @@
 			path = SqliteDateFormat;
 			sourceTree = "<group>";
 		};
+		7E92BE6A15611E9D0088E369 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				7E92BE6B15611E9D0088E369 /* 2.sqlite */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 		7EB7DB0D1559713C005BF339 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +166,7 @@
 			children = (
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
+				7E92BE6A15611E9D0088E369 /* TestData */,
 				7ED3E57915400C1E008268CF /* Frameworks */,
 				7ED3E57815400C1E008268CF /* Products */,
 				7ED3E5B615400C8F008268CF /* ESLocaleTests copy-Info.plist */,
@@ -213,6 +229,8 @@
 				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
 				7E92BE5A156107770088E369 /* SqlFormatterTest.h */,
 				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
+				7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */,
+				7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -333,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E59515400C1E008268CF /* InfoPlist.strings in Resources */,
+				7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E5AF15400C8E008268CF /* InfoPlist.strings in Resources */,
+				7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +416,7 @@
 				7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */,
+				7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +428,7 @@
 				7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */,
+				7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,10 +532,14 @@
 		7ED3E59C15400C1E008268CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/ESLocale.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -522,10 +548,14 @@
 		7ED3E59D15400C1E008268CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/ESLocale.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -610,10 +640,14 @@
 		7ED3E5A215400C2A008268CF /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/ESLocale.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -630,6 +664,12 @@
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-L../",
+					"-lCoverageFopenFix",
+					"-v",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
