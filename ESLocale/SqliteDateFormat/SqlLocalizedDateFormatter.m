@@ -9,7 +9,8 @@
     NSString* _strDate;
     NSString* _format;
     NSString* _localeIdentifier;
-    
+
+    BOOL _resultComputed;
     NSString* _result;
 }
 
@@ -49,6 +50,12 @@
     NSString* localeIdentifier_ = self->_localeIdentifier;
 
     
+    NSArray* validlocaleIdentifiers_ = [ NSLocale availableLocaleIdentifiers ];
+    if ( ![ validlocaleIdentifiers_ containsObject: localeIdentifier_ ] )
+    {
+        return nil;
+    }
+    
     NSDateFormatter* ansiFormatter_ = [ ESLocaleFactory ansiDateFormatter ];
     
     NSDate* date_ = [ ansiFormatter_ dateFromString: strDate_ ];
@@ -65,9 +72,10 @@
 
 -(NSString*)getFormattedDate
 {
-    if ( nil == self->_result ) 
+    if ( !self->_resultComputed ) 
     {
         self->_result = [ self doGetFormattedDate ];
+        self->_resultComputed = YES;
     }
 
     return self->_result;

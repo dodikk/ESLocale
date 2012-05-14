@@ -52,7 +52,7 @@ void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_, int argc_, sqlite3_va
     NSString* result_ = [ fmt_ getFormattedDate ];
     
     
-    if ( nil == result_ )
+    if ( nil == result_ || [ result_ isEqualToString: @"" ] )
     {    
         sqlite3_result_null( ctx_ );
     }
