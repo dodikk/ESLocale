@@ -59,31 +59,25 @@
 
 -(void)testFormatterRejectsNilInput
 {
-    STAssertThrows
-    (
-         [ [ SqlLocalizedDateFormatter alloc ] initWithDate: nil
-                                                     format: @"YYYY-ww"
-                                                     locale: @"ru_RU" ],
-         @"Nil input shoult not be valid"
-    );
-    
-
-    STAssertThrows
-    (
-        [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
-                                                    format: nil
-                                                    locale: @"ru_RU" ],
-        @"Nil input shoult not be valid"
-     );
+    SqlLocalizedDateFormatter* result_ = nil;
     
     
-    STAssertThrows
-    (
-     [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
-                                                 format: @"YYYY-ww"
-                                                 locale: nil ],
-     @"Nil input shoult not be valid"
-     );
+    result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: nil
+                                                          format: @"YYYY-ww"
+                                                          locale: @"ru_RU" ];
+    STAssertNil( result_, @"nil input should not be valid" );
+    
+    
+    result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
+                                                          format: nil
+                                                          locale: @"ru_RU" ];
+    STAssertNil( result_, @"nil input should not be valid" );
+    
+    
+    result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
+                                                          format: @"YYYY-ww"
+                                                          locale: nil ];
+    STAssertNil( result_, @"nil input should not be valid" );
 }
 
 @end

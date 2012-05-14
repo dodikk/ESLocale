@@ -24,9 +24,10 @@
            format:( NSString* )format_
            locale:( NSString* )localeIdentifier_
 {
-    NSParameterAssert( strDate_          );
-    NSParameterAssert( format_           );
-    NSParameterAssert( localeIdentifier_ );    
+    if ( !strDate_ || !format_ || !localeIdentifier_ )
+    {
+        return nil;
+    }
     
     self = [ super init ];
     if ( nil == self )
