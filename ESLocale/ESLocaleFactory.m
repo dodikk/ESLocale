@@ -26,7 +26,22 @@
     return [ self gregorianDateFormatterWithLocale: [ self posixLocale ] ];
 }
 
++(NSDateFormatter*)ansiDateFormatter
+{
+    // !!! Register matters : http://unicode.org/reports/tr35/tr35-10.html#Date_Format_Patterns
 
+    NSDateFormatter* result_ = [ self posixDateFormatter ];
+    result_.dateFormat = @"yyyy-MM-dd";
+    
+    return result_;
+}
+
+
++(NSCalendar*)gregorianCalendarWithLocaleId:( NSString* )localeIdentifier_
+{
+    NSLocale* locale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: localeIdentifier_ ];
+    return [ self gregorianCalendarWithLocale: locale_ ];
+}
 
 +(NSCalendar*)gregorianCalendarWithLocale:( NSLocale* )locale_
 {

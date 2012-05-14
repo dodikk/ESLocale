@@ -44,8 +44,7 @@
     NSString* localeIdentifier_ = self->_localeIdentifier;
 
     
-    NSDateFormatter* ansiFormatter_ = [ ESLocaleFactory posixDateFormatter ];
-    ansiFormatter_.dateFormat = @"yyyy-MM-dd";
+    NSDateFormatter* ansiFormatter_ = [ ESLocaleFactory ansiDateFormatter ];
     
     NSDate* date_ = [ ansiFormatter_ dateFromString: strDate_ ];
     NSLocale* locale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: localeIdentifier_ ];
