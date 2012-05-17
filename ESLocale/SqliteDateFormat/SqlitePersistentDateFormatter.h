@@ -1,13 +1,16 @@
-//
-//  SqlitePersistentDateFormatter.h
-//  ESLocale
-//
-//  Created by Alexander Dodatko on 5/17/12.
-//  Copyright (c) 2012 Sitecore. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface SqlitePersistentDateFormatter : NSObject
+
++(SqlitePersistentDateFormatter*)instance;
++(void)freeInstance;
+
+@property ( nonatomic, assign ) BOOL validateLocale ;
+@property ( nonatomic, assign ) BOOL checkSameLocale;
+
+-(BOOL)setFormat:( NSString* )dateFormat_
+          locale:( NSString* )locale_;
+
+-(NSString*)getFormattedDate:( NSString* )strDate_;
 
 @end

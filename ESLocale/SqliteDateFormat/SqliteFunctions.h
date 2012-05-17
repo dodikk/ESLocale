@@ -13,7 +13,7 @@
     #define EXTERN
 
 #else
-    #define EXTERN_BEGIN extern
+    #define EXTERN_BEGIN
     #define EXTERN_END
 
     #define EXTERN extern
@@ -32,7 +32,9 @@
 
         @return sqlite3_result_text with formatted date
    */
-EXTERN_BEGIN void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ );
+EXTERN_BEGIN 
+    EXTERN void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ );
+    EXTERN void ObjcFormatAnsiDateUsingLocale_v2( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ );
 EXTERN_END
 
 
