@@ -67,7 +67,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     BOOL isOtherLocale_ = NO;
     if ( self.checkSameLocale )
     {
-        isOtherLocale_ = [ self->targetFormatter.locale.localeIdentifier isEqualToString: locale_ ];
+        isOtherLocale_ = ![ self->targetFormatter.locale.localeIdentifier isEqualToString: locale_ ];
     }
     
     
@@ -83,7 +83,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
             }
         }        
 
-
+        NSLog( @"SqlitePersistentDateFormatter : Locale mismatch - setting a new one" );
         NSCalendar* cal_ = [ ESLocaleFactory gregorianCalendarWithLocaleId: locale_ ];       
         
         self->targetFormatter = [ NSDateFormatter new ];
