@@ -119,10 +119,14 @@ void ObjcFormatAnsiDateUsingLocale_v2( sqlite3_context* ctx_,int argc_,sqlite3_v
 
         
         SqlitePersistentDateFormatter* fmt_ = [ SqlitePersistentDateFormatter instance ];
-        [ fmt_ setFormat: format_
-                  locale: localeIdentifier_ ];
+        NSString* result_ = nil;
+        @synchronized( fmt_ )
+        {
+            [ fmt_ setFormat: format_
+                      locale: localeIdentifier_ ];
 
-        NSString* result_ = [ fmt_ getFormattedDate: strDate_ ];
+            result_ = [ fmt_ getFormattedDate: strDate_ ];
+        }
         
         
         if ( nil == result_ || [ result_ isEqualToString: @"" ] )

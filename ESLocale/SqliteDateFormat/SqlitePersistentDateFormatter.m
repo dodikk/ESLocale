@@ -21,7 +21,13 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 {
     if ( nil == instance_ )
     {
-        instance_ = [ SqlitePersistentDateFormatter new ];
+        @synchronized ( self )
+        {
+            if ( nil == instance_ )
+            {
+                instance_ = [ SqlitePersistentDateFormatter new ];
+            }
+        }
     }
 
     return instance_;
@@ -29,7 +35,10 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 
 +(void)freeInstance
 {
-    instance_ = nil;
+    @synchronized ( self )
+    {
+        instance_ = nil;
+    }
 }
 
 -(id)init
@@ -80,8 +89,9 @@ static SqlitePersistentDateFormatter* instance_ = nil;
         self->targetFormatter = [ NSDateFormatter new ];
         [ ESLocaleFactory setCalendar: cal_ 
                      forDateFormatter: self->targetFormatter ];  
-        self->targetFormatter.dateFormat = dateFormat_;
     }
+    
+    self->targetFormatter.dateFormat = dateFormat_;
 
     return YES;
 }
