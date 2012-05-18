@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
 		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
@@ -66,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
 		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlitePersistentDateFormatter.m; sourceTree = "<group>"; };
 		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */,
 				7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */,
@@ -130,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */,
 				7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */,
@@ -174,6 +179,7 @@
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
+				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7E92BE6A15611E9D0088E369 /* TestData */,
@@ -481,13 +487,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -519,13 +523,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -615,13 +617,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
