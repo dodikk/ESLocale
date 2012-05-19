@@ -1,6 +1,8 @@
 <h1>Учим  SQLite работать с локализированным календарем</h1>
 
 
+<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/sqlite_editor_logo.png"/>  <img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/hero_ical.jpg"/>
+
 Недавно мне довелось портировать (точнее, переписывать) под iOS приложение для анализа посещаемости сайта. Поскольку данные подходили под реляционную модель, мы решили использовать SQLite. Насколько я знаю, других реляционных СУБД под iOS просто нет.
 
 Долго ли, коротко ли… Пришло время подсчитать понедельный КПД для определенного диапазона дат.
@@ -121,7 +123,9 @@ SQLite самостоятельно проверяет соответствие 
 <ul>
 <li> Как известно, экземпляр класса NSLocale содержится как в объекте NSCalendar, так и в NSDateFormatter.
 Очень важно чтобы выполнялось условие "NSDateFormatter.calendar.locale == NSDateFormatter.locale".
---диаграмма NSDateFormatter--
+
+<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/NSDateFormatter.png"/>
+
 <li> inputFormatter_ должен иметь локаль "en_US_POSIX" </li>
 <li> SQLite хранит даты в ANSI формате @"yyyy-MM-dd". Его и необходимо выставить для inputFormatter_ </li>
 <li> Создание NSDateFormatter - весьма затратная операция. Старайтесь лишний раз ее не вызывать </li>
