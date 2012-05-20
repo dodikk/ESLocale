@@ -124,18 +124,19 @@ SQLite самостоятельно проверяет соответствие 
 <li> Как известно, экземпляр класса NSLocale содержится как в объекте NSCalendar, так и в NSDateFormatter.
 Очень важно чтобы выполнялось условие "NSDateFormatter.calendar.locale == NSDateFormatter.locale".
 
-<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/NSDateFormatter.png"/>
+<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/NSDateFormatter.png"/> </li>
 
 <li> inputFormatter_ должен иметь локаль "en_US_POSIX" </li>
 <li> SQLite хранит даты в ANSI формате @"yyyy-MM-dd". Его и необходимо выставить для inputFormatter_ </li>
 <li> Создание NSDateFormatter - весьма затратная операция. Старайтесь лишний раз ее не вызывать </li>
+</ul>
 --------------
 
 
-<h2> 3. Для возврата результата </h2>
+<h2> 3. Возврат результата </h2>
 
 Для этих целей используется функция sqlite3_result_text. Важно использовать опцию SQLITE_TRANSIENT чтобы SQLite сделал копию ресурсов, выделенных в Foundation Framework
---------------
+==============
 
 
 Вот, собственно, и все. Расчет сошелся.
