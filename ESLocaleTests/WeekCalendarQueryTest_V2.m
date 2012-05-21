@@ -30,6 +30,9 @@
 {
     sqlite3_close( self->_db );
     sqlite3_free( self->_sqliteError );
+
+    [ [ NSFileManager defaultManager ] removeItemAtPath: @"2.sqlite" 
+                                                  error: NULL ];
 }
 
 -(void)test2011_01_02US
@@ -37,9 +40,7 @@
     int qResult_ = 0;
     const unsigned char* result_ = NULL;
     
-    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2011-01-02', 'en_US' )\n"
-    "FROM 'Campaigns'\n"
-    "LIMIT 1;";
+    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2011-01-02', 'en_US' )";
     
     sqlite3_stmt* statement_ = NULL;
     
@@ -66,9 +67,7 @@
     int qResult_ = 0;
     const unsigned char* result_ = NULL;
     
-    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2011-01-02', 'ru_RU' )\n"
-    "FROM 'Campaigns'\n"
-    "LIMIT 1;";
+    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2011-01-02', 'ru_RU' );";
     
     sqlite3_stmt* statement_ = NULL;
     [ SqlitePersistentDateFormatter freeInstance ];
@@ -95,9 +94,7 @@
     int qResult_ = 0;
     const unsigned char* result_ = NULL;
     
-    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2010-12-26', 'ru_RU' )\n"
-    "FROM 'Campaigns'\n"
-    "LIMIT 1;";
+    const char* query_ = "SELECT ObjcFormatAnsiDateUsingLocale( 'YYYY-ww', '2010-12-26', 'ru_RU' )";
     
     sqlite3_stmt* statement_ = NULL;
     [ SqlitePersistentDateFormatter freeInstance ];
