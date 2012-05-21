@@ -198,8 +198,13 @@ void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sq
         NSString* result_ = nil;
         @synchronized( fmt_ )
         {
-            [ fmt_ setFormat: nil
-                      locale: localeIdentifier_ ];
+            BOOL setupOk_ = [ fmt_ setFormat: nil
+                                      locale: localeIdentifier_ ];
+            if ( !setupOk_ )
+            {
+                sqlite3_result_error( ctx_, "Invalid locale error", 5 );
+                return;
+            }
 
             result_ = objc_msgSend( fmt_, transformSelector_, strDate_ );
         }

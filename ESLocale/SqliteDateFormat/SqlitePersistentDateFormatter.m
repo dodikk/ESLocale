@@ -155,6 +155,10 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 -(NSString*)getYearAndQuarter:( NSString* )strDate_
 {
     NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    if ( nil == date_ )
+    {
+        return nil;
+    }
 
     NSDateComponents* result_ = [ self->targetCalendar components: yearAndQuarterMask_ 
                                                          fromDate: date_ ];
@@ -164,7 +168,12 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 
 -(NSString*)getYearAndHalfYear:( NSString* )strDate_
 {
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];    
+    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    if ( nil == date_ )
+    {
+        return nil;
+    }
+    
     NSInteger hYear_ = [ [ self class ] halfYearForDate: date_ 
                                           usingCalendar: self->targetCalendar ];
 
