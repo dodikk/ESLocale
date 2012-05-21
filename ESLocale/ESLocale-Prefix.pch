@@ -1,7 +1,5 @@
-//
-// Prefix header for all source files of the 'ESLocale' target in the 'ESLocale' project
-//
 
 #ifdef __OBJC__
    #import <Foundation/Foundation.h>
+    #import <objc/message.h>
 #endif

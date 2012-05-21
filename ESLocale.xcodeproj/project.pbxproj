@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
+		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
 		7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.m */; };
 		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
@@ -17,6 +21,14 @@
 		7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
 		7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
 		7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
+		7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
+		7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
+		7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
+		7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
+		7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
+		7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
+		7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
 		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
@@ -42,6 +54,8 @@
 		7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */; };
 		7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED61716155BBDA200DE6328 /* libc++.dylib */; };
 		7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED61716155BBDA200DE6328 /* libc++.dylib */; };
+		7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */; };
+		7EF6836415652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
+		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlitePersistentDateFormatter.m; sourceTree = "<group>"; };
 		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
 		7E92BE521560FB360088E369 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
 		7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLocalizedDateFormatter.h; sourceTree = "<group>"; };
@@ -71,6 +88,14 @@
 		7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarQueryTest.h; sourceTree = "<group>"; };
 		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
 		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
+		7EAA9552156A441000A071F2 /* HalfYearNumberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfYearNumberTest.h; sourceTree = "<group>"; };
+		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
+		7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfYearQueryTest.h; sourceTree = "<group>"; };
+		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
+		7EAA955B156A57AC00A071F2 /* QuarterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterTest.h; sourceTree = "<group>"; };
+		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
+		7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterQueryTest.h; sourceTree = "<group>"; };
+		7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterQueryTest.m; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
@@ -95,6 +120,8 @@
 		7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLocaleFactory.h; sourceTree = "<group>"; };
 		7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLocaleFactory.m; sourceTree = "<group>"; };
 		7ED61716155BBDA200DE6328 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7EF6836115652A4A00151779 /* WeekCalendarQueryTest_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarQueryTest_V2.h; sourceTree = "<group>"; };
+		7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest_V2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */,
 				7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */,
@@ -122,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */,
 				7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */,
 				7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */,
 				7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */,
@@ -140,6 +169,8 @@
 				7E92BE521560FB360088E369 /* SqliteFunctions.m */,
 				7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */,
 				7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */,
+				7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */,
+				7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */,
 			);
 			path = SqliteDateFormat;
 			sourceTree = "<group>";
@@ -164,6 +195,7 @@
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
+				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7E92BE6A15611E9D0088E369 /* TestData */,
@@ -231,6 +263,16 @@
 				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
 				7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */,
 				7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */,
+				7EF6836115652A4A00151779 /* WeekCalendarQueryTest_V2.h */,
+				7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */,
+				7EAA9552156A441000A071F2 /* HalfYearNumberTest.h */,
+				7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */,
+				7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */,
+				7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */,
+				7EAA955B156A57AC00A071F2 /* QuarterTest.h */,
+				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
+				7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */,
+				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -256,6 +298,7 @@
 				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
 				7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */,
 				7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */,
+				7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +448,7 @@
 				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
 				7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */,
 				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
+				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +461,11 @@
 				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */,
 				7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
+				7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
+				7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
+				7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
+				7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +478,11 @@
 				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */,
 				7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
+				7EF6836415652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
+				7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
+				7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */,
+				7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,13 +519,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -503,13 +555,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -599,13 +649,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
