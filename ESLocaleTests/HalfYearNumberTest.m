@@ -47,7 +47,7 @@
     }
 }
 
--(void)testTestJune30IsInFirstSeason
+-(void)testJune30IsInFirstSeason
 {
     NSDateFormatter* ansiFormatter_ = self.ansiDateFormatter ;
     NSCalendar*      posixCalendar_ = ansiFormatter_.calendar;
@@ -63,7 +63,7 @@
     STAssertTrue( 1 == result_, @"H1 expected" );    
 }
 
--(void)testTestJuly1IsInSecondSeason
+-(void)testJuly1IsInSecondSeason
 {
     NSDateFormatter* ansiFormatter_ = self.ansiDateFormatter ;
     NSCalendar*      posixCalendar_ = ansiFormatter_.calendar;
@@ -80,7 +80,7 @@
 }
 
 
--(void)testTestDec31IsInSecondSeason
+-(void)testDec31IsInSecondSeason
 {
     NSDateFormatter* ansiFormatter_ = self.ansiDateFormatter ;
     NSCalendar*      posixCalendar_ = ansiFormatter_.calendar;
@@ -96,7 +96,7 @@
     STAssertTrue( 2 == result_, @"H2 expected" );    
 }
 
--(void)testTestJan1IsInFirstSeason
+-(void)testJan1IsInFirstSeason
 {
     NSDateFormatter* ansiFormatter_ = self.ansiDateFormatter ;
     NSCalendar*      posixCalendar_ = ansiFormatter_.calendar;
@@ -115,7 +115,7 @@
 
 
 
--(void)testTestJune30IsInFirstSeasonStringOutput
+-(void)testJune30IsInFirstSeasonStringOutput
 {
     NSString* result_ = nil;
     
@@ -123,7 +123,7 @@
     STAssertTrue( [ result_ isEqualToString: @"H1 2012" ], @"H1 expected" );
 }
 
--(void)testTestJuly1IsInSecondSeasonStringOutput
+-(void)testJuly1IsInSecondSeasonStringOutput
 {
     NSString* result_ = nil;
     
@@ -132,7 +132,7 @@
 }
 
 
--(void)testTestDec31IsInSecondSeasonStringOutput
+-(void)testDec31IsInSecondSeasonStringOutput
 {
     NSString* result_ = nil;
     
@@ -140,7 +140,7 @@
     STAssertTrue( [ result_ isEqualToString: @"H2 2011" ], @"H2 expected" );
 }
 
--(void)testTestJan1IsInFirstSeasonStringOutput
+-(void)testJan1IsInFirstSeasonStringOutput
 {
     NSString* result_ = nil;
     
