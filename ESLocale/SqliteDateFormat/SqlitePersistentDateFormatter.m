@@ -111,34 +111,25 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 +(NSInteger)halfYearForDate:( NSDate* )date_
               usingCalendar:( NSCalendar* )calendar_
 {
+    // This class must not throw ever
+    if ( nil == date_ ) 
+    {
+        return -1;
+    }
+    else if ( nil == calendar_ )
+    {
+        return -2;
+    }
+
+
     NSDateComponents* dateComp_ = [ calendar_ components: yearMonthDayMask_ 
-                                                           fromDate: date_ ];
+                                                fromDate: date_ ];
     
+
+    // Gregorian calendar hard code
     
-    NSDateComponents* yearBeginDC_ = [ dateComp_ copy ];
-    yearBeginDC_.month = 1;
-    yearBeginDC_.day   = 1;
-    
-    NSDateComponents* yearEndDC_ = [ yearBeginDC_ copy ];
-    ++yearEndDC_.year;
-    
-    
-    // TODO : fix one day error if required
-    
-    //    NSDateComponents* minusOneDay_ = [ NSDateComponents new ];
-    //    minusOneDay_.day = -1;
-    //    NSDate* yearEnd_ = [ self->targetCalendar dateByAddingComponents: minusOneDay_ 
-    //                                                              toDate: yearEnd_
-    //                                                             options: 0 ];
-    
-    NSDate* yearEnd_   = [ calendar_ dateFromComponents: yearEndDC_   ]; 
-    NSDate* yearBegin_ = [ calendar_ dateFromComponents: yearBeginDC_ ];
-    
-    NSTimeInterval yearTI_  = [ yearEnd_ timeIntervalSinceDate: yearBegin_ ];
-    NSTimeInterval hYearTI_ = yearTI_ / 2.f;
-    
-    NSTimeInterval dateTI_ = [ date_ timeIntervalSinceDate: yearBegin_ ];
-    if ( dateTI_ <= hYearTI_ )
+    static const NSInteger june_ = 6;
+    if ( dateComp_.month <= june_ )
     {
         return 1;
     }
@@ -146,7 +137,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     {
         return 2;
     }
-    
+
     return 0;
 }
 

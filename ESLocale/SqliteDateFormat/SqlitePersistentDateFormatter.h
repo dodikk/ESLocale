@@ -11,11 +11,11 @@
 -(BOOL)setFormat:( NSString* )dateFormat_
           locale:( NSString* )locale_;
 
--(NSString*)getFormattedDate:( NSString* )strDate_;
--(NSString*)getYearAndQuarter:( NSString* )strDate_;
--(NSString*)getYearAndHalfYear:( NSString* )strDate_;
+-(NSString*)getFormattedDate:( NSString* )strDate_;   //throw()
+-(NSString*)getYearAndQuarter:( NSString* )strDate_;  //throw()
+-(NSString*)getYearAndHalfYear:( NSString* )strDate_; //throw()
 
 +(NSInteger)halfYearForDate:( NSDate* )date_
-              usingCalendar:( NSCalendar* )calendar_;
+              usingCalendar:( NSCalendar* )calendar_; //throw()
 
 @end
