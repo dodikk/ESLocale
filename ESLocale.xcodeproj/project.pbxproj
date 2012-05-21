@@ -25,6 +25,8 @@
 		7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
 		7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
 		7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
+		7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
+		7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
 		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
 		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
 		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
@@ -88,6 +90,8 @@
 		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
 		7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfYearQueryTest.h; sourceTree = "<group>"; };
 		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
+		7EAA955B156A57AC00A071F2 /* QuarterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterTest.h; sourceTree = "<group>"; };
+		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
 		7EB7DAE51559476D005BF339 /* ESDatesCalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculatorTest.h; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */,
 				7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */,
 				7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */,
+				7EAA955B156A57AC00A071F2 /* QuarterTest.h */,
+				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
 				7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
 				7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +474,7 @@
 				7EF6836415652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
 				7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
 				7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
