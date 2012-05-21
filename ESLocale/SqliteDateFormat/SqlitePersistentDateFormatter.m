@@ -2,13 +2,13 @@
 
 #import "ESLocaleFactory.h"
 
+#define QUARTER_UNIT_DOES_NOT_WORK
+
 static const NSInteger yearAndQuarterMask_ = NSQuarterCalendarUnit | 
                                              NSYearCalendarUnit    ;
 
-static const NSInteger yearMonthDayMask_ = NSYearCalendarUnit  | 
-                                           NSMonthCalendarUnit |
-                                           NSDayCalendarUnit   ;
-
+static const NSInteger yearMonthMask_ = NSYearCalendarUnit  | 
+                                        NSMonthCalendarUnit ;
 
 static SqlitePersistentDateFormatter* instance_ = nil;
 
@@ -122,7 +122,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     }
 
 
-    NSDateComponents* dateComp_ = [ calendar_ components: yearMonthDayMask_ 
+    NSDateComponents* dateComp_ = [ calendar_ components: yearMonthMask_ 
                                                 fromDate: date_ ];
     
 
@@ -160,10 +160,32 @@ static SqlitePersistentDateFormatter* instance_ = nil;
         return nil;
     }
 
+    
+// http://openradar.appspot.com/9270112       
+//    NSQuarterCalendarUnit does not work
+//Originator:	victor.jalencas	
+//Number:	rdar://9270112	Date Originated:	2011-04-12
+//Status:	Open	Resolved:	
+//Product:	iPhone SDK	Product Version:	4.2
+//Classification:	Other bug	Reproducible:	Always        
+#ifdef QUARTER_UNIT_DOES_NOT_WORK
+    
+    //gregorian calendar hard code
+    NSDateComponents* result_ = [ self->targetCalendar components: yearMonthMask_ 
+                                                         fromDate: date_ ];    
+    
+    
+    static const NSInteger monthsInQuarter_ = 3;
+    NSInteger quarter_ = (result_.month - 1) / monthsInQuarter_;
+    NSInteger quarterStartingWithOne_ = 1 + quarter_;
+#else
     NSDateComponents* result_ = [ self->targetCalendar components: yearAndQuarterMask_ 
                                                          fromDate: date_ ];
+    
+    NSInteger quarterStartingWithOne_ = 1 + result_.quarter;
+#endif
 
-    return [ NSString stringWithFormat: @"Q%d %d", result_.quarter, result_.year ];
+    return [ NSString stringWithFormat: @"Q%d %d", quarterStartingWithOne_, result_.year ];
 }
 
 -(NSString*)getYearAndHalfYear:( NSString* )strDate_
