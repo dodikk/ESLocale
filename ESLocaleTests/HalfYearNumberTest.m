@@ -112,9 +112,6 @@
     STAssertTrue( 1 == result_, @"H1 expected" ); 
 }
 
-
-
-
 -(void)testJune30IsInFirstSeasonStringOutput
 {
     NSString* result_ = nil;

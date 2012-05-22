@@ -4,26 +4,30 @@
 
 +(NSLocale*)posixLocale
 {
-   return [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    return [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
 }
 
 +(NSCalendar*)gregorianCalendar
 {
-   return [ [ NSCalendar alloc ] initWithCalendarIdentifier: NSGregorianCalendar ];
+    NSCalendar* result_ = [ [ NSCalendar alloc ] initWithCalendarIdentifier: NSGregorianCalendar ];
+    [ result_ setTimeZone: [ NSTimeZone timeZoneWithName: @"GMT" ] ];
+    return result_;
 }
-
 
 +(NSCalendar*)posixCalendar
 {
-   NSCalendar* result_ = [ self gregorianCalendar ];
-   result_.locale = [ self posixLocale ];
-   
-   return result_;
+    NSCalendar* result_ = [ self gregorianCalendar ];
+    result_.locale = [ self posixLocale ];
+
+    return result_;
 }
 
 +(NSDateFormatter*)posixDateFormatter
 {
-    return [ self gregorianDateFormatterWithLocale: [ self posixLocale ] ];
+    NSDateFormatter* result_ = [ self gregorianDateFormatterWithLocale: [ self posixLocale ] ];
+    result_.timeZone = [ NSTimeZone timeZoneWithName: @"GMT" ];
+
+    return result_;
 }
 
 +(NSDateFormatter*)ansiDateFormatter
@@ -32,7 +36,7 @@
 
     NSDateFormatter* result_ = [ self posixDateFormatter ];
     result_.dateFormat = @"yyyy-MM-dd";
-    
+
     return result_;
 }
 
