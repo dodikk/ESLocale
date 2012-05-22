@@ -127,9 +127,21 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
 -(NSDate*)toFuture:( NSDate* )date_
      forResolution:( ESDateResolution )resolution_
 {
-    return [ self toPast: date_
-           forResolution: resolution_
-           alignToFuture: YES ];
+    //subtract one day
+    {
+        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        subtractOneDay_.day = -1;
+
+        date_ = [ self dateByAddingComponents: subtractOneDay_
+                                         toDate: date_
+                                        options: 0 ];
+    }
+
+    NSDate* result_ = [ self toPast: date_
+                      forResolution: resolution_
+                      alignToFuture: YES ];
+
+    return result_;
 }
 
 @end

@@ -91,7 +91,7 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"2010-01-01", @"ok" );
 }
 
 -(void)testFutureDec31_2012_YearDateResolution
@@ -108,7 +108,7 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
 
 //////////////////// WEEK PAST ////////////////////
 
--(void)testPastMar31_2011_WeekDateResolution
+-(void)testPastJan01_2011_WeekDateResolution
 {
     NSDate* date_ = dateFromString( @"2011-01-01" );
 
@@ -123,7 +123,7 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
     STAssertEquals( weekday_, 7, @"ok" );//should be saturday
 }
 
--(void)testPastJan01_2010_WeekDateResolution
+-(void)testPastMay22_2012_WeekDateResolution
 {
     NSDate* date_ = dateFromString( @"2012-05-22" );
 
@@ -138,7 +138,7 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
     STAssertEquals( weekday_, 7, @"ok" );//should be saturday
 }
 
--(void)testPastDec31_2012_WeekDateResolution
+-(void)testPastJan01_2012_WeekDateResolution
 {
     NSDate* date_ = dateFromString( @"2012-01-01" );
 
@@ -155,7 +155,7 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
 
 //////////////////// WEAK FUTURE ////////////////////
 
--(void)testFutureMar31_2011_WeakDateResolution
+-(void)testFutureDec30_2010_WeakDateResolution
 {
     NSDate* date_ = dateFromString( @"2010-12-30" );
 
@@ -167,31 +167,37 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
     STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
 
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be monday
+    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
 }
 
-/*-(void)testFutureJan01_2010_WeakDateResolution
+-(void)testFutureJan02_2011_WeakDateResolution
 {
-    NSDate* date_ = dateFromString( @"2010-01-01" );
+    NSDate* date_ = dateFromString( @"2011-01-02" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
+
+    NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
+    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
 }
 
--(void)testFutureDec31_2012_WeakDateResolution
+-(void)testFutureDec31_2011_WeakDateResolution
 {
-    NSDate* date_ = dateFromString( @"2012-12-31" );
+    NSDate* date_ = dateFromString( @"2011-12-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2013-01-01", @"ok" );
-}*/
+    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+
+    NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
+    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
+}
 
 @end
