@@ -2,33 +2,19 @@
 
 #include <vector>
 
-static const std::vector< NSUInteger >& getCalendarUnit()
+typedef std::vector< std::pair< NSUInteger, SEL > > ESDateComponentsSelectorsType;
+
+static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
 {
-    static std::vector< NSUInteger > calendarUnit_;
-
-    if ( calendarUnit_.size() == 0 )
-    {
-        calendarUnit_.push_back( NSYearCalendarUnit );
-        calendarUnit_.push_back( 0 );//ESHalfYearDateResolution resolution
-        calendarUnit_.push_back( NSQuarterCalendarUnit );
-        calendarUnit_.push_back( NSMonthCalendarUnit );
-        calendarUnit_.push_back( NSWeekCalendarUnit );
-    }
-
-    return calendarUnit_;
-}
-
-static const std::vector< SEL >& getDateComponentSelectors()
-{
-    static std::vector< SEL > dateComponentSelectors_;
+    static ESDateComponentsSelectorsType dateComponentSelectors_;
 
     if ( dateComponentSelectors_.size() == 0 )
     {
-        dateComponentSelectors_.push_back( @selector( year ) );
-        dateComponentSelectors_.push_back( NULL );//ESHalfYearDateResolution resolution
-        dateComponentSelectors_.push_back( @selector( quarter ) );
-        dateComponentSelectors_.push_back( @selector( month   ) );
-        dateComponentSelectors_.push_back( @selector( week    ) );
+        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( year ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
+        dateComponentSelectors_.push_back( std::make_pair( NSQuarterCalendarUnit, @selector( quarter ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( NSMonthCalendarUnit  , @selector( month   ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( NSWeekCalendarUnit   , @selector( week    ) ) );
     }
 
     return dateComponentSelectors_;
@@ -79,7 +65,8 @@ static const std::vector< SEL >& getDateComponentSelectors()
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
 
-    NSCalendarUnit unit_ = getCalendarUnit()[ resolution_ ];
+    std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors2()[ resolution_ ];
+    NSCalendarUnit unit_ = selectors_.first;
 
     if ( 0 == unit_ )
     {
@@ -92,7 +79,7 @@ static const std::vector< SEL >& getDateComponentSelectors()
 
     if ( difference_ )
     {
-        SEL getSelector_ = getDateComponentSelectors()[ resolution_ ];
+        SEL getSelector_ = selectors_.second;
         NSInteger someComponents_ = (NSInteger)objc_msgSend( components_, getSelector_ );
         NSString* setSelectorStr_ = [ NSStringFromSelector( getSelector_ ) propertySetNameForPropertyName ];
         SEL setSelector_ = NSSelectorFromString( setSelectorStr_ );
