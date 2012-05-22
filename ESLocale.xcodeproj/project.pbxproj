@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
+		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
+		1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */; };
 		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
@@ -76,6 +79,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
+		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
+		1BCC9FFF156B74CB00961B74 /* DateAlignmentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAlignmentTest.h; sourceTree = "<group>"; };
+		1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAlignmentTest.m; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
 		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlitePersistentDateFormatter.m; sourceTree = "<group>"; };
@@ -162,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BCC9FF9156B687500961B74 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */,
+				1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		7E92BE501560FB360088E369 /* SqliteDateFormat */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +245,7 @@
 		7ED3E57C15400C1E008268CF /* ESLocale */ = {
 			isa = PBXGroup;
 			children = (
+				1BCC9FF9156B687500961B74 /* Calendar */,
 				7E92BE501560FB360088E369 /* SqliteDateFormat */,
 				7ED3E57D15400C1E008268CF /* Supporting Files */,
 				7EB7DB0D1559713C005BF339 /* Detail */,
@@ -273,6 +290,8 @@
 				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
 				7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */,
 				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
+				1BCC9FFF156B74CB00961B74 /* DateAlignmentTest.h */,
+				1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -299,6 +318,7 @@
 				7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */,
 				7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */,
 				7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */,
+				1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +469,7 @@
 				7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */,
 				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
 				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */,
+				1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +487,7 @@
 				7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
 				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
 				7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
+				1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
