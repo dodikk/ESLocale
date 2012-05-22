@@ -240,39 +240,9 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
 
 //////////////////// MONTH FUTURE ////////////////////
 
-/*-(void)testFutureDec30_2010_MonthDateResolution
+-(void)testFutureJan01_2012_MonthDateResolution
 {
-    NSDate* date_ = dateFromString( @"2010-12-30" );
-
-    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESMonthDateResolution ];
-
-    NSString* result_ = stringFromDate( date_ );
-
-    STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
-
-    NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
-}
-
--(void)testFutureJan02_2011_MonthDateResolution
-{
-    NSDate* date_ = dateFromString( @"2011-01-02" );
-
-    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESMonthDateResolution ];
-
-    NSString* result_ = stringFromDate( date_ );
-
-    STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
-
-    NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
-}
-
--(void)testFutureDec31_2011_MonthDateResolution
-{
-    NSDate* date_ = dateFromString( @"2011-12-31" );
+    NSDate* date_ = dateFromString( @"2012-01-01" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESMonthDateResolution ];
@@ -280,9 +250,30 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
     NSString* result_ = stringFromDate( date_ );
 
     STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+}
 
-    NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be sunday
-}*/
+-(void)testFutureDec28_2012_MonthDateResolution
+{
+    NSDate* date_ = dateFromString( @"2011-12-28" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    date_ = [ calendar_ toFuture: date_ forResolution: ESMonthDateResolution ];
+
+    NSString* result_ = stringFromDate( date_ );
+
+    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+}
+
+-(void)testFutureJan11_2012_MonthDateResolution
+{
+    NSDate* date_ = dateFromString( @"2012-01-11" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    date_ = [ calendar_ toFuture: date_ forResolution: ESMonthDateResolution ];
+
+    NSString* result_ = stringFromDate( date_ );
+
+    STAssertEqualObjects( result_, @"2012-02-01", @"ok" );
+}
 
 @end
