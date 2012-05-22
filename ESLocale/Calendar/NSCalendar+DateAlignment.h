@@ -5,9 +5,9 @@ typedef enum
 {
     ESDateResolutionUndefined
     , ESWeekDateResolution
-    , ESMonthDateResolution
-    , ESQuarterDateResolution
-    , ESHalfYearDateResolution
+    , ESMonthDateResolution//testing
+    , ESQuarterDateResolution//todo test
+    , ESHalfYearDateResolution//todo test
     , ESYearDateResolution//tested
 } ESDateResolution;
 

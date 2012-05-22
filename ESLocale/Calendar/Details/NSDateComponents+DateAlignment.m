@@ -3,10 +3,7 @@
 @implementation NSDateComponents (DateAlignment)
 
 -(void)weekAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_
 {
-    NSParameterAssert( calendar_ );
-
     if ( toFuture_ )
     {
         [ self setWeekday: 1 ];
@@ -18,8 +15,15 @@
     }
 }
 
+-(void)monthAlignToFuture:( BOOL )toFuture_
+{
+    if ( toFuture_ )
+    {
+        [ self setMonth: [ self month ] + 1 ];
+    }
+}
+
 -(void)yearAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_
 {
     if ( toFuture_ )
     {

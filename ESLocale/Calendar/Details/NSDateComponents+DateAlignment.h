@@ -2,10 +2,10 @@
 
 @interface NSDateComponents (DateAlignment)
 
--(void)weekAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_;
+-(void)weekAlignToFuture:( BOOL )toFuture_;
 
--(void)yearAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_;
+-(void)monthAlignToFuture:( BOOL )toFuture_;
+
+-(void)yearAlignToFuture:( BOOL )toFuture_;
 
 @end

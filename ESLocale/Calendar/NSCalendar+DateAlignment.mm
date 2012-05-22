@@ -14,35 +14,23 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
 
         {
             NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
-            dateComponentSelectors_.push_back( std::make_pair( unit_, @selector( weekAlignToFuture:calendar: ) ) );
+            SEL selector_ = @selector( weekAlignToFuture: );
+            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
-        dateComponentSelectors_.push_back( std::make_pair( NSMonthCalendarUnit  , @selector( month   ) ) );
+        {
+            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+            SEL selector_ = @selector( monthAlignToFuture: );
+            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+        }
+
         dateComponentSelectors_.push_back( std::make_pair( NSQuarterCalendarUnit, @selector( quarter ) ) );
         dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
-        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture:calendar: ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture: ) ) );
     }
 
     return dateComponentSelectors_;
 }
-
-@implementation NSString (PropertyName_NSCalendar_DateAlignment)
-
--(id)propertySetNameForPropertyName
-{
-    static NSString* setterSuffix_ = @":";
-    if ( [ self hasSuffix: setterSuffix_ ] )
-        return nil;
-
-    NSUInteger stringLength_ = [ self length ];
-    NSString* propertyNamePart1_ = [ [ self substringWithRange: NSMakeRange( 0, 1 ) ] capitalizedString ];
-    NSString* propertyNamePart2_ = [ self substringWithRange: NSMakeRange( 1, stringLength_ - 1 ) ];
-    NSString* result_ = [ propertyNamePart1_ stringByAppendingString: propertyNamePart2_ ];
-
-    return [ [ @"set" stringByAppendingString: result_ ] stringByAppendingString: setterSuffix_ ];
-}
-
-@end
 
 @implementation NSCalendar (DateAlignment)
 
@@ -89,7 +77,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
                                              fromDate: date_ ];
 
     SEL selector_ = selectors_.second;
-    objc_msgSend( components_, selector_, alignToFuture_, self );
+    objc_msgSend( components_, selector_, alignToFuture_ );
 
     return [ self dateFromComponents: components_ ];
 }
