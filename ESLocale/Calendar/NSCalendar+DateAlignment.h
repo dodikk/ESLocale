@@ -5,10 +5,10 @@ typedef enum
 {
     ESDateResolutionUndefined
     , ESWeekDateResolution
-    , ESMonthDateResolution//testing
-    , ESQuarterDateResolution//todo test
+    , ESMonthDateResolution
+    , ESQuarterDateResolution//testing
     , ESHalfYearDateResolution//todo test
-    , ESYearDateResolution//tested
+    , ESYearDateResolution
 } ESDateResolution;
 
 @interface NSCalendar (DateAlignment)

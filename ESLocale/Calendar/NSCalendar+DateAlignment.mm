@@ -24,7 +24,12 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
-        dateComponentSelectors_.push_back( std::make_pair( NSQuarterCalendarUnit, @selector( quarter ) ) );
+        {
+            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+            SEL selector_ = @selector( quarterAlignToFuture: );
+            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+        }
+
         dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
         dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture: ) ) );
     }
@@ -65,11 +70,6 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     if ( resolution_ == ESHalfYearDateResolution )
     {
         NSAssert( NO, @"ESHalfYearDateResolution: Not implemented yet" );
-        return nil;
-    }
-    if ( resolution_ == ESQuarterDateResolution )
-    {
-        NSAssert( NO, @"ESQuarterDateResolution: Not implemented yet" );
         return nil;
     }
 

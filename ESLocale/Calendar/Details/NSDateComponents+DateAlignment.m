@@ -23,6 +23,21 @@
     }
 }
 
+-(void)quarterAlignToFuture:( BOOL )toFuture_
+{
+    NSInteger month_ = [ self month ];
+    if ( toFuture_ )
+    {
+        //???
+        month_ = ( month_ - 1 ) / 3 * 3 + 1;
+    }
+    else
+    {
+        month_ = ( month_ - 1 ) / 3 * 3 + 1;
+    }
+    [ self setMonth: month_ ];
+}
+
 -(void)yearAlignToFuture:( BOOL )toFuture_
 {
     if ( toFuture_ )
