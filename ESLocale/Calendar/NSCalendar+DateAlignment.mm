@@ -10,11 +10,17 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
 
     if ( dateComponentSelectors_.size() == 0 )
     {
-        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( year ) ) );
-        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
-        dateComponentSelectors_.push_back( std::make_pair( NSQuarterCalendarUnit, @selector( quarter ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//undefined resolution
+
+        {
+            NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
+            dateComponentSelectors_.push_back( std::make_pair( unit_, @selector( weekAlignToFuture:calendar: ) ) );
+        }
+
         dateComponentSelectors_.push_back( std::make_pair( NSMonthCalendarUnit  , @selector( month   ) ) );
-        dateComponentSelectors_.push_back( std::make_pair( NSWeekCalendarUnit   , @selector( week    ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( NSQuarterCalendarUnit, @selector( quarter ) ) );
+        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
+        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture:calendar: ) ) );
     }
 
     return dateComponentSelectors_;
@@ -48,7 +54,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     if ( !validDate_ )
         return NO;
 
-    BOOL isValidResolution_ = ( ESYearDateResolution <= resolution_ || ESWeekDateResolution >= resolution_ );
+    BOOL isValidResolution_ = ( ESDateResolutionUndefined < resolution_ || resolution_ <= ESYearDateResolution );
     if ( !isValidResolution_ )
     {
         NSAssert( NO, @"Invalid resolution argument" );
@@ -58,9 +64,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     return YES;
 }
 
--(NSDate*)floorDate:( NSDate* )date_
-      forResolution:( ESDateResolution )resolution_
-     dateDifference:( NSInteger )difference_
+-(NSDate*)toPast:( NSDate* )date_
+   forResolution:( ESDateResolution )resolution_
+   alignToFuture:( BOOL )alignToFuture_
 {
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
@@ -68,41 +74,62 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors2()[ resolution_ ];
     NSCalendarUnit unit_ = selectors_.first;
 
-    if ( 0 == unit_ )
+    if ( resolution_ == ESHalfYearDateResolution )
     {
-        NSAssert( NO, @"ESYearDateResolution: Not implemented yet" );
+        NSAssert( NO, @"ESHalfYearDateResolution: Not implemented yet" );
+        return nil;
+    }
+    if ( resolution_ == ESQuarterDateResolution )
+    {
+        NSAssert( NO, @"ESQuarterDateResolution: Not implemented yet" );
         return nil;
     }
 
     NSDateComponents* components_ = [ self components: unit_
                                              fromDate: date_ ];
 
-    if ( difference_ )
-    {
-        SEL getSelector_ = selectors_.second;
-        NSInteger someComponents_ = (NSInteger)objc_msgSend( components_, getSelector_ );
-        NSString* setSelectorStr_ = [ NSStringFromSelector( getSelector_ ) propertySetNameForPropertyName ];
-        SEL setSelector_ = NSSelectorFromString( setSelectorStr_ );
-        objc_msgSend( components_, setSelector_, someComponents_ + difference_ );
-    }
+    SEL selector_ = selectors_.second;
+    objc_msgSend( components_, selector_, alignToFuture_, self );
 
     return [ self dateFromComponents: components_ ];
 }
 
--(NSDate*)floorDate:( NSDate* )date_
-      forResolution:( ESDateResolution )resolution_
+-(NSDate*)toPast:( NSDate* )date_
+   forResolution:( ESDateResolution )resolution_
 {
-    return [ self floorDate: date_
-              forResolution: resolution_
-             dateDifference: 0 ];
+    //add one day
+    {
+        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        subtractOneDay_.day = 1;
+
+        date_ = [ self dateByAddingComponents: subtractOneDay_
+                                       toDate: date_
+                                      options: 0 ];
+    }
+
+    NSDate* result_ = [ self toPast: date_
+                      forResolution: resolution_
+                      alignToFuture: NO ];
+
+    //subtract one day
+    {
+        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        subtractOneDay_.day = -1;
+
+        result_ = [ self dateByAddingComponents: subtractOneDay_
+                                         toDate: result_
+                                        options: 0 ];
+    }
+
+    return result_;
 }
 
--(NSDate*)ceilDate:( NSDate* )date_
+-(NSDate*)toFuture:( NSDate* )date_
      forResolution:( ESDateResolution )resolution_
 {
-    return [ self floorDate: date_
-              forResolution: resolution_
-             dateDifference: 1 ];
+    return [ self toPast: date_
+           forResolution: resolution_
+           alignToFuture: YES ];
 }
 
 @end

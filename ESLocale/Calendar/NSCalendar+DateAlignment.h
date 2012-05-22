@@ -1,17 +1,19 @@
 #import <Foundation/Foundation.h>
 
+//STODO remove enum
 typedef enum
 {
-    ESYearDateResolution
-    , ESHalfYearDateResolution
-    , ESQuarterDateResolution
-    , ESMonthDateResolution
+    ESDateResolutionUndefined
     , ESWeekDateResolution
+    , ESMonthDateResolution
+    , ESQuarterDateResolution
+    , ESHalfYearDateResolution
+    , ESYearDateResolution//tested
 } ESDateResolution;
 
 @interface NSCalendar (DateAlignment)
 
--(NSDate*)floorDate:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
--(NSDate*)ceilDate:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
+-(NSDate*)toPast:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
+-(NSDate*)toFuture:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
 
 @end

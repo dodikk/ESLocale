@@ -100,10 +100,9 @@
     {
         return nil;
     }
-    
+
     NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
     subtractOneDay_.day = -1;
-
 
     NSDate* nextIntervalStart_ = [ self startOfIntervalWithIndex: nextIndex_ ];
     NSCalendar* cal_ = [ ESLocaleFactory posixCalendar ];
