@@ -329,51 +329,87 @@ static NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_
 -(void)testPastDec31_2012_QuarterDateResolution
 {
     NSDate* date_ = dateFromString( @"2012-03-31" );
-    
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
-    
+
     NSString* result_ = stringFromDate( date_ );
-    
+
     STAssertEqualObjects( result_, @"2012-03-31", @"ok" );
 }
 
-//////////////////// MONTH FUTURE ////////////////////
+//////////////////// QUARTER FUTURE ////////////////////
 
-/*-(void)testFutureJan01_2012_QuarterDateResolution
+-(void)testFutureJan01_2012_QuarterDateResolution
 {
     NSDate* date_ = dateFromString( @"2012-01-01" );
-    
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
-    
+
     NSString* result_ = stringFromDate( date_ );
-    
+
     STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
 }
 
--(void)testFutureDec28_2012_QuarterDateResolution
+-(void)testFutureJan02_2012_QuarterDateResolution
 {
-    NSDate* date_ = dateFromString( @"2011-12-28" );
-    
+    NSDate* date_ = dateFromString( @"2012-01-02" );
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
-    
+
     NSString* result_ = stringFromDate( date_ );
-    
-    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+
+    STAssertEqualObjects( result_, @"2012-04-01", @"ok" );
 }
 
--(void)testFutureJan11_2012_QuarterDateResolution
+-(void)testFutureMay22_2012_QuarterDateResolution
 {
-    NSDate* date_ = dateFromString( @"2012-01-11" );
-    
+    NSDate* date_ = dateFromString( @"2012-05-22" );
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
-    
+
     NSString* result_ = stringFromDate( date_ );
-    
-    STAssertEqualObjects( result_, @"2012-02-01", @"ok" );
-}*/
+
+    STAssertEqualObjects( result_, @"2012-07-01", @"ok" );
+}
+
+-(void)testFutureSep22_2012_QuarterDateResolution
+{
+    NSDate* date_ = dateFromString( @"2012-09-22" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+
+    NSString* result_ = stringFromDate( date_ );
+
+    STAssertEqualObjects( result_, @"2012-10-01", @"ok" );
+}
+
+-(void)testFutureOct22_2012_QuarterDateResolution
+{
+    NSDate* date_ = dateFromString( @"2012-10-22" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+
+    NSString* result_ = stringFromDate( date_ );
+
+    STAssertEqualObjects( result_, @"2013-01-01", @"ok" );
+}
+
+-(void)testFutureDec31_2012_QuarterDateResolution
+{
+    NSDate* date_ = dateFromString( @"2012-12-31" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+
+    NSString* result_ = stringFromDate( date_ );
+
+    STAssertEqualObjects( result_, @"2013-01-01", @"ok" );
+}
 
 @end

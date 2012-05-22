@@ -26,14 +26,10 @@
 -(void)quarterAlignToFuture:( BOOL )toFuture_
 {
     NSInteger month_ = [ self month ];
+    month_ = ( month_ - 1 ) / 3 * 3 + 1;
     if ( toFuture_ )
     {
-        //???
-        month_ = ( month_ - 1 ) / 3 * 3 + 1;
-    }
-    else
-    {
-        month_ = ( month_ - 1 ) / 3 * 3 + 1;
+        month_ += 3;
     }
     [ self setMonth: month_ ];
 }
