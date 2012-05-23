@@ -96,6 +96,7 @@
 		1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithQuarterResolution.m; sourceTree = "<group>"; };
 		1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithMonthResolution.m; sourceTree = "<group>"; };
 		1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithWeekResolution.m; sourceTree = "<group>"; };
+		1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDateResolutionType.h; sourceTree = "<group>"; };
 		1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+DateAlignment.h"; sourceTree = "<group>"; };
 		1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+DateAlignment.m"; sourceTree = "<group>"; };
 		1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearDateAlignmentTest.m; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				1B228576156B9A57006A529B /* Details */,
+				1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */,
 				1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */,
 				1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */,
 			);

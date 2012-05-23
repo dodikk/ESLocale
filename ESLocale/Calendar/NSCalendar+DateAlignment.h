@@ -1,14 +1,6 @@
 #import <Foundation/Foundation.h>
 
-typedef enum
-{
-    ESDateResolutionUndefined
-    , ESWeekDateResolution
-    , ESMonthDateResolution
-    , ESQuarterDateResolution
-    , ESHalfYearDateResolution
-    , ESYearDateResolution
-} ESDateResolution;
+#include <ESLocale/Calendar/ESDateResolutionType.h>
 
 @interface NSCalendar (DateAlignment)
 
