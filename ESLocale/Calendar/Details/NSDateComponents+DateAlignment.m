@@ -41,15 +41,17 @@
                                date:( NSDate* )date_
                            calendar:( NSCalendar* )calendar_
 {
+    //NSDateComponents.quarter property does not work properly,
+    //so own range calulation used here
+
     NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
 
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
-    NSInteger month_ = [ components_ month ];
-    //6 month per Quarter harcode here for gregorian calendar only
+    //3 month per Quarter harcode used here for gregorian calendar only
     static NSInteger const monthPerQuarter_ = 3;
-    NSInteger quarterStartMonth_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
+    NSInteger quarterStartMonth_ = ( [ components_ month ] - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
     if ( toFuture_ )
     {
         quarterStartMonth_ += monthPerQuarter_;
@@ -68,17 +70,14 @@
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
-    //NSDateComponents.quarter property does not work properly,
-    //so own range calulation used here
-    NSInteger month_ = [ components_ month ];
-    //6 month per halfYear harcode here for gregorian calendar only
+    //6 month per halfYear harcode used here for gregorian calendar only
     static NSInteger const monthPerHalfYear_ = 6;
-    month_ = ( month_ - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
+    NSInteger monthStart_ = ( [ components_ month ] - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
     if ( toFuture_ )
     {
-        month_ += monthPerHalfYear_;
+        monthStart_ += monthPerHalfYear_;
     }
-    [ components_ setMonth: month_ ];
+    [ components_ setMonth: monthStart_ ];
 
     return components_;
 }
