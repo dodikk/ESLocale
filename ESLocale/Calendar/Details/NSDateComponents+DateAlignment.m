@@ -6,7 +6,7 @@
                             date:( NSDate* )date_
                         calendar:( NSCalendar* )calendar_
 {
-    NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSWeekOfYearCalendarUnit;
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
@@ -15,7 +15,7 @@
 
     if ( toFuture_ )
     {
-        [ components_ setWeek: [ components_ week ] + 1 ];
+        [ components_ setWeekOfYear: [ components_ weekOfYear ] + 1 ];
     }
 
     return components_;
