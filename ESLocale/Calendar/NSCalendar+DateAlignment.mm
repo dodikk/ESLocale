@@ -82,7 +82,8 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 -(NSDate*)toPast:( NSDate* )date_
    forResolution:( ESDateResolution )resolution_
 {
-    //add one day
+    //add one day to round last weak/month etc. date to the same date
+    //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
     {
         NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
         subtractOneDay_.day = 1;
