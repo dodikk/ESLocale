@@ -8,7 +8,8 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     static ESDateComponentsSelectorsType dateComponentSelectors_;
 
-    if ( dateComponentSelectors_.size() == 0 )
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken, ^
     {
         dateComponentSelectors_.push_back( static_cast<SEL>( NULL ) );//undefined resolution
 
@@ -36,7 +37,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
             SEL selector_ = @selector( yearAlignComponentsToFuture:date:calendar: );
             dateComponentSelectors_.push_back( selector_ );
         }
-    }
+    } );
 
     return dateComponentSelectors_;
 }
@@ -85,7 +86,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     //add one day to round last weak/month etc. date to the same date
     //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
     {
-        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
         subtractOneDay_.day = 1;
 
         date_ = [ self dateByAddingComponents: subtractOneDay_
@@ -99,7 +100,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 
     //subtract one day
     {
-        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
         subtractOneDay_.day = -1;
 
         result_ = [ self dateByAddingComponents: subtractOneDay_
@@ -115,7 +116,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     //subtract one day
     {
-        NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
+        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
         subtractOneDay_.day = -1;
 
         date_ = [ self dateByAddingComponents: subtractOneDay_
