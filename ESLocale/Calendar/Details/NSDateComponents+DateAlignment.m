@@ -67,6 +67,8 @@
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
+    //NSDateComponents.quarter property does not work properly,
+    //so own range calulation used here
     NSInteger month_ = [ components_ month ];
     static NSInteger const monthPerHalfYear_ = 6;
     month_ = ( month_ - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
