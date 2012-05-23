@@ -47,6 +47,7 @@
                                                   fromDate: date_ ];
 
     NSInteger month_ = [ components_ month ];
+    //6 month per Quarter harcode here for gregorian calendar only
     static NSInteger const monthPerQuarter_ = 3;
     NSInteger quarterStartMonth_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
     if ( toFuture_ )
@@ -70,6 +71,7 @@
     //NSDateComponents.quarter property does not work properly,
     //so own range calulation used here
     NSInteger month_ = [ components_ month ];
+    //6 month per halfYear harcode here for gregorian calendar only
     static NSInteger const monthPerHalfYear_ = 6;
     month_ = ( month_ - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
     if ( toFuture_ )
