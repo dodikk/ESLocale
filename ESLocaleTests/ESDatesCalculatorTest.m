@@ -87,16 +87,16 @@
         STAssertTrue( [ beg_ isEqualToDate: result_.startDate ], @"startDate mismatch - %@ != %@", beg_, result_.startDate );
         STAssertTrue( [ fin_ isEqualToDate: result_.endDate   ], @"endDate   mismatch - %@ != %@", fin_, result_.endDate   );
     }
-    
-    
+
+
     {
         beg_ = [ df_ dateFromString: @"1648-04-29" ];
         fin_ = [ df_ dateFromString: @"2011-10-23" ];
-        
+
         result_ = [ [ ESDatesCalculator alloc ] initWithResolution: 222333222
                                                          startDate: beg_
                                                            endDate: fin_ ];
-        
+
         STAssertTrue( 222333222 == result_.resolution, @"resolution mismatch - %d != %d", 222333222, result_.resolution );
         STAssertTrue( [ beg_ isEqualToDate: result_.startDate ], @"startDate mismatch - %@ != %@", beg_, result_.startDate );
         STAssertTrue( [ fin_ isEqualToDate: result_.endDate   ], @"endDate   mismatch - %@ != %@", fin_, result_.endDate   );
