@@ -1,9 +1,11 @@
-#import "QuarterQueryTest.h"
-
 #import "SqlitePersistentDateFormatter.h"
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface QuarterQueryTest : SenTestCase
+@end
 
 @implementation QuarterQueryTest
 {

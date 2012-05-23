@@ -1,5 +1,9 @@
-#import "QuarterTest.h"
 #import "SqlitePersistentDateFormatter.h"
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface QuarterTest : SenTestCase
+@end
 
 @implementation QuarterTest
 

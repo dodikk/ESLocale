@@ -1,8 +1,11 @@
-#import "WeekCalendarQueryTest.h"
-
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface WeekCalendarQueryTest : SenTestCase
+
+@end
 
 @implementation WeekCalendarQueryTest
 {

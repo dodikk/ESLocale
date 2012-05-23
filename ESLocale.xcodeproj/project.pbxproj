@@ -12,9 +12,11 @@
 		1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
 		1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB041156CF3EF004D3377 /* testDateUtils.m */; };
 		1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */; };
+		1B3DB048156CF523004D3377 /* MonthDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */; };
+		1B3DB04B156CF578004D3377 /* QuarterDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */; };
 		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
 		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
-		1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */; };
+		1BCCA001156B74CB00961B74 /* HalfYearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */; };
 		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
@@ -90,9 +92,11 @@
 		1B3DB040156CF3EF004D3377 /* testDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDateUtils.h; sourceTree = "<group>"; };
 		1B3DB041156CF3EF004D3377 /* testDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testDateUtils.m; sourceTree = "<group>"; };
 		1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterDateAlignmentTest.m; sourceTree = "<group>"; };
 		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
 		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
-		1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAlignmentTest.m; sourceTree = "<group>"; };
+		1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearDateAlignmentTest.m; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
 		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlitePersistentDateFormatter.m; sourceTree = "<group>"; };
@@ -102,16 +106,11 @@
 		7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLocalizedDateFormatter.m; sourceTree = "<group>"; };
 		7E92BE5A156107770088E369 /* SqlFormatterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlFormatterTest.h; sourceTree = "<group>"; };
 		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
-		7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarQueryTest.h; sourceTree = "<group>"; };
 		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
 		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
-		7EAA9552156A441000A071F2 /* HalfYearNumberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfYearNumberTest.h; sourceTree = "<group>"; };
 		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
-		7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfYearQueryTest.h; sourceTree = "<group>"; };
 		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
-		7EAA955B156A57AC00A071F2 /* QuarterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterTest.h; sourceTree = "<group>"; };
 		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
-		7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterQueryTest.h; sourceTree = "<group>"; };
 		7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterQueryTest.m; sourceTree = "<group>"; };
 		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
 		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 		7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLocaleFactory.h; sourceTree = "<group>"; };
 		7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLocaleFactory.m; sourceTree = "<group>"; };
 		7ED61716155BBDA200DE6328 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		7EF6836115652A4A00151779 /* WeekCalendarQueryTest_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarQueryTest_V2.h; sourceTree = "<group>"; };
 		7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest_V2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -308,20 +306,16 @@
 				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
 				7E92BE5A156107770088E369 /* SqlFormatterTest.h */,
 				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
-				7E92BE5E15610C020088E369 /* WeekCalendarQueryTest.h */,
 				7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */,
-				7EF6836115652A4A00151779 /* WeekCalendarQueryTest_V2.h */,
 				7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */,
-				7EAA9552156A441000A071F2 /* HalfYearNumberTest.h */,
 				7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */,
-				7EAA9557156A531800A071F2 /* HalfYearQueryTest.h */,
 				7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */,
-				7EAA955B156A57AC00A071F2 /* QuarterTest.h */,
 				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
-				7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */,
 				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
-				1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */,
 				1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */,
+				1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */,
+				1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */,
+				1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */,
 				1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */,
 			);
 			path = ESLocaleTests;
@@ -520,10 +514,12 @@
 				7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
 				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
 				7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
-				1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */,
+				1BCCA001156B74CB00961B74 /* HalfYearDateAlignmentTest.m in Sources */,
 				1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */,
 				1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */,
 				1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */,
+				1B3DB048156CF523004D3377 /* MonthDateAlignmentTest.m in Sources */,
+				1B3DB04B156CF578004D3377 /* QuarterDateAlignmentTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
