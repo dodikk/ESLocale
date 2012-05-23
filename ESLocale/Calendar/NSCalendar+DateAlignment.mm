@@ -2,16 +2,45 @@
 
 #include <vector>
 
+static NSDateComponents* getAddOneDayComponents()
+{
+    static NSDateComponents* addOneDay_;
+
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
+    {
+        addOneDay_ = [ NSDateComponents new ];
+        addOneDay_.day = 1;
+    } );
+
+    return addOneDay_;
+}
+
+static NSDateComponents* getSubtractOneDayComponents()
+{
+    static NSDateComponents* subtractOneDay_;
+
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
+    {
+        subtractOneDay_ = [ NSDateComponents new ];
+        subtractOneDay_.day = -1;
+    } );
+
+    return subtractOneDay_;
+}
+
 typedef std::vector< SEL > ESDateComponentsSelectorsType;
 
 static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     static ESDateComponentsSelectorsType dateComponentSelectors_;
 
-    static dispatch_once_t onceToken;
-    dispatch_once( &onceToken, ^
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
     {
-        dateComponentSelectors_.push_back( static_cast<SEL>( NULL ) );//undefined resolution
+        //undefined resolution
+        dateComponentSelectors_.push_back( static_cast<SEL>( NULL ) );
 
         {
             SEL selector_ = @selector( weekAlignComponentsToFuture:date:calendar: );
@@ -85,28 +114,18 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     //add one day to round last weak/month etc. date to the same date
     //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
-    {
-        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
-        subtractOneDay_.day = 1;
-
-        date_ = [ self dateByAddingComponents: subtractOneDay_
-                                       toDate: date_
-                                      options: 0 ];
-    }
+    date_ = [ self dateByAddingComponents: getAddOneDayComponents()
+                                   toDate: date_
+                                  options: 0 ];
 
     NSDate* result_ = [ self alignDate: date_
                             resolution: resolution_
                               toFuture: NO ];
 
     //subtract one day
-    {
-        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
-        subtractOneDay_.day = -1;
-
-        result_ = [ self dateByAddingComponents: subtractOneDay_
-                                         toDate: result_
-                                        options: 0 ];
-    }
+    result_ = [ self dateByAddingComponents: getSubtractOneDayComponents()
+                                     toDate: result_
+                                    options: 0 ];
 
     return result_;
 }
@@ -114,15 +133,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 -(NSDate*)alignToFutureDate:( NSDate* )date_
                  resolution:( ESDateResolution )resolution_
 {
-    //subtract one day
-    {
-        static NSDateComponents* subtractOneDay_ = [ NSDateComponents new ];
-        subtractOneDay_.day = -1;
-
-        date_ = [ self dateByAddingComponents: subtractOneDay_
-                                         toDate: date_
-                                        options: 0 ];
-    }
+    date_ = [ self dateByAddingComponents: getSubtractOneDayComponents()
+                                   toDate: date_
+                                  options: 0 ];
 
     return [ self alignDate: date_
                  resolution: resolution_

@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-
 #include <ESLocale/Calendar/ESDateResolutionType.h>
+
+#import <Foundation/Foundation.h>
 
 @interface NSCalendar (DateAlignment)
 
