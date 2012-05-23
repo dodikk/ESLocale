@@ -4,13 +4,14 @@
 
 typedef std::vector< std::pair< NSUInteger, SEL > > ESDateComponentsSelectorsType;
 
-static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
+static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     static ESDateComponentsSelectorsType dateComponentSelectors_;
 
     if ( dateComponentSelectors_.size() == 0 )
     {
-        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//undefined resolution
+        dateComponentSelectors_.push_back( std::make_pair( 0
+                                                          , static_cast<SEL>(NULL) ) );//undefined resolution
 
         {
             NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
@@ -69,7 +70,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
 
-    std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors2()[ resolution_ ];
+    std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors()[ resolution_ ];
     NSCalendarUnit unit_ = selectors_.first;
 
     NSDateComponents* components_ = [ self components: unit_
@@ -127,6 +128,48 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
     return [ self toPast: date_
            forResolution: resolution_
            alignToFuture: YES ];
+}
+
+-(void)alignDateRangeFromDate:( inout NSDate** )fromDate_
+                       toDate:( inout NSDate** )toDate_
+                   resolution:( inout ESDateResolution* )resolution_
+{
+    BOOL resolutionOk_ = ( NULL != resolution_ );
+    BOOL startDateOk_  = ( NULL != fromDate_   && nil != *fromDate_  );
+    BOOL endDateOk_    = ( NULL != toDate_     && nil != *toDate_    );
+    BOOL dateRangeOk_  = startDateOk_ && endDateOk_
+        && ( NSOrderedDescending != [ *fromDate_ compare: *toDate_ ] );
+
+    NSParameterAssert( resolutionOk_ );
+    NSParameterAssert( startDateOk_  );
+    NSParameterAssert( endDateOk_    );
+    NSParameterAssert( dateRangeOk_  );
+    if ( !resolutionOk_ || !startDateOk_ || !endDateOk_ || !dateRangeOk_ )
+    {
+        return;
+    }
+
+    if ( 0 == *resolution_ )
+    {
+        *resolution_ = ESYearDateResolution;
+    }
+
+    NSUInteger tmpResolution_ = *resolution_;
+    while ( tmpResolution_ != 0 )
+    {
+        *fromDate_ = [ self toFuture: *fromDate_
+                       forResolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+
+        *toDate_ = [ self toPast: *toDate_
+                   forResolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+
+        if ( NSOrderedAscending == [ *fromDate_ compare: *toDate_ ] )
+            break;
+
+        tmpResolution_ -= 1;
+    }
+
+    *resolution_ = static_cast<ESDateResolution>( tmpResolution_ );
 }
 
 @end
