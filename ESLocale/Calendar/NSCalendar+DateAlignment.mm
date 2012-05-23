@@ -2,7 +2,7 @@
 
 #include <vector>
 
-typedef std::vector< std::pair< NSUInteger, SEL > > ESDateComponentsSelectorsType;
+typedef std::vector< SEL > ESDateComponentsSelectorsType;
 
 static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
@@ -10,37 +10,31 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 
     if ( dateComponentSelectors_.size() == 0 )
     {
-        dateComponentSelectors_.push_back( std::make_pair( 0
-                                                          , static_cast<SEL>(NULL) ) );//undefined resolution
+        dateComponentSelectors_.push_back( static_cast<SEL>( NULL ) );//undefined resolution
 
         {
-            NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
-            SEL selector_ = @selector( weekAlignToFuture:calendar: );
-            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+            SEL selector_ = @selector( weekAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
 
         {
-            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( monthAlignToFuture:calendar: );
-            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+            SEL selector_ = @selector( monthAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
 
         {
-            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( quarterAlignToFuture:calendar: );
-            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+            SEL selector_ = @selector( quarterAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
 
         {
-            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( halfYearAlignToFuture:calendar: );
-            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+            SEL selector_ = @selector( halfYearAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
 
         {
-            NSCalendarUnit unit_ = NSYearCalendarUnit;
-            SEL selector_ = @selector( yearAlignToFuture:calendar: );
-            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+            SEL selector_ = @selector( yearAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
     }
 
@@ -74,14 +68,13 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
 
-    std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors()[ resolution_ ];
-    NSCalendarUnit unit_ = selectors_.first;
+    SEL selector_ = getDateComponentSelectors()[ resolution_ ];
 
-    NSDateComponents* components_ = [ self components: unit_
-                                             fromDate: date_ ];
-
-    SEL selector_ = selectors_.second;
-    objc_msgSend( components_, selector_, alignToFuture_, self );
+    NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
+                                                 , selector_
+                                                 , alignToFuture_
+                                                 , date_
+                                                 , self );
 
     return [ self dateFromComponents: components_ ];
 }

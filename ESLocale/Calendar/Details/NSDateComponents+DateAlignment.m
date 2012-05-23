@@ -2,63 +2,98 @@
 
 @implementation NSDateComponents (DateAlignment)
 
--(void)weekAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_
++(id)weekAlignComponentsToFuture:( BOOL )toFuture_
+                            date:( NSDate* )date_
+                        calendar:( NSCalendar* )calendar_
 {
-    NSInteger firstWeekDay_ = (NSInteger)[ calendar_ firstWeekday ];
+    NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
+    NSDateComponents* components_ = [ calendar_ components: unit_
+                                                  fromDate: date_ ];
+
+    [ components_ setWeekday: (NSInteger)[ calendar_ firstWeekday ] ];
+
     if ( toFuture_ )
     {
-        [ self setWeekday: firstWeekDay_ ];
-        [ self setWeek: [ self week ] + 1 ];
+        [ components_ setWeek: [ components_ week ] + 1 ];
     }
-    else
-    {
-        [ self setWeekday: firstWeekDay_ ];
-    }
+
+    return components_;
 }
 
--(void)monthAlignToFuture:( BOOL )toFuture_
-                 calendar:( NSCalendar* )calendar_
++(id)monthAlignComponentsToFuture:( BOOL )toFuture_
+                             date:( NSDate* )date_
+                         calendar:( NSCalendar* )calendar_
 {
+    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+
+    NSDateComponents* components_ = [ calendar_ components: unit_
+                                                  fromDate: date_ ];
+
     if ( toFuture_ )
     {
-        [ self setMonth: [ self month ] + 1 ];
+        [ components_ setMonth: [ components_ month ] + 1 ];
     }
+
+    return components_;
 }
 
--(void)quarterAlignToFuture:( BOOL )toFuture_
-                   calendar:( NSCalendar* )calendar_
++(id)quarterAlignComponentsToFuture:( BOOL )toFuture_
+                               date:( NSDate* )date_
+                           calendar:( NSCalendar* )calendar_
 {
-    NSInteger month_ = [ self month ];
+    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+
+    NSDateComponents* components_ = [ calendar_ components: unit_
+                                                  fromDate: date_ ];
+
+    NSInteger month_ = [ components_ month ];
     static NSInteger const monthPerQuarter_ = 3;
     month_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
     if ( toFuture_ )
     {
         month_ += monthPerQuarter_;
     }
-    [ self setMonth: month_ ];
+    [ components_ setMonth: month_ ];
+
+    return components_;
 }
 
--(void)halfYearAlignToFuture:( BOOL )toFuture_
-                    calendar:( NSCalendar* )calendar_
++(id)halfYearAlignComponentsToFuture:( BOOL )toFuture_
+                                date:( NSDate* )date_
+                            calendar:( NSCalendar* )calendar_
 {
-    NSInteger month_ = [ self month ];
+    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+
+    NSDateComponents* components_ = [ calendar_ components: unit_
+                                                  fromDate: date_ ];
+
+    NSInteger month_ = [ components_ month ];
     static NSInteger const monthPerHalfYear_ = 6;
     month_ = ( month_ - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
     if ( toFuture_ )
     {
         month_ += monthPerHalfYear_;
     }
-    [ self setMonth: month_ ];
+    [ components_ setMonth: month_ ];
+
+    return components_;
 }
 
--(void)yearAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_
++(id)yearAlignComponentsToFuture:( BOOL )toFuture_
+                            date:( NSDate* )date_
+                        calendar:( NSCalendar* )calendar_
 {
+    NSCalendarUnit unit_ = NSYearCalendarUnit;
+
+    NSDateComponents* components_ = [ calendar_ components: unit_
+                                                  fromDate: date_ ];
+
     if ( toFuture_ )
     {
-        [ self setYear: [ self year ] + 1 ];
+        [ components_ setYear: [ components_ year ] + 1 ];
     }
+
+    return components_;
 }
 
 @end

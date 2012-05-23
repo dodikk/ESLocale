@@ -2,16 +2,24 @@
 
 @interface NSDateComponents (DateAlignment)
 
--(void)weekAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_;
++(id)weekAlignComponentsToFuture:( BOOL )toFuture_
+                            date:( NSDate* )date_
+                        calendar:( NSCalendar* )calendar_;
 
--(void)monthAlignToFuture:( BOOL )toFuture_
-                 calendar:( NSCalendar* )calendar_;
++(id)monthAlignComponentsToFuture:( BOOL )toFuture_
+                             date:( NSDate* )date_
+                         calendar:( NSCalendar* )calendar_;
 
--(void)halfYearAlignToFuture:( BOOL )toFuture_
-                    calendar:( NSCalendar* )calendar_;
++(id)quarterAlignComponentsToFuture:( BOOL )toFuture_
+                               date:( NSDate* )date_
+                           calendar:( NSCalendar* )calendar_;
 
--(void)yearAlignToFuture:( BOOL )toFuture_
-                calendar:( NSCalendar* )calendar_;
++(id)halfYearAlignComponentsToFuture:( BOOL )toFuture_
+                                date:( NSDate* )date_
+                            calendar:( NSCalendar* )calendar_;
+
++(id)yearAlignComponentsToFuture:( BOOL )toFuture_
+                            date:( NSDate* )date_
+                        calendar:( NSCalendar* )calendar_;
 
 @end
