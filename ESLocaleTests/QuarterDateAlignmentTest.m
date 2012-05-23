@@ -25,7 +25,7 @@
     NSDate* date_ = dateFromString( @"2012-01-01" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESQuarterDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -44,7 +44,7 @@
     NSDate* date_ = dateFromString( @"2012-05-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -64,7 +64,7 @@
     NSDate* date_ = dateFromString( @"2012-09-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -83,7 +83,7 @@
     NSDate* date_ = dateFromString( @"2012-10-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -103,7 +103,7 @@
     NSDate* date_ = dateFromString( @"2012-03-31" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -124,7 +124,7 @@
     NSDate* date_ = dateFromString( @"2012-01-01" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -143,7 +143,7 @@
     NSDate* date_ = dateFromString( @"2012-01-02" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -162,7 +162,7 @@
     NSDate* date_ = dateFromString( @"2012-05-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -182,7 +182,7 @@
     NSDate* date_ = dateFromString( @"2012-09-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -201,7 +201,7 @@
     NSDate* date_ = dateFromString( @"2012-10-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -221,7 +221,7 @@
     NSDate* date_ = dateFromString( @"2012-12-31" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESQuarterDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESQuarterDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     

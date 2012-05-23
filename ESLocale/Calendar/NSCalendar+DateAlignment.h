@@ -13,8 +13,8 @@ typedef enum
 
 @interface NSCalendar (DateAlignment)
 
--(NSDate*)toPast:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
--(NSDate*)toFuture:( NSDate* )date_ forResolution:( ESDateResolution )resolution_;
+-(NSDate*)alignToPastDate:( NSDate* )date_ resolution:( ESDateResolution )resolution_;
+-(NSDate*)alignToFutureDate:( NSDate* )date_ resolution:( ESDateResolution )resolution_;
 
 -(void)alignDateRangeFromDate:( inout NSDate** )fromDate_
                        toDate:( inout NSDate** )toDate_

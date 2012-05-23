@@ -62,9 +62,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     return YES;
 }
 
--(NSDate*)toPast:( NSDate* )date_
-   forResolution:( ESDateResolution )resolution_
-   alignToFuture:( BOOL )alignToFuture_
+-(NSDate*)alignDate:( NSDate* )date_
+         resolution:( ESDateResolution )resolution_
+           toFuture:( BOOL )alignToFuture_
 {
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
@@ -80,8 +80,8 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     return [ self dateFromComponents: components_ ];
 }
 
--(NSDate*)toPast:( NSDate* )date_
-   forResolution:( ESDateResolution )resolution_
+-(NSDate*)alignToPastDate:( NSDate* )date_
+               resolution:( ESDateResolution )resolution_
 {
     //add one day to round last weak/month etc. date to the same date
     //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
@@ -94,9 +94,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
                                       options: 0 ];
     }
 
-    NSDate* result_ = [ self toPast: date_
-                      forResolution: resolution_
-                      alignToFuture: NO ];
+    NSDate* result_ = [ self alignDate: date_
+                            resolution: resolution_
+                              toFuture: NO ];
 
     //subtract one day
     {
@@ -111,8 +111,8 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     return result_;
 }
 
--(NSDate*)toFuture:( NSDate* )date_
-     forResolution:( ESDateResolution )resolution_
+-(NSDate*)alignToFutureDate:( NSDate* )date_
+                 resolution:( ESDateResolution )resolution_
 {
     //subtract one day
     {
@@ -124,9 +124,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
                                         options: 0 ];
     }
 
-    return [ self toPast: date_
-           forResolution: resolution_
-           alignToFuture: YES ];
+    return [ self alignDate: date_
+                 resolution: resolution_
+                   toFuture: YES ];
 }
 
 -(void)alignDateRangeFromDate:( inout NSDate** )fromDate_
@@ -156,11 +156,11 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     NSUInteger tmpResolution_ = *resolution_;
     while ( tmpResolution_ != 0 )
     {
-        *fromDate_ = [ self toFuture: *fromDate_
-                       forResolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+        *fromDate_ = [ self alignToFutureDate: *fromDate_
+                                   resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
 
-        *toDate_ = [ self toPast: *toDate_
-                   forResolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+        *toDate_ = [ self alignToPastDate: *toDate_
+                               resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
 
         if ( NSOrderedAscending == [ *fromDate_ compare: *toDate_ ] )
             break;

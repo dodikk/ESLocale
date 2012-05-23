@@ -25,7 +25,7 @@
     NSDate* date_ = dateFromString( @"2011-03-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -44,7 +44,7 @@
     NSDate* date_ = dateFromString( @"2010-10-01" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -64,7 +64,7 @@
     NSDate* date_ = dateFromString( @"2012-12-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -83,7 +83,7 @@
     NSDate* date_ = dateFromString( @"2012-06-30" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -104,7 +104,7 @@
     NSDate* date_ = dateFromString( @"2011-03-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -124,7 +124,7 @@
     NSDate* date_ = dateFromString( @"1986-08-18" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -144,7 +144,7 @@
     NSDate* date_ = dateFromString( @"2011-07-01" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -163,7 +163,7 @@
     NSDate* date_ = dateFromString( @"1987-01-01" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESHalfYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 

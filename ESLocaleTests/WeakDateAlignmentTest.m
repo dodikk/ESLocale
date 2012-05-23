@@ -26,7 +26,7 @@
     NSDate* date_ = dateFromString( @"2011-01-01" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -48,7 +48,7 @@
     NSDate* date_ = dateFromString( @"2012-05-22" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -72,7 +72,7 @@
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     [ calendar_ setLocale: [ [ NSLocale alloc ] initWithLocaleIdentifier: @"ru_RU" ] ];
     
-    date_ = [ calendar_ toPast: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -94,7 +94,7 @@
     NSDate* date_ = dateFromString( @"2012-01-01" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -118,7 +118,7 @@
     NSDate* date_ = dateFromString( @"2010-12-30" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -142,7 +142,7 @@
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     [ calendar_ setLocale: [ [ NSLocale alloc ] initWithLocaleIdentifier: @"ru_RU" ] ];
     
-    date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -163,14 +163,14 @@
 -(void)testFutureJan02_2011_WeekDateResolution
 {
     NSDate* date_ = dateFromString( @"2011-01-02" );
-    
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
-    
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESWeekDateResolution ];
+
     NSString* result_ = stringFromDate( date_ );
-    
+
     STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
-    
+
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
     STAssertEquals( weekday_, 1, @"ok" );//should be sunday
 }
@@ -187,7 +187,7 @@
     NSDate* date_ = dateFromString( @"2011-12-31" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESWeekDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESWeekDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     

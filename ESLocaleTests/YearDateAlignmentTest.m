@@ -25,7 +25,7 @@
     NSDate* date_ = dateFromString( @"2011-03-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -45,7 +45,7 @@
     NSDate* date_ = dateFromString( @"2010-01-01" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESYearDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -65,7 +65,7 @@
     NSDate* date_ = dateFromString( @"2012-12-31" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toPast: date_ forResolution: ESYearDateResolution ];
+    date_ = [ calendar_ alignToPastDate: date_ resolution: ESYearDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
@@ -86,7 +86,7 @@
     NSDate* date_ = dateFromString( @"2011-03-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
@@ -106,8 +106,8 @@
     NSDate* date_ = dateFromString( @"2010-01-01" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESYearDateResolution ];
-    
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESYearDateResolution ];
+
     NSString* result_ = stringFromDate( date_ );
     
     STAssertEqualObjects( result_, @"2010-01-01", @"ok" );
@@ -126,7 +126,7 @@
     NSDate* date_ = dateFromString( @"2012-12-31" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ toFuture: date_ forResolution: ESYearDateResolution ];
+    date_ = [ calendar_ alignToFutureDate: date_ resolution: ESYearDateResolution ];
     
     NSString* result_ = stringFromDate( date_ );
     
