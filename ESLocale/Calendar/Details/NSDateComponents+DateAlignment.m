@@ -48,12 +48,12 @@
 
     NSInteger month_ = [ components_ month ];
     static NSInteger const monthPerQuarter_ = 3;
-    month_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
+    NSInteger quarterStartMonth_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
     if ( toFuture_ )
     {
-        month_ += monthPerQuarter_;
+        quarterStartMonth_ += monthPerQuarter_;
     }
-    [ components_ setMonth: month_ ];
+    [ components_ setMonth: quarterStartMonth_ ];
 
     return components_;
 }
