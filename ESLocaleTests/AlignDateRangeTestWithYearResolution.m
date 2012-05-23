@@ -38,6 +38,27 @@ static ESDateResolution initialResolution_ = ESYearDateResolution;
     STAssertEqualObjects( endDateStr_  , @"2010-12-31", @"ok" );
 }
 
+-(void)testAlignDates_Oct20_2008_May15_2011_toTwoYearResolution_withDefaultResolution
+{
+    NSDate* startDate_ = dateFromString( @"2008-10-20" );
+    NSDate* endDate_   = dateFromString( @"2011-05-15" );
+
+    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
+    ESDateResolution resolution_ = ESDateResolutionUndefined;
+
+    [ calendar_ alignDateRangeFromDate: &startDate_
+                                toDate: &endDate_
+                            resolution: &resolution_ ];
+    
+    STAssertEquals( ESYearDateResolution, resolution_, @"ok" );
+    
+    NSString* startDateStr_ = stringFromDate( startDate_ );
+    NSString* endDateStr_   = stringFromDate( endDate_ );
+    
+    STAssertEqualObjects( startDateStr_, @"2009-01-01", @"ok" );
+    STAssertEqualObjects( endDateStr_  , @"2010-12-31", @"ok" );
+}
+
 -(void)testAlignDates_Oct20_2009_May15_2011_toOneYearResolution
 {
     NSDate* startDate_ = dateFromString( @"2009-10-20" );
