@@ -43,6 +43,7 @@
 {
     //NSDateComponents.quarter property does not work properly,
     //so own range calulation used here
+    //TODO: try to use NSQuarterCalendarUnit
 
     NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
 
