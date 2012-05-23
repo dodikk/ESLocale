@@ -154,21 +154,29 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     }
 
     NSUInteger tmpResolution_ = *resolution_;
+    NSDate* tmpFromDate_ = nil;
+    NSDate* tmpToDate_   = nil;
+
     while ( tmpResolution_ != 0 )
     {
-        *fromDate_ = [ self alignToFutureDate: *fromDate_
-                                   resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+        tmpFromDate_ = [ self alignToFutureDate: *fromDate_
+                                     resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
 
-        *toDate_ = [ self alignToPastDate: *toDate_
-                               resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+        tmpToDate_ = [ self alignToPastDate: *toDate_
+                                 resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
 
-        if ( NSOrderedAscending == [ *fromDate_ compare: *toDate_ ] )
+        if ( NSOrderedAscending == [ tmpFromDate_ compare: tmpToDate_ ] )
             break;
 
         tmpResolution_ -= 1;
     }
 
     *resolution_ = static_cast<ESDateResolution>( tmpResolution_ );
+    if ( *resolution_ != ESDateResolutionUndefined )
+    {
+        *fromDate_ = tmpFromDate_;
+        *toDate_   = tmpToDate_;
+    }
 }
 
 @end

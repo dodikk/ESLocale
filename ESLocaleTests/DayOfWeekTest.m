@@ -1,5 +1,10 @@
-#import "DayOfWeekTest.h"
 #import "ESLocaleFactory.h"
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface DayOfWeekTest : SenTestCase
+
+@end
 
 @implementation DayOfWeekTest
 

@@ -1,13 +1,12 @@
 #import <Foundation/Foundation.h>
 
-//STODO remove enum
 typedef enum
 {
     ESDateResolutionUndefined
     , ESWeekDateResolution
     , ESMonthDateResolution
     , ESQuarterDateResolution
-    , ESHalfYearDateResolution//testing
+    , ESHalfYearDateResolution
     , ESYearDateResolution
 } ESDateResolution;
 

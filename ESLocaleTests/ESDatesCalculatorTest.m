@@ -1,5 +1,10 @@
-#import "ESDatesCalculatorTest.h"
 #import <ESLocale/ESLocale.h>
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface ESDatesCalculatorTest : SenTestCase
+
+@end
 
 @implementation ESDatesCalculatorTest
 

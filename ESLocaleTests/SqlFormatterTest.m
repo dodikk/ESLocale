@@ -1,7 +1,11 @@
-#import "SqlFormatterTest.h"
-
 #import "ESLocaleFactory.h"
 #import "SqlLocalizedDateFormatter.h"
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface SqlFormatterTest : SenTestCase
+
+@end
 
 @implementation SqlFormatterTest
 
