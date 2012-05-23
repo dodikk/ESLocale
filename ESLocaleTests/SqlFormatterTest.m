@@ -50,11 +50,14 @@
 
 -(void)testFormatterRejectsInit
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     STAssertThrows
     (
         [ [ SqlLocalizedDateFormatter alloc ] init ],
         @"Unexpected init"
     );
+#pragma clang diagnostic pop
 }
 
 -(void)testFormatterRejectsNilInput
