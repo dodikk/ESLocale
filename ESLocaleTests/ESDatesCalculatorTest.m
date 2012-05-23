@@ -5,11 +5,14 @@
 
 -(void)testDatesCalcRejectsInit
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     STAssertThrows
     (
         [ [ ESDatesCalculator alloc ] init ],
         @"ESDatesCalculator->init must fail"
     );
+#pragma clang diagnostic pop
 }
 
 -(void)testDatesCalcRequiresDatesRangeAndStep
@@ -24,6 +27,8 @@
         STAssertNotNil( result_, @"valid object expected" );
     }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     {
         STAssertThrows
         (
@@ -43,10 +48,13 @@
              @"Assert nil expected"
          );
     }
+#pragma clang diagnostic pop
 }
 
 -(void)testDatesCalcZeroResolutionIsForbidden
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     STAssertThrows
     (
         [ [ ESDatesCalculator alloc ] initWithResolution: 0
@@ -54,6 +62,7 @@
                                                  endDate: [ NSDate date ] ],
         @"Zero resolution is undefined. ESDatesCalculator can't stand it"
     );
+#pragma clang diagnostic pop
 }
 
 -(void)testInitStoresCorrectvalues
@@ -106,7 +115,9 @@
     {
         beg_ = [ df_ dateFromString: @"1648-04-29" ];
         fin_ = [ df_ dateFromString: @"2011-10-23" ];
-        
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
         STAssertThrows
         (
              [ [ ESDatesCalculator alloc ] initWithResolution: 222333222
@@ -114,7 +125,8 @@
                                                       endDate: beg_ ],
              @"Invalid dates range"
          );
-    }  
+#pragma clang diagnostic pop
+    }
 }
 
 @end
