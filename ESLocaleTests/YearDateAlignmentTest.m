@@ -84,12 +84,12 @@
 -(void)testFutureMar31_2011_YearDateResolution
 {
     NSDate* date_ = dateFromString( @"2011-03-31" );
-    
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     date_ = [ calendar_ toFuture: date_ forResolution: ESYearDateResolution ];
-    
+
     NSString* result_ = stringFromDate( date_ );
-    
+
     STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
 }
 

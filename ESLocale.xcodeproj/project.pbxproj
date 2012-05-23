@@ -11,6 +11,7 @@
 		1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */; };
 		1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
 		1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB041156CF3EF004D3377 /* testDateUtils.m */; };
+		1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */; };
 		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
 		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
 		1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */; };
@@ -88,6 +89,7 @@
 		1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearDateAlignmentTest.m; sourceTree = "<group>"; };
 		1B3DB040156CF3EF004D3377 /* testDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDateUtils.h; sourceTree = "<group>"; };
 		1B3DB041156CF3EF004D3377 /* testDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testDateUtils.m; sourceTree = "<group>"; };
+		1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDateAlignmentTest.m; sourceTree = "<group>"; };
 		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
 		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
 		1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAlignmentTest.m; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
 				1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */,
 				1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */,
+				1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */,
 				1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */,
 				1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */,
+				1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
