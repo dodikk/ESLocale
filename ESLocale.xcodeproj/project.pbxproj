@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */; };
 		1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */; };
+		1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
+		1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB041156CF3EF004D3377 /* testDateUtils.m */; };
 		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
 		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
 		1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */; };
@@ -83,6 +85,9 @@
 /* Begin PBXFileReference section */
 		1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+DateAlignment.h"; sourceTree = "<group>"; };
 		1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+DateAlignment.m"; sourceTree = "<group>"; };
+		1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB040156CF3EF004D3377 /* testDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDateUtils.h; sourceTree = "<group>"; };
+		1B3DB041156CF3EF004D3377 /* testDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testDateUtils.m; sourceTree = "<group>"; };
 		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
 		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
 		1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAlignmentTest.m; sourceTree = "<group>"; };
@@ -177,6 +182,15 @@
 			children = (
 				1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */,
 				1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1B3DB03F156CF3DB004D3377 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1B3DB040156CF3EF004D3377 /* testDateUtils.h */,
+				1B3DB041156CF3EF004D3377 /* testDateUtils.m */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -282,6 +296,7 @@
 		7ED3E59015400C1E008268CF /* ESLocaleTests */ = {
 			isa = PBXGroup;
 			children = (
+				1B3DB03F156CF3DB004D3377 /* Details */,
 				7ED3E59115400C1E008268CF /* Supporting Files */,
 				7ED3E59615400C1E008268CF /* ESLocaleTests.h */,
 				7ED3E59715400C1E008268CF /* ESLocaleTests.m */,
@@ -304,6 +319,7 @@
 				7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */,
 				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
 				1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */,
+				1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -502,6 +518,8 @@
 				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
 				7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
 				1BCCA001156B74CB00961B74 /* DateAlignmentTest.m in Sources */,
+				1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */,
+				1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
