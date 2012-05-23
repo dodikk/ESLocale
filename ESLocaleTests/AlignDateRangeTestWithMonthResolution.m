@@ -6,56 +6,12 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-static ESDateResolution initialResolution_ = ESQuarterDateResolution;
+static ESDateResolution initialResolution_ = ESMonthDateResolution;
 
-@interface AlignDateRangeTestWithQuarterResolution : SenTestCase
+@interface AlignDateRangeTestWithMonthResolution : SenTestCase
 @end
 
-@implementation AlignDateRangeTestWithQuarterResolution
-
-/////////////////// RESULT: QUARTER RESOLUTION ///////////////////
-
--(void)testAlignDates_Sep20_2011_Mar31_2012_toTwoQuarterResolution
-{
-    NSDate* startDate_ = dateFromString( @"2011-09-20" );
-    NSDate* endDate_   = dateFromString( @"2012-03-31" );
-
-    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    ESDateResolution resolution_ = initialResolution_;
-
-    [ calendar_ alignDateRangeFromDate: &startDate_
-                                toDate: &endDate_
-                            resolution: &resolution_ ];
-    
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
-    
-    NSString* startDateStr_ = stringFromDate( startDate_ );
-    NSString* endDateStr_   = stringFromDate( endDate_ );
-    
-    STAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
-}
-
--(void)testAlignDates_Oct01_2011_Apr01_2012_toOneQuarterResolution
-{
-    NSDate* startDate_ = dateFromString( @"2011-10-01" );
-    NSDate* endDate_   = dateFromString( @"2012-04-01" );
-    
-    NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    ESDateResolution resolution_ = initialResolution_;
-    
-    [ calendar_ alignDateRangeFromDate: &startDate_
-                                toDate: &endDate_
-                            resolution: &resolution_ ];
-    
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
-    
-    NSString* startDateStr_ = stringFromDate( startDate_ );
-    NSString* endDateStr_   = stringFromDate( endDate_ );
-    
-    STAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
-}
+@implementation AlignDateRangeTestWithMonthResolution
 
 /////////////////// RESULT: MONTH RESOLUTION ///////////////////
 
@@ -123,16 +79,16 @@ static ESDateResolution initialResolution_ = ESQuarterDateResolution;
 {
     NSDate* startDate_ = dateFromString( @"2012-05-14" );
     NSDate* endDate_   = dateFromString( @"2012-05-17" );
-
+    
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     ESDateResolution resolution_ = initialResolution_;
-
+    
     [ calendar_ alignDateRangeFromDate: &startDate_
                                 toDate: &endDate_
                             resolution: &resolution_ ];
-
+    
     STAssertEquals( ESDateResolutionUndefined, resolution_, @"ok" );
-
+    
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     

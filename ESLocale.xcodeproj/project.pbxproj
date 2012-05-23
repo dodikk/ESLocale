@@ -10,6 +10,7 @@
 		1B09BCC1156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */; };
 		1B09BCC6156D0875001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */; };
 		1B09BCC9156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */; };
+		1B09BCCC156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */; };
 		1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */; };
 		1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */; };
 		1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
@@ -92,6 +93,7 @@
 		1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithYearResolution.m; sourceTree = "<group>"; };
 		1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithHalfYearResolution.m; sourceTree = "<group>"; };
 		1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithQuarterResolution.m; sourceTree = "<group>"; };
+		1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithMonthResolution.m; sourceTree = "<group>"; };
 		1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+DateAlignment.h"; sourceTree = "<group>"; };
 		1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+DateAlignment.m"; sourceTree = "<group>"; };
 		1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearDateAlignmentTest.m; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */,
 				1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */,
 				1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */,
+				1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				1B09BCC1156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m in Sources */,
 				1B09BCC6156D0875001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */,
 				1B09BCC9156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m in Sources */,
+				1B09BCCC156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
