@@ -15,29 +15,33 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 
         {
             NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
-            SEL selector_ = @selector( weekAlignToFuture: );
+            SEL selector_ = @selector( weekAlignToFuture:calendar: );
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
         {
             NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( monthAlignToFuture: );
+            SEL selector_ = @selector( monthAlignToFuture:calendar: );
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
         {
             NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( quarterAlignToFuture: );
+            SEL selector_ = @selector( quarterAlignToFuture:calendar: );
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
         {
             NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
-            SEL selector_ = @selector( halfYearAlignToFuture: );
+            SEL selector_ = @selector( halfYearAlignToFuture:calendar: );
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
-        dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture: ) ) );
+        {
+            NSCalendarUnit unit_ = NSYearCalendarUnit;
+            SEL selector_ = @selector( yearAlignToFuture:calendar: );
+            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+        }
     }
 
     return dateComponentSelectors_;
@@ -77,7 +81,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
                                              fromDate: date_ ];
 
     SEL selector_ = selectors_.second;
-    objc_msgSend( components_, selector_, alignToFuture_ );
+    objc_msgSend( components_, selector_, alignToFuture_, self );
 
     return [ self dateFromComponents: components_ ];
 }

@@ -3,19 +3,22 @@
 @implementation NSDateComponents (DateAlignment)
 
 -(void)weekAlignToFuture:( BOOL )toFuture_
+                calendar:( NSCalendar* )calendar_
 {
+    NSInteger firstWeekDay_ = (NSInteger)[ calendar_ firstWeekday ];
     if ( toFuture_ )
     {
-        [ self setWeekday: 1 ];
+        [ self setWeekday: firstWeekDay_ ];
         [ self setWeek: [ self week ] + 1 ];
     }
     else
     {
-        [ self setWeekday: 1 ];
+        [ self setWeekday: firstWeekDay_ ];
     }
 }
 
 -(void)monthAlignToFuture:( BOOL )toFuture_
+                 calendar:( NSCalendar* )calendar_
 {
     if ( toFuture_ )
     {
@@ -24,6 +27,7 @@
 }
 
 -(void)quarterAlignToFuture:( BOOL )toFuture_
+                   calendar:( NSCalendar* )calendar_
 {
     NSInteger month_ = [ self month ];
     static NSInteger const monthPerQuarter_ = 3;
@@ -36,6 +40,7 @@
 }
 
 -(void)halfYearAlignToFuture:( BOOL )toFuture_
+                    calendar:( NSCalendar* )calendar_
 {
     NSInteger month_ = [ self month ];
     static NSInteger const monthPerHalfYear_ = 6;
@@ -48,6 +53,7 @@
 }
 
 -(void)yearAlignToFuture:( BOOL )toFuture_
+                calendar:( NSCalendar* )calendar_
 {
     if ( toFuture_ )
     {
