@@ -85,7 +85,6 @@
 		1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+DateAlignment.m"; sourceTree = "<group>"; };
 		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
 		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
-		1BCC9FFF156B74CB00961B74 /* DateAlignmentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAlignmentTest.h; sourceTree = "<group>"; };
 		1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAlignmentTest.m; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
@@ -304,7 +303,6 @@
 				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
 				7EAA955F156A60E700A071F2 /* QuarterQueryTest.h */,
 				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
-				1BCC9FFF156B74CB00961B74 /* DateAlignmentTest.h */,
 				1BCCA000156B74CB00961B74 /* DateAlignmentTest.m */,
 			);
 			path = ESLocaleTests;

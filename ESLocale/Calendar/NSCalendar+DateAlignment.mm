@@ -30,7 +30,12 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
             dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
         }
 
-        dateComponentSelectors_.push_back( std::make_pair( 0, (SEL)NULL ) );//ESHalfYearDateResolution resolution
+        {
+            NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+            SEL selector_ = @selector( halfYearAlignToFuture: );
+            dateComponentSelectors_.push_back( std::make_pair( unit_, selector_ ) );
+        }
+
         dateComponentSelectors_.push_back( std::make_pair( NSYearCalendarUnit, @selector( yearAlignToFuture: ) ) );
     }
 
@@ -66,12 +71,6 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
 
     std::pair< NSUInteger, SEL > selectors_ = getDateComponentSelectors2()[ resolution_ ];
     NSCalendarUnit unit_ = selectors_.first;
-
-    if ( resolution_ == ESHalfYearDateResolution )
-    {
-        NSAssert( NO, @"ESHalfYearDateResolution: Not implemented yet" );
-        return nil;
-    }
 
     NSDateComponents* components_ = [ self components: unit_
                                              fromDate: date_ ];
@@ -125,11 +124,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors2()
                                         options: 0 ];
     }
 
-    NSDate* result_ = [ self toPast: date_
-                      forResolution: resolution_
-                      alignToFuture: YES ];
-
-    return result_;
+    return [ self toPast: date_
+           forResolution: resolution_
+           alignToFuture: YES ];
 }
 
 @end

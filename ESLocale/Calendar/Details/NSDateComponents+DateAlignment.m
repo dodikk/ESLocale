@@ -26,10 +26,23 @@
 -(void)quarterAlignToFuture:( BOOL )toFuture_
 {
     NSInteger month_ = [ self month ];
-    month_ = ( month_ - 1 ) / 3 * 3 + 1;
+    static NSInteger const monthPerQuarter_ = 3;
+    month_ = ( month_ - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
     if ( toFuture_ )
     {
-        month_ += 3;
+        month_ += monthPerQuarter_;
+    }
+    [ self setMonth: month_ ];
+}
+
+-(void)halfYearAlignToFuture:( BOOL )toFuture_
+{
+    NSInteger month_ = [ self month ];
+    static NSInteger const monthPerHalfYear_ = 6;
+    month_ = ( month_ - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
+    if ( toFuture_ )
+    {
+        month_ += monthPerHalfYear_;
     }
     [ self setMonth: month_ ];
 }
