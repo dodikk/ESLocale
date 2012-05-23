@@ -14,10 +14,10 @@
 -(void)setUp
 {
     NSString* dbPath_ = [ [ NSBundle bundleForClass: [ self class ] ] pathForResource: @"2" 
-                                                                                                    ofType: @"sqlite" ];
+                                                                               ofType: @"sqlite" ];
 
     sqlite3_open( [ dbPath_ cStringUsingEncoding: NSUTF8StringEncoding ] , &self->_db );
-   
+
     sqlite3_create_function( self->_db, "ObjcFormatAnsiDateUsingLocale", 3, 
                              SQLITE_UTF8, NULL, 
                              &ObjcFormatAnsiDateUsingLocale,

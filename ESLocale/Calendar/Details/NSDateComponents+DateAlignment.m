@@ -10,7 +10,8 @@
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
-    [ components_ setWeekday: (NSInteger)[ calendar_ firstWeekday ] ];
+    NSInteger firstWeekday_ = (NSInteger)[ calendar_ firstWeekday ];
+    [ components_ setWeekday: firstWeekday_ ];
 
     if ( toFuture_ )
     {

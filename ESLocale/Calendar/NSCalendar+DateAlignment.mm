@@ -68,7 +68,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
 
-    SEL selector_ = getDateComponentSelectors()[ resolution_ ];
+    auto selector_ = getDateComponentSelectors()[ resolution_ ];
 
     NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
                                                  , selector_
