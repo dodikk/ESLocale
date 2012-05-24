@@ -146,9 +146,9 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
                        toDate:( inout NSDate** )toDate_
                    resolution:( inout ESDateResolution* )resolution_
 {
-    BOOL resolutionOk_ = ( NULL != resolution_ );
-    BOOL startDateOk_  = ( NULL != fromDate_   && nil != *fromDate_  );
-    BOOL endDateOk_    = ( NULL != toDate_     && nil != *toDate_    );
+    BOOL resolutionOk_ = ( NULL != resolution_ && *resolution_ <= ESYearDateResolution );
+    BOOL startDateOk_  = ( NULL != fromDate_   && nil != *fromDate_ );
+    BOOL endDateOk_    = ( NULL != toDate_     && nil != *toDate_   );
     BOOL dateRangeOk_  = startDateOk_ && endDateOk_
         && ( NSOrderedDescending != [ *fromDate_ compare: *toDate_ ] );
 
