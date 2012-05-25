@@ -19,13 +19,16 @@
 		1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */; };
 		1B3DB048156CF523004D3377 /* MonthDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */; };
 		1B3DB04B156CF578004D3377 /* QuarterDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */; };
+		1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */; };
+		1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */; };
+		1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */; };
 		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
 		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
 		1BCCA001156B74CB00961B74 /* HalfYearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */; };
 		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
-		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */; };
+		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
 		7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.m */; };
 		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
@@ -36,6 +39,8 @@
 		7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
 		7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
 		7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */; };
+		7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */; };
 		7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
 		7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
 		7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
@@ -105,12 +110,16 @@
 		1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDateAlignmentTest.m; sourceTree = "<group>"; };
 		1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthDateAlignmentTest.m; sourceTree = "<group>"; };
 		1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+AddingTimeIntervals.h"; sourceTree = "<group>"; };
+		1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+AddingTimeIntervals.m"; sourceTree = "<group>"; };
+		1B75967C156E742E0078A99F /* CalendarAlignmentConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarAlignmentConstants.h; sourceTree = "<group>"; };
+		1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CalendarAlignmentConstants.c; sourceTree = "<group>"; };
 		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
 		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
 		1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearDateAlignmentTest.m; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
-		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlitePersistentDateFormatter.m; sourceTree = "<group>"; };
+		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SqlitePersistentDateFormatter.mm; sourceTree = "<group>"; };
 		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
 		7E92BE521560FB360088E369 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
 		7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLocalizedDateFormatter.h; sourceTree = "<group>"; };
@@ -118,6 +127,8 @@
 		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
 		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
 		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
+		7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+Constants.h"; sourceTree = "<group>"; };
+		7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+Constants.m"; sourceTree = "<group>"; };
 		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
 		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
 		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
@@ -189,6 +200,10 @@
 			children = (
 				1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */,
 				1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */,
+				1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */,
+				1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */,
+				1B75967C156E742E0078A99F /* CalendarAlignmentConstants.h */,
+				1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -209,6 +224,8 @@
 				1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */,
 				1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */,
 				1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */,
+				7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */,
+				7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -221,7 +238,7 @@
 				7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */,
 				7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */,
 				7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */,
-				7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.m */,
+				7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */,
 			);
 			path = SqliteDateFormat;
 			sourceTree = "<group>";
@@ -246,7 +263,6 @@
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
-				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7E92BE6A15611E9D0088E369 /* TestData */,
@@ -269,6 +285,7 @@
 		7ED3E57915400C1E008268CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
 				7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */,
 				7ED61716155BBDA200DE6328 /* libc++.dylib */,
 				7ED3E57A15400C1E008268CF /* Foundation.framework */,
@@ -354,6 +371,8 @@
 				7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */,
 				1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */,
 				1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */,
+				7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */,
+				1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,9 +522,12 @@
 				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
 				7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */,
 				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
-				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.m in Sources */,
+				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */,
 				1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */,
 				1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */,
+				7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */,
+				1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */,
+				1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

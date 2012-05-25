@@ -1,34 +1,8 @@
 #import "NSCalendar+DateAlignment.h"
+#import "NSDateComponents+Constants.h"
+
 
 #include <vector>
-
-static NSDateComponents* getAddOneDayComponents()
-{
-    static NSDateComponents* addOneDay_;
-
-    static dispatch_once_t onceToken_;
-    dispatch_once( &onceToken_, ^
-    {
-        addOneDay_ = [ NSDateComponents new ];
-        addOneDay_.day = 1;
-    } );
-
-    return addOneDay_;
-}
-
-static NSDateComponents* getSubtractOneDayComponents()
-{
-    static NSDateComponents* subtractOneDay_;
-
-    static dispatch_once_t onceToken_;
-    dispatch_once( &onceToken_, ^
-    {
-        subtractOneDay_ = [ NSDateComponents new ];
-        subtractOneDay_.day = -1;
-    } );
-
-    return subtractOneDay_;
-}
 
 typedef std::vector< SEL > ESDateComponentsSelectorsType;
 
@@ -69,6 +43,47 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     } );
 
     return dateComponentSelectors_;
+}
+
+static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
+{
+    static ESDateComponentsSelectorsType dateAddingComponentSelectors_;
+
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
+    {
+        {
+            SEL selector_ = @selector( dayComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+
+        {
+            SEL selector_ = @selector( weekComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+
+        {
+            SEL selector_ = @selector( monthComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+
+        {
+            SEL selector_ = @selector( quarterComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+
+        {
+            SEL selector_ = @selector( halfYearComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+
+        {
+            SEL selector_ = @selector( yearAlignComponentsWithTimeInterval: );
+            dateAddingComponentSelectors_.push_back( selector_ );
+        }
+    } );
+
+    return dateAddingComponentSelectors_;
 }
 
 @implementation NSCalendar (DateAlignment)
@@ -114,7 +129,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 {
     //add one day to round last weak/month etc. date to the same date
     //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
-    date_ = [ self dateByAddingComponents: getAddOneDayComponents()
+    date_ = [ self dateByAddingComponents: [ NSDateComponents getAddOneDayComponents ]
                                    toDate: date_
                                   options: 0 ];
 
@@ -123,7 +138,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
                               toFuture: NO ];
 
     //subtract one day
-    result_ = [ self dateByAddingComponents: getSubtractOneDayComponents()
+    result_ = [ self dateByAddingComponents: [ NSDateComponents getSubtractOneDayComponents ]
                                      toDate: result_
                                     options: 0 ];
 
@@ -133,7 +148,7 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
 -(NSDate*)alignToFutureDate:( NSDate* )date_
                  resolution:( ESDateResolution )resolution_
 {
-    date_ = [ self dateByAddingComponents: getSubtractOneDayComponents()
+    date_ = [ self dateByAddingComponents: [ NSDateComponents getSubtractOneDayComponents ]
                                    toDate: date_
                                   options: 0 ];
 
@@ -190,6 +205,24 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
         *fromDate_ = tmpFromDate_;
         *toDate_   = tmpToDate_;
     }
+}
+
+-(NSDate*)dateByAddingTimeIntervals:( NSInteger )intervals_
+                             toDate:( NSDate* )date_
+                         resolution:( ESDateResolution )resolution_
+{
+    //STODO validate arguments
+    //STODO test
+
+    auto selector_ = getAddingDateComponentSelectors()[ resolution_ ];
+
+    NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
+                                                 , selector_
+                                                 , intervals_ );
+
+    return [ self dateByAddingComponents: components_
+                                  toDate: date_
+                                 options: 0 ];
 }
 
 @end

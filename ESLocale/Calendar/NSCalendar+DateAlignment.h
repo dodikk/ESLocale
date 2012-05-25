@@ -11,4 +11,8 @@
                        toDate:( inout NSDate** )toDate_
                    resolution:( inout ESDateResolution* )resolution_;
 
+-(NSDate*)dateByAddingTimeIntervals:( NSInteger )intervals_
+                             toDate:( NSDate* )date_
+                         resolution:( ESDateResolution )resolution_;
+
 @end

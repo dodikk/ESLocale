@@ -2,6 +2,11 @@
 
 #import "ESLocaleFactory.h"
 
+#include <utility>
+
+typedef std::pair<NSInteger, NSInteger> ESYearAndQuarter ;
+typedef std::pair<NSInteger, NSInteger> ESYearAndHalfYear;
+
 #define QUARTER_UNIT_DOES_NOT_WORK
 
 static const NSInteger yearAndQuarterMask_ = NSQuarterCalendarUnit | 
@@ -152,22 +157,16 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     return result_;
 }
 
--(NSString*)getYearAndQuarter:( NSString* )strDate_
-{
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
-    if ( nil == date_ )
-    {
-        return nil;
-    }
 
-    
-// http://openradar.appspot.com/9270112       
-//    NSQuarterCalendarUnit does not work
-//Originator:	victor.jalencas	
-//Number:	rdar://9270112	Date Originated:	2011-04-12
-//Status:	Open	Resolved:	
-//Product:	iPhone SDK	Product Version:	4.2
-//Classification:	Other bug	Reproducible:	Always        
+-(ESYearAndQuarter)getRawYearAndQuarter:( NSDate* )date_
+{
+    // http://openradar.appspot.com/9270112       
+    //    NSQuarterCalendarUnit does not work
+    //Originator:	victor.jalencas	
+    //Number:	rdar://9270112	Date Originated:	2011-04-12
+    //Status:	Open	Resolved:	
+    //Product:	iPhone SDK	Product Version:	4.2
+    //Classification:	Other bug	Reproducible:	Always        
 #ifdef QUARTER_UNIT_DOES_NOT_WORK
     
     //gregorian calendar hard code
@@ -177,7 +176,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     
     static const NSInteger monthsInQuarter_ = 3;
     NSInteger quarter_ = (result_.month - 1) / monthsInQuarter_;
-    NSInteger quarterStartingWithOne_ = 1 + quarter_;
+    NSInteger quarterStartingWithOne_ = 1 + quarter_;    
 #else
     NSDateComponents* result_ = [ self->targetCalendar components: yearAndQuarterMask_ 
                                                          fromDate: date_ ];
@@ -185,7 +184,42 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     NSInteger quarterStartingWithOne_ = 1 + result_.quarter;
 #endif
 
-    return [ NSString stringWithFormat: @"Q%d %d", quarterStartingWithOne_, result_.year ];
+    
+    ESYearAndQuarter ret_;
+    ret_.first = result_.year;
+    ret_.second = quarterStartingWithOne_;
+    
+    return ret_;
+}
+
+-(ESYearAndHalfYear)getRawYearAndHalfYear:( NSDate* )date_
+{
+    NSInteger hYear_ = [ [ self class ] halfYearForDate: date_ 
+                                          usingCalendar: self->targetCalendar ];
+    
+    NSDateComponents* result_ = [ self->targetCalendar components: NSYearCalendarUnit 
+                                                         fromDate: date_ ];
+    
+    ESYearAndHalfYear ret_;
+    ret_.first = result_.year;
+    ret_.second = hYear_;
+    
+    return ret_;
+}
+
+
+-(NSString*)getYearAndQuarter:( NSString* )strDate_
+{
+    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    if ( nil == date_ )
+    {
+        return nil;
+    }
+    
+    ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
+    
+    NSInteger shortYear_ = result_.first % 100;
+    return [ NSString stringWithFormat: @"Q%d '%02d", result_.second, shortYear_ ];
 }
 
 -(NSString*)getYearAndHalfYear:( NSString* )strDate_
@@ -196,13 +230,34 @@ static SqlitePersistentDateFormatter* instance_ = nil;
         return nil;
     }
     
-    NSInteger hYear_ = [ [ self class ] halfYearForDate: date_ 
-                                          usingCalendar: self->targetCalendar ];
+    ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
+    NSInteger shortYear_ = result_.first % 100;
+    
+    return [ NSString stringWithFormat: @"H%d '%02d", result_.second, shortYear_ ];
+}
 
-    NSDateComponents* result_ = [ self->targetCalendar components: NSYearCalendarUnit 
-                                                         fromDate: date_ ];
+-(NSString*)getFullYearAndQuarter:( NSString* )strDate_  //throw()
+{
+    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    if ( nil == date_ )
+    {
+        return nil;
+    }
+    
+    ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
+    return [ NSString stringWithFormat: @"%d-%d", result_.first, result_.second ];
+}
 
-    return [ NSString stringWithFormat: @"H%d %d", hYear_, result_.year ];
+-(NSString*)getFullYearAndHalfYear:( NSString* )strDate_ //throw()
+{
+    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    if ( nil == date_ )
+    {
+        return nil;
+    }
+
+    ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
+    return [ NSString stringWithFormat: @"%d-%d", result_.first, result_.second ];
 }
 
 @end

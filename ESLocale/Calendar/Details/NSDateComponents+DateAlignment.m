@@ -1,5 +1,7 @@
 #import "NSDateComponents+DateAlignment.h"
 
+#include "CalendarAlignmentConstants.h"
+
 @implementation NSDateComponents (DateAlignment)
 
 +(id)weekAlignComponentsToFuture:( BOOL )toFuture_
@@ -51,12 +53,11 @@
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
-    //3 month per Quarter harcode used here for gregorian calendar only
-    static NSInteger const monthPerQuarter_ = 3;
-    NSInteger quarterStartMonth_ = ( [ components_ month ] - 1 ) / monthPerQuarter_ * monthPerQuarter_ + 1;
+    NSInteger quarterStartMonth_ = ( [ components_ month ] - 1 )
+    / ESCalendarMonthPerQuarter * ESCalendarMonthPerQuarter + 1;
     if ( toFuture_ )
     {
-        quarterStartMonth_ += monthPerQuarter_;
+        quarterStartMonth_ += ESCalendarMonthPerQuarter;
     }
     [ components_ setMonth: quarterStartMonth_ ];
 
@@ -72,12 +73,10 @@
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
-    //6 month per halfYear harcode used here for gregorian calendar only
-    static NSInteger const monthPerHalfYear_ = 6;
-    NSInteger monthStart_ = ( [ components_ month ] - 1 ) / monthPerHalfYear_ * monthPerHalfYear_ + 1;
+    NSInteger monthStart_ = ( [ components_ month ] - 1 ) / ESCalendarMonthPerHalfYear * ESCalendarMonthPerHalfYear + 1;
     if ( toFuture_ )
     {
-        monthStart_ += monthPerHalfYear_;
+        monthStart_ += ESCalendarMonthPerHalfYear;
     }
     [ components_ setMonth: monthStart_ ];
 
