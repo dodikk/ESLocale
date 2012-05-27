@@ -114,7 +114,6 @@ sqlite> SELECT strftime( '%Y-%W', '2011-01-01' );
 <p>You should have basic knowledge of SQL and ObjectiveC. You should also be familiar with week based calendar concepts.</p>
 
 
-<code>this</code>
 
 
 <h2>The Solution</h2>
@@ -230,11 +229,11 @@ Otherwise you'll experience some undefined behaviour and bugs.
 <h3>3. Returning the result.</h3>
 
 <p>You must use <code>sqlite3_result_text()</code> to accomplish this. It's important to use <code>SQLITE_TRANSIENT</code> to make SQLite obtain a copy of the result string. If you use <code>SQITE_STATIC</code> you'll get a crash after Foundation framework disposes resources.</p>
-----------------------
+
 
 
 <p>That's it. </p>
-<p>You can obtain the source code at <a href="https://github.com/dodikk/ESLocale">github</p>
+<p>You can obtain the source code and text of this article at <a href="https://github.com/dodikk/ESLocale">github</p>
 
 
 
