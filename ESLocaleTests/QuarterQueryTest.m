@@ -1,9 +1,11 @@
-#import "QuarterQueryTest.h"
-
 #import "SqlitePersistentDateFormatter.h"
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface QuarterQueryTest : SenTestCase
+@end
 
 @implementation QuarterQueryTest
 {
@@ -53,7 +55,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q1 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q1 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -80,7 +82,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q1 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q1 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -108,7 +110,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q2 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q2 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -135,7 +137,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q2 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q2 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -163,7 +165,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q3 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q3 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -190,7 +192,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q3 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q3 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -217,7 +219,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q4 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q4 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -244,7 +246,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "Q4 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "Q4 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );

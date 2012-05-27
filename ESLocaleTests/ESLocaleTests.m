@@ -1,8 +1,12 @@
-#import "ESLocaleTests.h"
 #import <ESLocale/ESLocale.h>
 
-@implementation ESLocaleTests
+#import <SenTestingKit/SenTestingKit.h>
 
+@interface ESLocaleTests : SenTestCase
+
+@end
+
+@implementation ESLocaleTests
 
 -(void)testPosixLocaleIdentifier
 {

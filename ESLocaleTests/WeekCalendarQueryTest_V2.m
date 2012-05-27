@@ -1,10 +1,12 @@
-#import "WeekCalendarQueryTest_V2.h"
-
-
 #import "SqlitePersistentDateFormatter.h"
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface WeekCalendarQueryTest_V2 : SenTestCase
+
+@end
 
 @implementation WeekCalendarQueryTest_V2
 {

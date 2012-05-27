@@ -18,4 +18,8 @@
 +(NSInteger)halfYearForDate:( NSDate* )date_
               usingCalendar:( NSCalendar* )calendar_; //throw()
 
+-(NSString*)getFullYearAndQuarter:( NSString* )strDate_;  //throw()
+-(NSString*)getFullYearAndHalfYear:( NSString* )strDate_; //throw()
+
+
 @end

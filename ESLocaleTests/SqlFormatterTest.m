@@ -1,7 +1,11 @@
-#import "SqlFormatterTest.h"
-
 #import "ESLocaleFactory.h"
 #import "SqlLocalizedDateFormatter.h"
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface SqlFormatterTest : SenTestCase
+
+@end
 
 @implementation SqlFormatterTest
 
@@ -50,11 +54,14 @@
 
 -(void)testFormatterRejectsInit
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     STAssertThrows
     (
         [ [ SqlLocalizedDateFormatter alloc ] init ],
         @"Unexpected init"
     );
+#pragma clang diagnostic pop
 }
 
 -(void)testFormatterRejectsNilInput

@@ -1,9 +1,11 @@
-#import "HalfYearQueryTest.h"
-
 #import "SqlitePersistentDateFormatter.h"
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface HalfYearQueryTest : SenTestCase
+@end
 
 @implementation HalfYearQueryTest
 {
@@ -53,7 +55,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "H1 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "H1 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
@@ -80,7 +82,7 @@
     STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "H2 2011" ), @"raw answer mismatch" );
+    STAssertTrue( 0 == strcmp( (const char*)result_, "H2 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );

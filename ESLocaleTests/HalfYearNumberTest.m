@@ -1,8 +1,13 @@
-#import "HalfYearNumberTest.h"
-
 #import "ESLocaleFactory.h"
 #import "SqlitePersistentDateFormatter.h"
 
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface HalfYearNumberTest : SenTestCase
+
+@property( nonatomic, strong ) NSDateFormatter* ansiDateFormatter;
+
+@end
 
 @implementation HalfYearNumberTest
 {
@@ -112,15 +117,12 @@
     STAssertTrue( 1 == result_, @"H1 expected" ); 
 }
 
-
-
-
 -(void)testJune30IsInFirstSeasonStringOutput
 {
     NSString* result_ = nil;
     
     result_ = [ [ SqlitePersistentDateFormatter instance ] getYearAndHalfYear: @"2012-06-30" ];
-    STAssertTrue( [ result_ isEqualToString: @"H1 2012" ], @"H1 expected" );
+    STAssertTrue( [ result_ isEqualToString: @"H1 '12" ], @"H1 expected" );
 }
 
 -(void)testJuly1IsInSecondSeasonStringOutput
@@ -128,7 +130,7 @@
     NSString* result_ = nil;
     
     result_ = [ [ SqlitePersistentDateFormatter instance ] getYearAndHalfYear: @"2012-07-01" ];
-    STAssertTrue( [ result_ isEqualToString: @"H2 2012" ], @"H2 expected" );
+    STAssertTrue( [ result_ isEqualToString: @"H2 '12" ], @"H2 expected" );
 }
 
 
@@ -137,7 +139,7 @@
     NSString* result_ = nil;
     
     result_ = [ [ SqlitePersistentDateFormatter instance ] getYearAndHalfYear: @"2011-12-31" ];
-    STAssertTrue( [ result_ isEqualToString: @"H2 2011" ], @"H2 expected" );
+    STAssertTrue( [ result_ isEqualToString: @"H2 '11" ], @"H2 expected" );
 }
 
 -(void)testJan1IsInFirstSeasonStringOutput
@@ -145,7 +147,7 @@
     NSString* result_ = nil;
     
     result_ = [ [ SqlitePersistentDateFormatter instance ] getYearAndHalfYear: @"2012-01-01" ];
-    STAssertTrue( [ result_ isEqualToString: @"H1 2012" ], @"H1 expected" );
+    STAssertTrue( [ result_ isEqualToString: @"H1 '12" ], @"H1 expected" );
 }
 
 @end
