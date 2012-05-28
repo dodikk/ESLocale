@@ -210,8 +210,12 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
                              toDate:( NSDate* )date_
                          resolution:( ESDateResolution )resolution_
 {
-    //STODO validate arguments
-    //STODO test
+    BOOL resolutionOk_ = ( ESDateResolutionUndefined <= resolution_ && resolution_ <= ESYearDateResolution );
+    NSParameterAssert( resolutionOk_ );
+    if ( !resolutionOk_ )
+    {
+        return nil;
+    }
 
     auto selector_ = getAddingDateComponentSelectors()[ resolution_ ];
 

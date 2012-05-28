@@ -15,10 +15,14 @@
 -(NSString*)getYearAndQuarter:( NSString* )strDate_;  //throw()
 -(NSString*)getYearAndHalfYear:( NSString* )strDate_; //throw()
 
+-(NSString*)getHalfYearAndFullYearFromDate:( NSDate* )date_; //throw()
+
 +(NSInteger)halfYearForDate:( NSDate* )date_
               usingCalendar:( NSCalendar* )calendar_; //throw()
 
--(NSString*)getFullYearAndQuarter:( NSString* )strDate_;  //throw()
+-(NSString*)getQuarterAndFullYearFromDate:( NSDate* )date_;  //throw()
+-(NSString*)getQuarterAndFullYear:( NSString* )strDate_;  //throw()
+
 -(NSString*)getFullYearAndHalfYear:( NSString* )strDate_; //throw()
 
 

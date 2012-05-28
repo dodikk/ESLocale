@@ -4,6 +4,9 @@
 
 #include <utility>
 
+typedef std::pair<NSInteger, NSInteger> ESDateComponentsPair;
+typedef ESDateComponentsPair(^ESComponentsForDate)( NSDate* );
+
 typedef std::pair<NSInteger, NSInteger> ESYearAndQuarter ;
 typedef std::pair<NSInteger, NSInteger> ESYearAndHalfYear;
 
@@ -21,9 +24,9 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 @implementation SqlitePersistentDateFormatter
 {
 @private
-    NSDateFormatter* ansiFormatter  ;
-    NSDateFormatter* targetFormatter;
-    NSCalendar*      targetCalendar ;
+    NSDateFormatter* _ansiFormatter  ;
+    NSDateFormatter* _targetFormatter;
+    NSCalendar*      _targetCalendar ;
 }
 
 @synthesize validateLocale ;
@@ -62,13 +65,11 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     {
         return nil;
     }
-    
-    self->ansiFormatter = [ ESLocaleFactory ansiDateFormatter ];
-    
+
+    self->_ansiFormatter = [ ESLocaleFactory ansiDateFormatter ];
+
     return self;
 }
-
-
 
 #pragma mark -
 #pragma mark LazyLoad
@@ -76,15 +77,14 @@ static SqlitePersistentDateFormatter* instance_ = nil;
           locale:( NSString* )locale_
 {
     NSParameterAssert( nil != locale_ );
-    
-    BOOL isNoFormatter_ = ( nil == self->targetFormatter );
+
+    BOOL isNoFormatter_ = ( nil == self->_targetFormatter );
     BOOL isOtherLocale_ = NO;
     if ( self.checkSameLocale )
     {
-        isOtherLocale_ = ![ self->targetFormatter.locale.localeIdentifier isEqualToString: locale_ ];
+        isOtherLocale_ = ![ self->_targetFormatter.locale.localeIdentifier isEqualToString: locale_ ];
     }
-    
-    
+
     if ( isNoFormatter_ || isOtherLocale_ )
     {
         if ( self.validateLocale ) 
@@ -97,17 +97,16 @@ static SqlitePersistentDateFormatter* instance_ = nil;
             }
         }        
 
-        NSLog( @"SqlitePersistentDateFormatter : Locale mismatch - setting a new one" );
-        self->targetCalendar = [ ESLocaleFactory gregorianCalendarWithLocaleId: locale_ ];       
-        
-        self->targetFormatter = [ NSDateFormatter new ];
-        [ ESLocaleFactory setCalendar: self->targetCalendar 
-                     forDateFormatter: self->targetFormatter ];  
+        self->_targetCalendar = [ ESLocaleFactory gregorianCalendarWithLocaleId: locale_ ];       
+
+        self->_targetFormatter = [ NSDateFormatter new ];
+        [ ESLocaleFactory setCalendar: self->_targetCalendar 
+                     forDateFormatter: self->_targetFormatter ];  
     }
-    
+
     if ( nil != dateFormat_ )
     {
-        self->targetFormatter.dateFormat = dateFormat_;
+        self->_targetFormatter.dateFormat = dateFormat_;
     }
 
     return YES;
@@ -151,8 +150,8 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 #pragma mark Getters
 -(NSString*)getFormattedDate:( NSString* )strDate_
 {
-    NSDate*   date_   = [ self->ansiFormatter   dateFromString: strDate_ ];
-    NSString* result_ = [ self->targetFormatter stringFromDate: date_    ];
+    NSDate*   date_   = [ self->_ansiFormatter   dateFromString: strDate_ ];
+    NSString* result_ = [ self->_targetFormatter stringFromDate: date_    ];
 
     return result_;
 }
@@ -170,7 +169,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 #ifdef QUARTER_UNIT_DOES_NOT_WORK
     
     //gregorian calendar hard code
-    NSDateComponents* result_ = [ self->targetCalendar components: yearMonthMask_ 
+    NSDateComponents* result_ = [ self->_targetCalendar components: yearMonthMask_ 
                                                          fromDate: date_ ];    
     
     
@@ -184,80 +183,124 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     NSInteger quarterStartingWithOne_ = 1 + result_.quarter;
 #endif
 
-    
+
     ESYearAndQuarter ret_;
     ret_.first = result_.year;
     ret_.second = quarterStartingWithOne_;
-    
+
     return ret_;
 }
 
 -(ESYearAndHalfYear)getRawYearAndHalfYear:( NSDate* )date_
 {
     NSInteger hYear_ = [ [ self class ] halfYearForDate: date_ 
-                                          usingCalendar: self->targetCalendar ];
-    
-    NSDateComponents* result_ = [ self->targetCalendar components: NSYearCalendarUnit 
-                                                         fromDate: date_ ];
-    
+                                          usingCalendar: self->_targetCalendar ];
+
+    NSDateComponents* result_ = [ self->_targetCalendar components: NSYearCalendarUnit 
+                                                          fromDate: date_ ];
+
     ESYearAndHalfYear ret_;
     ret_.first = result_.year;
     ret_.second = hYear_;
-    
+
     return ret_;
 }
 
+-(NSString*)stringFromDate:( NSDate* )date_
+         componentsForDate:( ESComponentsForDate )componentsForDate_
+                dateFormat:( NSString* )dateFormat_
 
--(NSString*)getYearAndQuarter:( NSString* )strDate_
 {
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
+    ESYearAndQuarter result_ = componentsForDate_( date_ );
+    return [ NSString stringWithFormat: dateFormat_
+            , result_.first
+            , result_.second ];
+}
+
+-(NSString*)stringFromStrDate:( NSString* )strDate_
+            componentsForDate:( ESComponentsForDate )componentsForDate_
+                   dateFormat:( NSString* )dateFormat_
+{
+    NSDate* date_ = [ self->_ansiFormatter dateFromString: strDate_ ];
     if ( nil == date_ )
     {
         return nil;
     }
-    
-    ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
-    
-    NSInteger shortYear_ = result_.first % 100;
-    return [ NSString stringWithFormat: @"Q%d '%02d", result_.second, shortYear_ ];
+    return [ self stringFromDate: date_
+               componentsForDate: componentsForDate_
+                      dateFormat: dateFormat_ ];
+}
+
+-(NSString*)getYearAndQuarter:( NSString* )strDate_
+{
+    ESComponentsForDate componentsForDate_ = ^ESDateComponentsPair( NSDate* date_ )
+    {
+        ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
+        NSInteger shortYear_ = result_.first % 100;
+        return std::make_pair( result_.second, shortYear_ );
+    };
+
+    return [ self stringFromStrDate: strDate_
+                  componentsForDate: componentsForDate_
+                         dateFormat: @"Q%d '%02d" ];
 }
 
 -(NSString*)getYearAndHalfYear:( NSString* )strDate_
 {
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
-    if ( nil == date_ )
+    ESComponentsForDate componentsForDate_ = ^ESDateComponentsPair( NSDate* date_ )
     {
-        return nil;
-    }
-    
-    ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
-    NSInteger shortYear_ = result_.first % 100;
-    
-    return [ NSString stringWithFormat: @"H%d '%02d", result_.second, shortYear_ ];
+        ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
+        NSInteger shortYear_ = result_.first % 100;
+        return std::make_pair( result_.second, shortYear_ );
+    };
+
+    return [ self stringFromStrDate: strDate_
+                  componentsForDate: componentsForDate_
+                         dateFormat: @"H%d '%02d" ];
 }
 
--(NSString*)getFullYearAndQuarter:( NSString* )strDate_  //throw()
+-(NSString*)getHalfYearAndFullYearFromDate:( NSDate* )date_
 {
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
-    if ( nil == date_ )
+    ESComponentsForDate componentsForDate_ = ^ESDateComponentsPair( NSDate* date_ )
     {
-        return nil;
-    }
-    
-    ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
-    return [ NSString stringWithFormat: @"%d-%d", result_.first, result_.second ];
+        ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
+        return std::make_pair( result_.second, result_.first );
+    };
+
+    return [ self stringFromDate: date_
+               componentsForDate: componentsForDate_
+                      dateFormat: @"H%d '%d" ];
+}
+
+-(NSString*)getQuarterAndFullYearFromDate:( NSDate* )date_  //throw()
+{
+    ESComponentsForDate componentsForDate_ = ^ESDateComponentsPair( NSDate* date_ )
+    {
+        ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
+        return std::make_pair( result_.second, result_.first );
+    };
+
+    return [ self stringFromDate: date_
+               componentsForDate: componentsForDate_
+                      dateFormat: @"Q%d %d" ];
+}
+
+-(NSString*)getQuarterAndFullYear:( NSString* )strDate_  //throw()
+{
+    NSDate* date_ = [ self->_ansiFormatter dateFromString: strDate_ ];
+    return [ self getQuarterAndFullYearFromDate: date_ ];
 }
 
 -(NSString*)getFullYearAndHalfYear:( NSString* )strDate_ //throw()
 {
-    NSDate* date_ = [ self->ansiFormatter dateFromString: strDate_ ];
-    if ( nil == date_ )
+    ESComponentsForDate componentsForDate_ = ^ESDateComponentsPair( NSDate* date_ )
     {
-        return nil;
-    }
+        return [ self getRawYearAndHalfYear: date_ ];
+    };
 
-    ESYearAndHalfYear result_ = [ self getRawYearAndHalfYear: date_ ];
-    return [ NSString stringWithFormat: @"%d-%d", result_.first, result_.second ];
+    return [ self stringFromStrDate: strDate_
+                  componentsForDate: componentsForDate_
+                         dateFormat: @"%d-%d" ];
 }
 
 @end
