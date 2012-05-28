@@ -1,7 +1,6 @@
 #import "NSCalendar+DateAlignment.h"
 #import "NSDateComponents+Constants.h"
 
-
 #include <vector>
 
 typedef std::vector< SEL > ESDateComponentsSelectorsType;
