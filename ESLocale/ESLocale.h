@@ -6,3 +6,4 @@
 #import <ESLocale/SqliteDateFormat/SqliteFunctions.h>
 #import <ESLocale/SqliteDateFormat/SqlitePersistentDateFormatter.h>
 
+#import <ESLocale/Extensions/NSDateFormatter+MultiThreading.h>

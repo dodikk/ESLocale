@@ -30,6 +30,8 @@
 		1BF2E17715736B3100632D67 /* FullYearAndHalfYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */; };
 		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */; };
+		7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
 		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
@@ -124,6 +126,8 @@
 		1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterAndFullYearTest.m; sourceTree = "<group>"; };
 		1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullYearAndHalfYearTest.m; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MultiThreading.h"; sourceTree = "<group>"; };
+		7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+MultiThreading.m"; sourceTree = "<group>"; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
 		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SqlitePersistentDateFormatter.mm; sourceTree = "<group>"; };
 		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
@@ -236,6 +240,15 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		7E6CF29E1577A8B6009D3E20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */,
+				7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7E92BE501560FB360088E369 /* SqliteDateFormat */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,10 +316,11 @@
 		7ED3E57C15400C1E008268CF /* ESLocale */ = {
 			isa = PBXGroup;
 			children = (
-				1BCC9FF9156B687500961B74 /* Calendar */,
-				7E92BE501560FB360088E369 /* SqliteDateFormat */,
 				7ED3E57D15400C1E008268CF /* Supporting Files */,
+				1BCC9FF9156B687500961B74 /* Calendar */,
 				7EB7DB0D1559713C005BF339 /* Detail */,
+				7E6CF29E1577A8B6009D3E20 /* Extensions */,
+				7E92BE501560FB360088E369 /* SqliteDateFormat */,
 				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
 				7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */,
@@ -382,6 +396,7 @@
 				1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */,
 				7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */,
 				1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */,
+				7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +552,7 @@
 				7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */,
 				1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */,
 				1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */,
+				7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

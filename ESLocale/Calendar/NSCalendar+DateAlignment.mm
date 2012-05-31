@@ -12,8 +12,10 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     static dispatch_once_t onceToken_;
     dispatch_once( &onceToken_, ^
     {
-        //undefined resolution
-        dateComponentSelectors_.push_back( static_cast<SEL>( NULL ) );
+        {
+            SEL selector_ = @selector( weekAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );//STODO fix day resolution
+        }
 
         {
             SEL selector_ = @selector( weekAlignComponentsToFuture:date:calendar: );
@@ -113,6 +115,12 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
                                 resolution: resolution_ ];
 
     auto selector_ = getDateComponentSelectors()[ resolution_ ];
+
+    if ( NULL == selector_ )
+    {
+        NSAssert( NO, @"does not implemented yet" );
+        return nil;
+    }
 
     NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
                                                  , selector_
