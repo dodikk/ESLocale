@@ -170,7 +170,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     
     //gregorian calendar hard code
     NSDateComponents* result_ = [ self->_targetCalendar components: yearMonthMask_ 
-                                                         fromDate: date_ ];    
+                                                          fromDate: date_ ];    
     
     
     static const NSInteger monthsInQuarter_ = 3;
