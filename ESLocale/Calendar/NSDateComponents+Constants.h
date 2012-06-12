@@ -5,4 +5,6 @@
 +(NSDateComponents*)getAddOneDayComponents;
 +(NSDateComponents*)getSubtractOneDayComponents;
 
++(NSDateComponents*)getAddSomeDaysComponents:( NSUInteger )daysCount_;
+
 @end

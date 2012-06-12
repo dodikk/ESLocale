@@ -30,4 +30,12 @@
     return subtractOneDay_;
 }
 
++(NSDateComponents*)getAddSomeDaysComponents:( NSUInteger )daysCount_;
+{
+    NSDateComponents* result_ = [ [ self getAddOneDayComponents ] copy ];
+    result_.day *= daysCount_;
+
+    return result_;
+}
+
 @end
