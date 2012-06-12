@@ -58,12 +58,12 @@
 +(NSDateFormatter*)gregorianDateFormatterWithLocale:( NSLocale* )locale_
 {
     NSDateFormatter* result_ = [ NSDateFormatter new ];
-    
+
     NSCalendar* calendar_ = [ self gregorianCalendarWithLocale: locale_ ];
-    
+
     [ self setCalendar: calendar_
       forDateFormatter: result_ ];
-   
+
     return result_;
 }
 

@@ -13,8 +13,6 @@ static ESDateResolution initialResolution_ = ESYearDateResolution;
 
 @implementation AlignDateRangeTestWithYearResolution
 
-//STODO test asserts
-
 /////////////////// RESULT: YEAR RESOLUTION ///////////////////
 
 -(void)testAlignDates_Oct20_2008_May15_2011_toTwoYearResolution

@@ -18,9 +18,9 @@
 {
     NSString* dbPath_ = [ [ NSBundle bundleForClass: [ self class ] ] pathForResource: @"hYear" 
                                                                                ofType: @"sqlite" ];
-    
+
     sqlite3_open( [ dbPath_ cStringUsingEncoding: NSUTF8StringEncoding ] , &self->_db );
-    
+
     sqlite3_create_function( self->_db, "ObjcGetYearAndHalfYearUsingLocale", 2, 
                             SQLITE_UTF8, NULL, 
                             &ObjcGetYearAndHalfYearUsingLocale,
@@ -31,7 +31,7 @@
 {
     sqlite3_close( self->_db );
     sqlite3_free( self->_sqliteError );
-    
+
     [ [ NSFileManager defaultManager ] removeItemAtPath: @"hYear.sqlite"
                                                   error: NULL ];
 }

@@ -49,10 +49,10 @@ static ESDateResolution initialResolution_ = ESMonthDateResolution;
 {
     NSDate* startDate_ = dateFromString( @"2012-05-02" );
     NSDate* endDate_   = dateFromString( @"2012-05-24" );
-    
+
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
     ESDateResolution resolution_ = initialResolution_;
-    
+
     [ calendar_ alignDateRangeFromDate: &startDate_
                                 toDate: &endDate_
                             resolution: &resolution_ ];

@@ -176,13 +176,12 @@ void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sq
             sqlite3_result_error( ctx_, "ObjcFormatAnsiDate - NULL argument passed", 3 );
             return;        
         }
-        
-        
+
         NSString* strDate_ = [ [ NSString alloc ] initWithBytesNoCopy: (void*)rawDate_
                                                                length: strlen( (const char*)rawDate_ )
                                                              encoding: NSUTF8StringEncoding
                                                          freeWhenDone: NO ];
-        
+
         NSString* localeIdentifier_ = [ [ NSString alloc ] initWithBytesNoCopy: (void*)rawLocaleIdentifier_
                                                                         length: strlen( (const char*)rawLocaleIdentifier_ )
                                                                       encoding: NSUTF8StringEncoding
@@ -208,8 +207,7 @@ void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sq
 
             result_ = objc_msgSend( fmt_, transformSelector_, strDate_ );
         }
-        
-        
+
         if ( nil == result_ || [ result_ isEqualToString: @"" ] )
         {    
             sqlite3_result_null( ctx_ );
