@@ -225,6 +225,54 @@ void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sq
     }
 }
 
+void ObjcRound( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ )
+{
+    assert( ctx_ );
+    @autoreleasepool 
+    {
+        if ( argc_ != 2 )
+        {
+            sqlite3_result_error( ctx_, "ObjcFormatAnsiDate - too few parameters", 1 );
+            return;
+        }
+        else if ( NULL == argv_ )
+        {
+            sqlite3_result_error( ctx_, "ObjcFormatAnsiDate - invalid argv", 2 );
+            return;
+        }
+
+        const double valueToRound_ = sqlite3_value_double( argv_[0] );
+        NSUInteger       decimals_ = (NSUInteger)sqlite3_value_int( argv_[1] );
+
+        NSNumber* number_ = @( valueToRound_ );
+
+        NSNumberFormatter* formatter_ = [ NSNumberFormatter new ];
+        [ formatter_ setNumberStyle: NSNumberFormatterDecimalStyle ];
+        [ formatter_ setMaximumFractionDigits: decimals_ ];
+ 
+        NSString* result_ = nil;
+        SqlitePersistentDateFormatter* fmt_ = [ SqlitePersistentDateFormatter instance ];
+        @synchronized( fmt_ )
+        {
+            result_ = [ formatter_ stringFromNumber: number_ ];
+        }
+
+        if ( nil == result_ || [ result_ isEqualToString: @"" ] )
+        {    
+            sqlite3_result_null( ctx_ );
+        }
+        else 
+        {
+            sqlite3_result_text
+            ( 
+             ctx_, 
+             (const char*)[ result_ cStringUsingEncoding      : NSUTF8StringEncoding ], 
+             (int        )[ result_ lengthOfBytesUsingEncoding: NSUTF8StringEncoding ], 
+             SQLITE_TRANSIENT 
+             );
+        }
+    }
+}
 
 void ObjcGetYearAndQuarterUsingLocale( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ )
 {
