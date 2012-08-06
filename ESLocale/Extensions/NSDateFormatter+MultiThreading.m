@@ -2,7 +2,7 @@
 
 @implementation NSDateFormatter (MultiThreading)
 
--(NSString*)synchronizedStringFromDate:(NSDate *)date_
+-(NSString*)synchronizedStringFromDate:( NSDate* )date_
 {
     @synchronized( self )
     {
@@ -10,13 +10,12 @@
     }
 }
 
-
--(NSDate*)synchronizedDateFromString:(NSString *)string_
+-(NSDate*)synchronizedDateFromString:( NSString* )string_
 {
     @synchronized( self )
     {
         return [ self dateFromString: string_ ];
-    }    
+    }
 }
 
 @end

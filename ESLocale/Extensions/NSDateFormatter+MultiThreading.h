@@ -2,8 +2,7 @@
 
 @interface NSDateFormatter (MultiThreading)
 
--(NSString*)synchronizedStringFromDate:(NSDate *)date_;
--(NSDate*)synchronizedDateFromString:(NSString *)string_;
-
+-(NSString*)synchronizedStringFromDate:( NSDate* )date_;
+-(NSDate*)synchronizedDateFromString:( NSString* )string_;
 
 @end
