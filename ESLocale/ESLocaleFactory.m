@@ -40,6 +40,13 @@
     return result_;
 }
 
++(NSDateFormatter*)ansiDatetimeFormatter
+{
+    NSDateFormatter* result_ = [ self posixDateFormatter ];
+    result_.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+
+    return result_;
+}
 
 +(NSCalendar*)gregorianCalendarWithLocaleId:( NSString* )localeIdentifier_
 {
