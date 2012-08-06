@@ -26,8 +26,8 @@
     
     {
         result_ = [ [ ESDatesCalculator alloc ] initWithResolution: 1
-                                                         startDate: [ NSDate date ]
-                                                           endDate: [ NSDate date ] ];
+                                                         startDate: [ NSDate new ]
+                                                           endDate: [ NSDate new ] ];
         
         STAssertNotNil( result_, @"valid object expected" );
     }
@@ -39,7 +39,7 @@
         (
              [ [ ESDatesCalculator alloc ] initWithResolution: 1
                                                     startDate: nil
-                                                      endDate: [ NSDate date ] ],
+                                                      endDate: [ NSDate new ] ],
               @"Assert nil expected"
         );
     }
@@ -48,7 +48,7 @@
         STAssertThrows
         (
              [ [ ESDatesCalculator alloc ] initWithResolution: 1
-                                                    startDate: [ NSDate date ]
+                                                    startDate: [ NSDate new ]
                                                       endDate: nil ],
              @"Assert nil expected"
          );
@@ -63,8 +63,8 @@
     STAssertThrows
     (
         [ [ ESDatesCalculator alloc ] initWithResolution: 0
-                                               startDate: [ NSDate date ]
-                                                 endDate: [ NSDate date ] ],
+                                               startDate: [ NSDate new ]
+                                                 endDate: [ NSDate new ] ],
         @"Zero resolution is undefined. ESDatesCalculator can't stand it"
     );
 #pragma clang diagnostic pop
@@ -112,11 +112,10 @@
 {
     NSDate* beg_ = nil;
     NSDate* fin_ = nil;    
-    
-    
+
     NSDateFormatter* df_ = [ ESLocaleFactory posixDateFormatter ];
     df_.dateFormat = @"yyyy-MM-dd";
-    
+
     {
         beg_ = [ df_ dateFromString: @"1648-04-29" ];
         fin_ = [ df_ dateFromString: @"2011-10-23" ];

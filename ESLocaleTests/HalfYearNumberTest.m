@@ -14,8 +14,6 @@
     NSDateFormatter* _ansiFormatter;
 }
 
-@synthesize ansiDateFormatter = _ansiFormatter;
-
 -(NSDateFormatter*)ansiDateFormatter
 {
     if ( nil == self->_ansiFormatter )
@@ -45,7 +43,7 @@
     }
 
     {
-        result_ = [ SqlitePersistentDateFormatter halfYearForDate: [ NSDate date ]
+        result_ = [ SqlitePersistentDateFormatter halfYearForDate: [ NSDate new ]
                                                     usingCalendar: nil ];
 
         STAssertTrue( -2 == result_, @"valid error code expected - %d", result_ );
