@@ -29,9 +29,6 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     NSCalendar*      _targetCalendar ;
 }
 
-@synthesize validateLocale ;
-@synthesize checkSameLocale;
-
 #pragma mark -
 #pragma mark Singletone
 +(SqlitePersistentDateFormatter*)instance

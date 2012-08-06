@@ -18,11 +18,6 @@
     std::vector<SEL> _dateComponentSelectors;
 }
 
-@synthesize resolution = _resolution;
-@synthesize startDate  = _startDate ;
-@synthesize endDate    = _endDate   ;
-
-
 #pragma mark - 
 #pragma mark init
 -(id)init
