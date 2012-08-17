@@ -5,8 +5,8 @@
 +(SqlitePersistentDateFormatter*)instance;
 +(void)freeInstance;
 
-@property ( nonatomic, assign ) BOOL validateLocale ;
-@property ( nonatomic, assign ) BOOL checkSameLocale;
+@property ( nonatomic ) BOOL validateLocale ;
+@property ( nonatomic ) BOOL checkSameLocale;
 
 -(BOOL)setFormat:( NSString* )dateFormat_
           locale:( NSString* )locale_;

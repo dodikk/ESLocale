@@ -168,8 +168,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     //gregorian calendar hard code
     NSDateComponents* result_ = [ self->_targetCalendar components: yearMonthMask_ 
                                                           fromDate: date_ ];    
-    
-    
+
     static const NSInteger monthsInQuarter_ = 3;
     NSInteger quarter_ = (result_.month - 1) / monthsInQuarter_;
     NSInteger quarterStartingWithOne_ = 1 + quarter_;    
@@ -209,7 +208,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
 
 {
     ESYearAndQuarter result_ = componentsForDate_( date_ );
-    return [ NSString stringWithFormat: dateFormat_
+    return [ [ NSString alloc ] initWithFormat: dateFormat_
             , result_.first
             , result_.second ];
 }

@@ -60,14 +60,6 @@ EXTERN_BEGIN
      "H2 yyyy"
      */
     EXTERN void ObjcGetYearAndHalfYearUsingLocale( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ );
-
-    /**
-     @param argv_[0] - Double string value
-     @param argv_[1] - decimals to round
-     
-     @return sqlite3_result_text with rounded value 
-     */
-    EXTERN void ObjcRound( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ );
 EXTERN_END
 
 

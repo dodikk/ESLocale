@@ -5,7 +5,6 @@
 
 @implementation SqlLocalizedDateFormatter
 {
-@private
     NSString* _strDate;
     NSString* _format;
     NSString* _localeIdentifier;
@@ -55,17 +54,15 @@
     {
         return nil;
     }
-    
+
     NSDateFormatter* ansiFormatter_ = [ ESLocaleFactory ansiDateFormatter ];
-    
+
     NSDate* date_ = [ ansiFormatter_ dateFromString: strDate_ ];
     NSLocale* locale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: localeIdentifier_ ];
-    
-    
+
     NSDateFormatter* targetFormatter_ = [ ESLocaleFactory gregorianDateFormatterWithLocale: locale_ ];
     targetFormatter_.dateFormat = format_;
-    
-    
+
     NSString* result_ = [ targetFormatter_ stringFromDate: date_ ];
     return result_;
 }

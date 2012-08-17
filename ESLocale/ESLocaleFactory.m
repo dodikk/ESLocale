@@ -10,7 +10,7 @@
 +(NSCalendar*)gregorianCalendar
 {
     NSCalendar* result_ = [ [ NSCalendar alloc ] initWithCalendarIdentifier: NSGregorianCalendar ];
-    [ result_ setTimeZone: [ NSTimeZone timeZoneWithName: @"GMT" ] ];
+    [ result_ setTimeZone: [ [ NSTimeZone alloc ] initWithName: @"GMT" ] ];
     return result_;
 }
 
@@ -25,7 +25,7 @@
 +(NSDateFormatter*)posixDateFormatter
 {
     NSDateFormatter* result_ = [ self gregorianDateFormatterWithLocale: [ self posixLocale ] ];
-    result_.timeZone = [ NSTimeZone timeZoneWithName: @"GMT" ];
+    result_.timeZone = [ [ NSTimeZone alloc ] initWithName: @"GMT" ];
 
     return result_;
 }
@@ -58,7 +58,7 @@
 {
     NSCalendar* result_ = [ self gregorianCalendar ];
     result_.locale = locale_;
-    
+
     return result_;
 }
 
@@ -73,7 +73,6 @@
 
     return result_;
 }
-
 
 +(void)setCalendar:( NSCalendar* )calendar_
   forDateFormatter:( NSDateFormatter* )result_

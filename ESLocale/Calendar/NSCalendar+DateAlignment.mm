@@ -1,6 +1,8 @@
 #import "NSCalendar+DateAlignment.h"
 #import "NSDateComponents+Constants.h"
 
+#import "ESLocaleFactory.h"
+
 #include <vector>
 
 typedef std::vector< SEL > ESDateComponentsSelectorsType;
@@ -13,8 +15,12 @@ static const ESDateComponentsSelectorsType& getDateComponentSelectors()
     dispatch_once( &onceToken_, ^
     {
         {
-            SEL selector_ = @selector( weekAlignComponentsToFuture:date:calendar: );
-            dateComponentSelectors_.push_back( selector_ );//STODO fix day resolution
+            dateComponentSelectors_.push_back( NULL );
+        }
+
+        {
+            SEL selector_ = @selector( dayAlignComponentsToFuture:date:calendar: );
+            dateComponentSelectors_.push_back( selector_ );
         }
 
         {
@@ -53,6 +59,10 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
     static dispatch_once_t onceToken_;
     dispatch_once( &onceToken_, ^
     {
+        {
+            dateAddingComponentSelectors_.push_back( NULL );
+        }
+
         {
             SEL selector_ = @selector( dayComponentsWithTimeInterval: );
             dateAddingComponentSelectors_.push_back( selector_ );
@@ -114,7 +124,8 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
     [ [ self class ] validateArgumentsDate: date_
                                 resolution: resolution_ ];
 
-    auto selector_ = getDateComponentSelectors()[ resolution_ ];
+    size_t resolutionIndex_ = static_cast<size_t>( resolution_ );
+    auto selector_ = getDateComponentSelectors().at( resolutionIndex_ );
 
     if ( NULL == selector_ )
     {
@@ -122,55 +133,80 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
         return nil;
     }
 
-    NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
-                                                 , selector_
-                                                 , alignToFuture_
-                                                 , date_
-                                                 , self );
+    NSDate* result_ = objc_msgSend( [ NSDate class ]
+                                   , selector_
+                                   , alignToFuture_
+                                   , date_
+                                   , self );
 
-    return [ self dateFromComponents: components_ ];
+    return result_;
 }
 
 -(NSDate*)alignToPastDate:( NSDate* )date_
                resolution:( ESDateResolution )resolution_
 {
-    //add one day to round last weak/month etc. date to the same date
-    //example: firstDateOfMonth( "Aug 31" + 1 day ) == Sep 01 => "Sep 01" - 1 day = Aug 31
-    date_ = [ self dateByAddingComponents: [ NSDateComponents getAddOneDayComponents ]
-                                   toDate: date_
-                                  options: 0 ];
-
-    NSDate* result_ = [ self alignDate: date_
-                            resolution: resolution_
-                              toFuture: NO ];
-
-    //subtract one day
-    result_ = [ self dateByAddingComponents: [ NSDateComponents getSubtractOneDayComponents ]
-                                     toDate: result_
-                                    options: 0 ];
-
-    return result_;
+    return [ self alignDate: date_
+                 resolution: resolution_
+                   toFuture: NO ];
 }
 
 -(NSDate*)alignToFutureDate:( NSDate* )date_
                  resolution:( ESDateResolution )resolution_
 {
-    date_ = [ self dateByAddingComponents: [ NSDateComponents getSubtractOneDayComponents ]
-                                   toDate: date_
-                                  options: 0 ];
+    NSDate* result_ = [ self alignDate: date_
+                            resolution: resolution_
+                              toFuture: YES ];
 
-    return [ self alignDate: date_
-                 resolution: resolution_
-                   toFuture: YES ];
+    return [ self dateByAddingComponents: [ NSDateComponents getSubtractOneDayComponents ]
+                                  toDate: result_
+                                 options: 0 ];
+}
+
+-(ESDateResolution)maximumResolutionFromDate:( NSDate* )fromDate_
+                                      toDate:( NSDate* )toDate_
+{
+    static const NSInteger monthsInYear_ = 12;
+
+    toDate_ = [ self dateByAddingComponents: [ NSDateComponents getAddOneDayComponents ]
+                                     toDate: toDate_
+                                    options: 0 ];
+
+    NSDateComponents* components_ = [ self components: NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit
+                                             fromDate: fromDate_
+                                               toDate: toDate_
+                                              options: 0 ];
+
+    if ( components_.year > 0 )
+    {
+        return ESYearDateResolution;
+    }
+    else if ( components_.month >= monthsInYear_ / 2 )
+    {
+        return ESHalfYearDateResolution;
+    }
+    else if ( components_.month >= monthsInYear_ / 4 )
+    {
+        return ESQuarterDateResolution;
+    }
+    else if ( components_.month > 0 )
+    {
+        return ESMonthDateResolution;
+    }
+    else if ( components_.week > 0 )
+    {
+        return ESWeekDateResolution;
+    }
+
+    return ESDayDateResolution;
 }
 
 -(void)alignDateRangeFromDate:( inout NSDate** )fromDate_
                        toDate:( inout NSDate** )toDate_
-                   resolution:( inout ESDateResolution* )resolution_
+                   resolution:( ESDateResolution )resolution_
 {
-    BOOL resolutionOk_ = ( NULL != resolution_ && *resolution_ <= ESYearDateResolution );
-    BOOL startDateOk_  = ( NULL != fromDate_   && nil != *fromDate_ );
-    BOOL endDateOk_    = ( NULL != toDate_     && nil != *toDate_   );
+    BOOL resolutionOk_ = ( resolution_ <= ESYearDateResolution );
+    BOOL startDateOk_  = ( NULL != fromDate_ && nil != *fromDate_ );
+    BOOL endDateOk_    = ( NULL != toDate_   && nil != *toDate_   );
     BOOL dateRangeOk_  = startDateOk_ && endDateOk_
         && ( NSOrderedDescending != [ *fromDate_ compare: *toDate_ ] );
 
@@ -183,31 +219,25 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
         return;
     }
 
-    if ( 0 == *resolution_ )
+    if ( 0 == resolution_ )
     {
-        *resolution_ = ESYearDateResolution;
+        resolution_ = ESYearDateResolution;
     }
 
-    NSUInteger tmpResolution_ = *resolution_;
+    NSInteger tmpResolution_ = resolution_;
     NSDate* tmpFromDate_ = nil;
     NSDate* tmpToDate_   = nil;
 
-    while ( tmpResolution_ != 0 )
     {
-        tmpFromDate_ = [ self alignToFutureDate: *fromDate_
-                                     resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
+        tmpFromDate_ = [ self alignToPastDate: *fromDate_
+                                   resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
 
-        tmpToDate_ = [ self alignToPastDate: *toDate_
-                                 resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
-
-        if ( NSOrderedAscending == [ tmpFromDate_ compare: tmpToDate_ ] )
-            break;
-
-        tmpResolution_ -= 1;
+        tmpToDate_ = [ self alignToFutureDate: *toDate_
+                                   resolution: static_cast<ESDateResolution>( tmpResolution_ ) ];
     }
 
-    *resolution_ = static_cast<ESDateResolution>( tmpResolution_ );
-    if ( *resolution_ != ESDateResolutionUndefined )
+    resolution_ = static_cast<ESDateResolution>( tmpResolution_ );
+    if ( resolution_ != ESDateResolutionUndefined )
     {
         *fromDate_ = tmpFromDate_;
         *toDate_   = tmpToDate_;
@@ -218,14 +248,15 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
                              toDate:( NSDate* )date_
                          resolution:( ESDateResolution )resolution_
 {
-    BOOL resolutionOk_ = ( ESDateResolutionUndefined <= resolution_ && resolution_ <= ESYearDateResolution );
+    auto resolutionOk_ = ( ESDateResolutionUndefined <= resolution_ && resolution_ <= ESYearDateResolution );
     NSParameterAssert( resolutionOk_ );
     if ( !resolutionOk_ )
     {
         return nil;
     }
 
-    auto selector_ = getAddingDateComponentSelectors()[ resolution_ ];
+    size_t resolutionIndex_ = static_cast<size_t>( resolution_ );
+    auto selector_ = getAddingDateComponentSelectors()[ resolutionIndex_ ];
 
     NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
                                                  , selector_

@@ -1,6 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@interface NSDateComponents (DateAlignment)
+@interface NSDate (DateAlignment)
+
++(id)dayAlignComponentsToFuture:( BOOL )toFuture_
+                           date:( NSDate* )date_
+                       calendar:( NSCalendar* )calendar_;
 
 +(id)weekAlignComponentsToFuture:( BOOL )toFuture_
                             date:( NSDate* )date_

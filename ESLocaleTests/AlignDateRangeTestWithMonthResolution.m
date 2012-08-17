@@ -6,14 +6,12 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-static ESDateResolution initialResolution_ = ESMonthDateResolution;
-
 @interface AlignDateRangeTestWithMonthResolution : SenTestCase
 @end
 
 @implementation AlignDateRangeTestWithMonthResolution
 
-/////////////////// RESULT: MONTH RESOLUTION ///////////////////
+/////////////////// RESULT: Quarter RESOLUTION ///////////////////
 
 -(void)testAlignDates_Sep20_2011_Mar31_2012_toFourMonthResolution
 {
@@ -21,19 +19,19 @@ static ESDateResolution initialResolution_ = ESMonthDateResolution;
     NSDate* endDate_   = dateFromString( @"2012-03-30" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    ESDateResolution resolution_ = initialResolution_;
-    
+    ESDateResolution resolution_ = [ calendar_ maximumResolutionFromDate: startDate_ toDate: endDate_ ];
+
     [ calendar_ alignDateRangeFromDate: &startDate_
                                 toDate: &endDate_
-                            resolution: &resolution_ ];
-    
-    STAssertEquals( ESMonthDateResolution, resolution_, @"ok" );
-    
+                            resolution: resolution_ ];
+
+    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
+
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
-    
-    STAssertEqualObjects( startDateStr_, @"2011-11-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-02-29", @"ok" );
+
+    STAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
+    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
 }
 
 /////////////////// RESULT: WEEK RESOLUTION ///////////////////
@@ -51,19 +49,19 @@ static ESDateResolution initialResolution_ = ESMonthDateResolution;
     NSDate* endDate_   = dateFromString( @"2012-05-24" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    ESDateResolution resolution_ = initialResolution_;
+    ESDateResolution resolution_ = [ calendar_ maximumResolutionFromDate: startDate_ toDate: endDate_ ];
 
     [ calendar_ alignDateRangeFromDate: &startDate_
                                 toDate: &endDate_
-                            resolution: &resolution_ ];
+                            resolution: resolution_ ];
     
     STAssertEquals( ESWeekDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2012-05-06", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-19", @"ok" );
+    STAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
+    STAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
 }
 
 /////////////////// RESULT: SEVERAL DAYS ///////////////////
@@ -81,17 +79,17 @@ static ESDateResolution initialResolution_ = ESMonthDateResolution;
     NSDate* endDate_   = dateFromString( @"2012-05-17" );
     
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    ESDateResolution resolution_ = initialResolution_;
+    ESDateResolution resolution_ = [ calendar_ maximumResolutionFromDate: startDate_ toDate: endDate_ ];
     
     [ calendar_ alignDateRangeFromDate: &startDate_
                                 toDate: &endDate_
-                            resolution: &resolution_ ];
-    
-    STAssertEquals( ESDateResolutionUndefined, resolution_, @"ok" );
-    
+                            resolution: resolution_ ];
+
+    STAssertEquals( ESDayDateResolution, resolution_, @"ok" );
+
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
-    
+
     STAssertEqualObjects( startDateStr_, @"2012-05-14", @"ok" );
     STAssertEqualObjects( endDateStr_  , @"2012-05-17", @"ok" );
 }

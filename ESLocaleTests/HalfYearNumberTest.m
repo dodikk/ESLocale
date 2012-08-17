@@ -5,7 +5,7 @@
 
 @interface HalfYearNumberTest : SenTestCase
 
-@property( nonatomic, strong ) NSDateFormatter* ansiDateFormatter;
+@property( nonatomic ) NSDateFormatter* ansiDateFormatter;
 
 @end
 

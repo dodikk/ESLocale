@@ -35,7 +35,7 @@
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
 		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
-		7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.m */; };
+		7E92BE541560FB360088E369 /* SqliteFunctions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.mm */; };
 		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
 		7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */; };
 		7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
@@ -54,10 +54,6 @@
 		7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
 		7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
 		7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
-		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
-		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
-		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
-		7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
 		7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */; };
 		7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
 		7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
@@ -131,7 +127,7 @@
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
 		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SqlitePersistentDateFormatter.mm; sourceTree = "<group>"; };
 		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
-		7E92BE521560FB360088E369 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
+		7E92BE521560FB360088E369 /* SqliteFunctions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SqliteFunctions.mm; sourceTree = "<group>"; };
 		7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLocalizedDateFormatter.h; sourceTree = "<group>"; };
 		7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLocalizedDateFormatter.m; sourceTree = "<group>"; };
 		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
@@ -143,9 +139,6 @@
 		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
 		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
 		7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterQueryTest.m; sourceTree = "<group>"; };
-		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
-		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
-		7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatesCalculatorTest.m; sourceTree = "<group>"; };
 		7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsFactory.h; sourceTree = "<group>"; };
 		7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsFactory.m; sourceTree = "<group>"; };
 		7ED0D587156023F70014BE2D /* DayOfWeekTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekTest.m; sourceTree = "<group>"; };
@@ -253,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				7E92BE511560FB360088E369 /* SqliteFunctions.h */,
-				7E92BE521560FB360088E369 /* SqliteFunctions.m */,
+				7E92BE521560FB360088E369 /* SqliteFunctions.mm */,
 				7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */,
 				7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */,
 				7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */,
@@ -324,8 +317,6 @@
 				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
 				7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */,
-				7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */,
-				7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */,
 			);
 			path = ESLocale;
 			sourceTree = "<group>";
@@ -344,7 +335,6 @@
 				1B3DB03F156CF3DB004D3377 /* Details */,
 				7ED3E59115400C1E008268CF /* Supporting Files */,
 				7ED3E59715400C1E008268CF /* ESLocaleTests.m */,
-				7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */,
 				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
 				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
 				7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */,
@@ -387,7 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */,
-				7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */,
 				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
 				7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */,
 				7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */,
@@ -542,9 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */,
-				7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */,
 				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
-				7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */,
+				7E92BE541560FB360088E369 /* SqliteFunctions.mm in Sources */,
 				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
 				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */,
 				1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */,
@@ -561,7 +549,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */,
-				7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */,
 				7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
@@ -592,7 +579,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */,
-				7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
 				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
 				7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */,
 				7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */,

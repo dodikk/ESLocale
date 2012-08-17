@@ -2,7 +2,6 @@
 
 @interface NSDateComponentsFactory : NSObject
 
-
 +(NSDateComponents*)addSomeMonths:( NSInteger )monthCount_;
 +(NSDateComponents*)addSomeWeeks:( NSInteger )weekCount_;
 

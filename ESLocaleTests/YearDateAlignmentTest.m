@@ -29,7 +29,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2010-12-31", @"ok" );
+    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
 }
 
 //January 2010
@@ -49,7 +49,7 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2009-12-31", @"ok" );
+    STAssertEqualObjects( result_, @"2010-01-01", @"ok" );
 }
 
 //December 2012
@@ -69,7 +69,7 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2012-12-31", @"ok" );
+    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
 }
 
 //////////////////// FUTURE ////////////////////
@@ -90,7 +90,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"2011-12-31", @"ok" );
 }
 
 //January 2010
@@ -110,7 +110,7 @@
 
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2010-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"2010-12-31", @"ok" );
 }
 
 //December 2012
@@ -130,7 +130,7 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2013-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"2012-12-31", @"ok" );
 }
 
 @end

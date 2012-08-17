@@ -1,14 +1,18 @@
 #ifndef ESLocale_ESDateResolutionType_h
 #define ESLocale_ESDateResolutionType_h
 
-typedef enum
+#import <Foundation/Foundation.h>
+
+enum ESDateResolutionEnum
 {
-    ESDateResolutionUndefined
+    ESDateResolutionUndefined = 0
+    , ESDayDateResolution
     , ESWeekDateResolution
     , ESMonthDateResolution
     , ESQuarterDateResolution
     , ESHalfYearDateResolution
     , ESYearDateResolution
-} ESDateResolution;
+};
+typedef NSInteger ESDateResolution;
 
 #endif //ESLocale_ESDateResolutionType_h

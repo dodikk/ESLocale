@@ -6,7 +6,7 @@
 {
     NSDateComponents* result_ = [ NSDateComponents new ];
     result_.month = monthCount_;
-    
+
     return result_;
 }
 
@@ -14,7 +14,7 @@
 {
     NSDateComponents* result_ = [ NSDateComponents new ];
     result_.week = weekCount_;
-    
+
     return result_;    
 }
 

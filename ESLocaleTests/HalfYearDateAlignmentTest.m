@@ -25,11 +25,13 @@
     NSDate* date_ = dateFromString( @"2011-03-31" );
 
     NSCalendar* calendar_ = [ ESLocaleFactory gregorianCalendar ];
-    date_ = [ calendar_ alignToPastDate: date_ resolution: ESHalfYearDateResolution ];
+
+    date_ = [ calendar_ alignToPastDate: date_
+                             resolution: ESHalfYearDateResolution ];
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2010-12-31", @"ok" );
+    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
 }
 
 //November 2010
@@ -48,7 +50,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2010-06-30", @"ok" );
+    STAssertEqualObjects( result_, @"2010-07-01", @"ok" );
 }
 
 //December 2012
@@ -68,7 +70,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2012-12-31", @"ok" );
+    STAssertEqualObjects( result_, @"2012-07-01", @"ok" );
 }
 
 //June 2012
@@ -87,7 +89,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2012-06-30", @"ok" );
+    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
 }
 
 //////////////////// FUTURE ////////////////////
@@ -108,7 +110,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-07-01", @"ok" );
+    STAssertEqualObjects( result_, @"2011-06-30", @"ok" );
 }
 
 //August 1986
@@ -128,7 +130,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"1987-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"1986-12-31", @"ok" );
 }
 
 //July 2011
@@ -148,7 +150,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-07-01", @"ok" );
+    STAssertEqualObjects( result_, @"2011-12-31", @"ok" );
 }
 
 //January 1987
@@ -167,7 +169,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"1987-01-01", @"ok" );
+    STAssertEqualObjects( result_, @"1987-06-30", @"ok" );
 }
 
 @end

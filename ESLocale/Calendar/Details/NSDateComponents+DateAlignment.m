@@ -1,8 +1,25 @@
 #import "NSDateComponents+DateAlignment.h"
 
 #include "CalendarAlignmentConstants.h"
+#import "NSDateComponents+Constants.h"
 
-@implementation NSDateComponents (DateAlignment)
+@implementation NSDate (DateAlignment)
+
++(id)dayAlignComponentsToFuture:( BOOL )toFuture_
+                           date:( NSDate* )date_
+                       calendar:( NSCalendar* )calendar_
+{
+    if ( !toFuture_ )
+        return date_;
+
+    NSDateComponents* components_ = [ NSDateComponents getAddOneDayComponents ];
+
+    NSDate* result_ = [ calendar_ dateByAddingComponents: components_
+                                                  toDate: date_
+                                                 options: 0 ];
+
+    return result_;
+}
 
 +(id)weekAlignComponentsToFuture:( BOOL )toFuture_
                             date:( NSDate* )date_
@@ -20,7 +37,7 @@
         [ components_ setWeekOfYear: [ components_ weekOfYear ] + 1 ];
     }
 
-    return components_;
+    return [ calendar_ dateFromComponents: components_ ];
 }
 
 +(id)monthAlignComponentsToFuture:( BOOL )toFuture_
@@ -37,7 +54,7 @@
         [ components_ setMonth: [ components_ month ] + 1 ];
     }
 
-    return components_;
+    return [ calendar_ dateFromComponents: components_ ];
 }
 
 +(id)quarterAlignComponentsToFuture:( BOOL )toFuture_
@@ -61,7 +78,7 @@
     }
     [ components_ setMonth: quarterStartMonth_ ];
 
-    return components_;
+    return [ calendar_ dateFromComponents: components_ ];
 }
 
 +(id)halfYearAlignComponentsToFuture:( BOOL )toFuture_
@@ -80,7 +97,7 @@
     }
     [ components_ setMonth: monthStart_ ];
 
-    return components_;
+    return [ calendar_ dateFromComponents: components_ ];
 }
 
 +(id)yearAlignComponentsToFuture:( BOOL )toFuture_
@@ -97,7 +114,7 @@
         [ components_ setYear: [ components_ year ] + 1 ];
     }
 
-    return components_;
+    return [ calendar_ dateFromComponents: components_ ];
 }
 
 @end
