@@ -25,8 +25,6 @@
 +(NSDateFormatter*)posixDateFormatter
 {
     NSDateFormatter* result_ = [ self gregorianDateFormatterWithLocale: [ self posixLocale ] ];
-    result_.timeZone = [ [ NSTimeZone alloc ] initWithName: @"GMT" ];
-
     return result_;
 }
 
@@ -79,6 +77,7 @@
 {
     result_.calendar = calendar_;
     result_.locale = calendar_.locale;
+    result_.timeZone = calendar_.timeZone;
 }
 
 @end
