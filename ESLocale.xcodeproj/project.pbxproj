@@ -44,6 +44,11 @@
 		7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
 		7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
 		7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7E9F3CD6165BBAAF00014E37 /* ESStringLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9F3CD5165BBAAF00014E37 /* ESStringLocalizer.h */; };
+		7E9F3CD9165BBAD100014E37 /* ESStringLocalizer_Apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9F3CD7165BBAD100014E37 /* ESStringLocalizer_Apple.h */; };
+		7E9F3CDA165BBAD100014E37 /* ESStringLocalizer_Apple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */; };
+		7E9F3CE1165BBC6D00014E37 /* ESDictionaryLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9F3CDF165BBC6D00014E37 /* ESDictionaryLocalizer.h */; };
+		7E9F3CE2165BBC6D00014E37 /* ESDictionaryLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */; };
 		7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */; };
 		7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */; };
 		7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
@@ -133,6 +138,11 @@
 		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
 		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
 		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
+		7E9F3CD5165BBAAF00014E37 /* ESStringLocalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESStringLocalizer.h; sourceTree = "<group>"; };
+		7E9F3CD7165BBAD100014E37 /* ESStringLocalizer_Apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESStringLocalizer_Apple.h; sourceTree = "<group>"; };
+		7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESStringLocalizer_Apple.m; sourceTree = "<group>"; };
+		7E9F3CDF165BBC6D00014E37 /* ESDictionaryLocalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDictionaryLocalizer.h; sourceTree = "<group>"; };
+		7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDictionaryLocalizer.m; sourceTree = "<group>"; };
 		7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+Constants.h"; sourceTree = "<group>"; };
 		7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+Constants.m"; sourceTree = "<group>"; };
 		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
@@ -263,6 +273,18 @@
 			path = TestData;
 			sourceTree = "<group>";
 		};
+		7E9F3CD4165BBA5700014E37 /* StringLocalizer */ = {
+			isa = PBXGroup;
+			children = (
+				7E9F3CD5165BBAAF00014E37 /* ESStringLocalizer.h */,
+				7E9F3CD7165BBAD100014E37 /* ESStringLocalizer_Apple.h */,
+				7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */,
+				7E9F3CDF165BBC6D00014E37 /* ESDictionaryLocalizer.h */,
+				7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */,
+			);
+			path = StringLocalizer;
+			sourceTree = "<group>";
+		};
 		7EB7DB0D1559713C005BF339 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +335,7 @@
 				1BCC9FF9156B687500961B74 /* Calendar */,
 				7EB7DB0D1559713C005BF339 /* Detail */,
 				7E6CF29E1577A8B6009D3E20 /* Extensions */,
+				7E9F3CD4165BBA5700014E37 /* StringLocalizer */,
 				7E92BE501560FB360088E369 /* SqliteDateFormat */,
 				7ED3E57F15400C1E008268CF /* ESLocale.h */,
 				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
@@ -386,6 +409,9 @@
 				7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */,
 				1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */,
 				7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */,
+				7E9F3CD6165BBAAF00014E37 /* ESStringLocalizer.h in Headers */,
+				7E9F3CD9165BBAD100014E37 /* ESStringLocalizer_Apple.h in Headers */,
+				7E9F3CE1165BBC6D00014E37 /* ESDictionaryLocalizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +567,8 @@
 				1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */,
 				1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */,
 				7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */,
+				7E9F3CDA165BBAD100014E37 /* ESStringLocalizer_Apple.m in Sources */,
+				7E9F3CE2165BBC6D00014E37 /* ESDictionaryLocalizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
