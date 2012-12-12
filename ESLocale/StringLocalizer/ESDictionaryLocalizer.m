@@ -27,7 +27,13 @@
 
 -(NSString*)localizedStringForKey:( NSString* )key_
 {
-    return [ self->_localization objectForKey: key_ ];
+    NSString* result_ = [ self->_localization objectForKey: key_ ];
+    if ( nil == result_ )
+    {
+        result_ = key_;
+    }
+    
+    return result_;
 }
 
 @end
