@@ -143,11 +143,18 @@ static NSCalendarUnit FAKE_CAL_UNIT = static_cast<NSCalendarUnit>( -1 );
                                              tillDate: end_
                                         forResolution: self->_resolution ];
     
-    NSParameterAssert( rangeBegin_ >= 0 );
-    NSParameterAssert( rangeLength_ >= 0 );    
-
-    self->_range = NSMakeRange(
-        static_cast<NSUInteger>( rangeBegin_ ), static_cast<NSUInteger>( rangeLength_ ) );
+    if ( rangeBegin_ < 0 || rangeLength_ <= 0 )
+    {
+        self->_range = { 0, 0 };
+    }
+    else
+    {
+        self->_range = NSMakeRange
+        (
+           static_cast<NSUInteger>( rangeBegin_ ),
+           static_cast<NSUInteger>( rangeLength_ )
+        );
+    }
     
     [ self restoreGlobalRange ];
 }

@@ -34,6 +34,8 @@
 		7E2B9EE61670E0D500408A42 /* ESRangeToDatesConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */; };
 		7E2B9EE71670E0D500408A42 /* ESDatesToRangeConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */; };
 		7E2B9EE81670E0D500408A42 /* ESDatesToRangeConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */; };
+		7E687FE41680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */; };
+		7E687FE51680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */; };
 		7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */; };
 		7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
@@ -135,6 +137,8 @@
 		7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESRangeToDatesConverter.mm; sourceTree = "<group>"; };
 		7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesToRangeConverter.h; sourceTree = "<group>"; };
 		7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesToRangeConverter.mm; sourceTree = "<group>"; };
+		7E687FE21680777C0041E3E3 /* DatesToRangeConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatesToRangeConverterTest.h; sourceTree = "<group>"; };
+		7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatesToRangeConverterTest.m; sourceTree = "<group>"; };
 		7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MultiThreading.h"; sourceTree = "<group>"; };
 		7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+MultiThreading.m"; sourceTree = "<group>"; };
 		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */,
 				1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */,
 				1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */,
+				7E687FE21680777C0041E3E3 /* DatesToRangeConverterTest.h */,
+				7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */,
 			);
 			path = ESLocaleTests;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				1BF2E16F1573674600632D67 /* HalfYearAndFullYearTest.m in Sources */,
 				1BF2E173157369E100632D67 /* QuarterAndFullYearTest.m in Sources */,
 				1BF2E17715736B3100632D67 /* FullYearAndHalfYearTest.m in Sources */,
+				7E687FE41680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +646,7 @@
 				7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
 				7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */,
 				7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
+				7E687FE51680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
