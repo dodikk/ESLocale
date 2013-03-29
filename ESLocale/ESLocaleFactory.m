@@ -62,6 +62,8 @@
 
 +(NSDateFormatter*)gregorianDateFormatterWithLocale:( NSLocale* )locale_
 {
+    // @adk - Information about governmental standards
+    // http://www.pjh2.de/datetime/weeknumber/wnd.php?l=en
     NSDateFormatter* result_ = [ NSDateFormatter new ];
 
     NSCalendar* calendar_ = [ self gregorianCalendarWithLocale: locale_ ];
