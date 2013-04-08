@@ -1,1 +1,2 @@
 language : objective-c
+script   : xcodebuild -target ESLocaleTests-CI -configuration Coverage -sdk iphonesimulator
