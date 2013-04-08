@@ -869,12 +869,6 @@
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-L../",
-					"-lCoverageFopenFix",
-					"-v",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
