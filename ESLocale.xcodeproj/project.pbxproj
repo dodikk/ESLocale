@@ -837,11 +837,7 @@
 					.,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-L../",
-					"-lCoverageFopenFix",
-				);
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 			};
 			name = Coverage;
