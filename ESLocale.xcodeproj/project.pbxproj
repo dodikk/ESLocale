@@ -28,6 +28,10 @@
 		1BF2E16F1573674600632D67 /* HalfYearAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */; };
 		1BF2E173157369E100632D67 /* QuarterAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */; };
 		1BF2E17715736B3100632D67 /* FullYearAndHalfYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */; };
+		7E015A461716A8E100F79665 /* ESNowDateMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E015A441716A8E100F79665 /* ESNowDateMock.h */; };
+		7E015A471716A8E100F79665 /* ESNowDateMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015A451716A8E100F79665 /* ESNowDateMock.m */; };
+		7E015ACB1716AB9300F79665 /* NSDate+ES_Now.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */; };
+		7E015ACC1716AB9300F79665 /* NSDate+ES_Now.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */; };
 		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
 		7E2B9EE51670E0D500408A42 /* ESRangeToDatesConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */; };
@@ -132,6 +136,10 @@
 		1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearAndFullYearTest.m; sourceTree = "<group>"; };
 		1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterAndFullYearTest.m; sourceTree = "<group>"; };
 		1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullYearAndHalfYearTest.m; sourceTree = "<group>"; };
+		7E015A441716A8E100F79665 /* ESNowDateMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNowDateMock.h; sourceTree = "<group>"; };
+		7E015A451716A8E100F79665 /* ESNowDateMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESNowDateMock.m; sourceTree = "<group>"; };
+		7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ES_Now.h"; sourceTree = "<group>"; };
+		7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ES_Now.m"; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRangeToDatesConverter.h; sourceTree = "<group>"; };
 		7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESRangeToDatesConverter.mm; sourceTree = "<group>"; };
@@ -255,6 +263,17 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		7E015A431716A8C900F79665 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */,
+				7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */,
+				7E015A441716A8E100F79665 /* ESNowDateMock.h */,
+				7E015A451716A8E100F79665 /* ESNowDateMock.m */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		7E2B9EE01670E0D400408A42 /* DatesConverter */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +378,7 @@
 				7E2B9EE01670E0D400408A42 /* DatesConverter */,
 				7EB7DB0D1559713C005BF339 /* Detail */,
 				7E6CF29E1577A8B6009D3E20 /* Extensions */,
+				7E015A431716A8C900F79665 /* Mock */,
 				7E9F3CD4165BBA5700014E37 /* StringLocalizer */,
 				7E92BE501560FB360088E369 /* SqliteDateFormat */,
 				7ED3E57F15400C1E008268CF /* ESLocale.h */,
@@ -440,6 +460,8 @@
 				7E9F3CE1165BBC6D00014E37 /* ESDictionaryLocalizer.h in Headers */,
 				7E2B9EE51670E0D500408A42 /* ESRangeToDatesConverter.h in Headers */,
 				7E2B9EE71670E0D500408A42 /* ESDatesToRangeConverter.h in Headers */,
+				7E015A461716A8E100F79665 /* ESNowDateMock.h in Headers */,
+				7E015ACB1716AB9300F79665 /* NSDate+ES_Now.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +621,8 @@
 				7E9F3CE2165BBC6D00014E37 /* ESDictionaryLocalizer.m in Sources */,
 				7E2B9EE61670E0D500408A42 /* ESRangeToDatesConverter.mm in Sources */,
 				7E2B9EE81670E0D500408A42 /* ESDatesToRangeConverter.mm in Sources */,
+				7E015A471716A8E100F79665 /* ESNowDateMock.m in Sources */,
+				7E015ACC1716AB9300F79665 /* NSDate+ES_Now.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
