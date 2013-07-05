@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import <ESLocale/SqliteDateFormat/ESDateComponents.h>
+
 @interface SqlitePersistentDateFormatter : NSObject
 
 +(SqlitePersistentDateFormatter*)instance;
@@ -25,5 +27,7 @@
 
 -(NSString*)getFullYearAndHalfYear:( NSString* )strDate_; //throw()
 
+-(ESYearAndQuarterPOD)getYearAndQuarterPOD:( NSDate* )date_;
+-(ESYearAndHalfYearPOD)getYearAndHalfYearPOD:( NSDate* )date_;
 
 @end

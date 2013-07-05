@@ -202,6 +202,22 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     return ret_;
 }
 
+-(ESYearAndQuarterPOD)getYearAndQuarterPOD:( NSDate* )date_
+{
+    ESYearAndQuarter result_ = [ self getRawYearAndQuarter: date_ ];
+    ESYearAndQuarterPOD podResult_ = { result_.first, result_.second };
+    
+    return podResult_;
+}
+
+-(ESYearAndHalfYearPOD)getYearAndHalfYearPOD:( NSDate* )date_
+{
+    ESYearAndQuarter result_ = [ self getRawYearAndHalfYear: date_ ];
+    ESYearAndHalfYearPOD podResult_ = { result_.first, result_.second };
+    
+    return podResult_;
+}
+
 -(NSString*)stringFromDate:( NSDate* )date_
          componentsForDate:( ESComponentsForDate )componentsForDate_
                 dateFormat:( NSString* )dateFormat_
