@@ -9,6 +9,7 @@
 +(NSDateFormatter*)posixDateFormatter;
 +(NSDateFormatter*)ansiDateFormatter;
 +(NSDateFormatter*)ansiDatetimeFormatter;
++(NSDateFormatter*)ansiTimestampFormatter;
 
 +(NSCalendar*)gregorianCalendarWithLocaleId:( NSString* )localeIdentifier_;
 +(NSCalendar*)gregorianCalendarWithLocale:( NSLocale* )locale_;
