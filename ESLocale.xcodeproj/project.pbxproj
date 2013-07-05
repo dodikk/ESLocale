@@ -145,6 +145,7 @@
 		7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESRangeToDatesConverter.mm; sourceTree = "<group>"; };
 		7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesToRangeConverter.h; sourceTree = "<group>"; };
 		7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesToRangeConverter.mm; sourceTree = "<group>"; };
+		7E3EE0F1176B47F100798A2E /* ESDateComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDateComponents.h; sourceTree = "<group>"; };
 		7E687FE21680777C0041E3E3 /* DatesToRangeConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatesToRangeConverterTest.h; sourceTree = "<group>"; };
 		7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatesToRangeConverterTest.m; sourceTree = "<group>"; };
 		7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MultiThreading.h"; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 				7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */,
 				7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */,
 				7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */,
+				7E3EE0F1176B47F100798A2E /* ESDateComponents.h */,
 			);
 			path = SqliteDateFormat;
 			sourceTree = "<group>";
