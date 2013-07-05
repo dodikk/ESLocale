@@ -11,3 +11,4 @@
 #import <ESLocale/SqliteDateFormat/SqlitePersistentDateFormatter.h>
 
 #import <ESLocale/Extensions/NSDateFormatter+MultiThreading.h>
+#import <ESLocale/Calendar/NSCalendar+DateAlignment.h>
