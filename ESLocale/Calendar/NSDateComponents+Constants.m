@@ -16,6 +16,34 @@
     return addOneDay_;
 }
 
++(NSDateComponents*)getAddOneMonthComponents
+{
+    static NSDateComponents* addOneMonth_;
+    
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
+                  {
+                      addOneMonth_ = [ NSDateComponents new ];
+                      addOneMonth_.month = 1;
+                  } );
+    
+    return addOneMonth_;
+}
+
++(NSDateComponents*)getAddOneYearComponents
+{
+    static NSDateComponents* addOneYear_;
+    
+    static dispatch_once_t onceToken_;
+    dispatch_once( &onceToken_, ^
+                  {
+                      addOneYear_ = [ NSDateComponents new ];
+                      addOneYear_.year = 1;
+                  } );
+    
+    return addOneYear_;
+}
+
 +(NSDateComponents*)getSubtractOneDayComponents
 {
     static NSDateComponents* subtractOneDay_;
