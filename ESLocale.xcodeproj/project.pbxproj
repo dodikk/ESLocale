@@ -40,6 +40,20 @@
 		7E2B9EE81670E0D500408A42 /* ESDatesToRangeConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */; };
 		7E687FE41680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */; };
 		7E687FE51680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E687FE31680777C0041E3E3 /* DatesToRangeConverterTest.m */; };
+		7E6C855B1796E5DF005CB209 /* HalfYearAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */; };
+		7E6C855C1796E5DF005CB209 /* QuarterAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */; };
+		7E6C855D1796E5DF005CB209 /* FullYearAndHalfYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */; };
+		7E6C855E1796E5DF005CB209 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
+		7E6C855F1796E5DF005CB209 /* HalfYearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */; };
+		7E6C85601796E5DF005CB209 /* QuarterDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */; };
+		7E6C85611796E5DF005CB209 /* MonthDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */; };
+		7E6C85621796E5DF005CB209 /* WeakDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */; };
+		7E6C85631796E5DF005CB209 /* AlignDateRangeTestWithYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */; };
+		7E6C85641796E5DF005CB209 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */; };
+		7E6C85651796E5DF005CB209 /* AlignDateRangeTestWithQuarterResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */; };
+		7E6C85661796E5DF005CB209 /* AlignDateRangeTestWithMonthResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */; };
+		7E6C85671796E5DF005CB209 /* AlignDateRangeTestWithWeekResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */; };
+		7E6C85681796E7FA005CB209 /* testDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB041156CF3EF004D3377 /* testDateUtils.m */; };
 		7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */; };
 		7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
@@ -673,6 +687,20 @@
 				7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */,
 				7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
 				7E687FE51680777C0041E3E3 /* DatesToRangeConverterTest.m in Sources */,
+				7E6C855B1796E5DF005CB209 /* HalfYearAndFullYearTest.m in Sources */,
+				7E6C855C1796E5DF005CB209 /* QuarterAndFullYearTest.m in Sources */,
+				7E6C855D1796E5DF005CB209 /* FullYearAndHalfYearTest.m in Sources */,
+				7E6C855E1796E5DF005CB209 /* YearDateAlignmentTest.m in Sources */,
+				7E6C855F1796E5DF005CB209 /* HalfYearDateAlignmentTest.m in Sources */,
+				7E6C85601796E5DF005CB209 /* QuarterDateAlignmentTest.m in Sources */,
+				7E6C85611796E5DF005CB209 /* MonthDateAlignmentTest.m in Sources */,
+				7E6C85621796E5DF005CB209 /* WeakDateAlignmentTest.m in Sources */,
+				7E6C85631796E5DF005CB209 /* AlignDateRangeTestWithYearResolution.m in Sources */,
+				7E6C85641796E5DF005CB209 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */,
+				7E6C85651796E5DF005CB209 /* AlignDateRangeTestWithQuarterResolution.m in Sources */,
+				7E6C85661796E5DF005CB209 /* AlignDateRangeTestWithMonthResolution.m in Sources */,
+				7E6C85671796E5DF005CB209 /* AlignDateRangeTestWithWeekResolution.m in Sources */,
+				7E6C85681796E7FA005CB209 /* testDateUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
