@@ -47,7 +47,7 @@
 
 -(void)testRussianFormatter
 {
-    [ self->_cal setMinimumDaysInFirstWeek: 4 ];
+//    [ self->_cal setMinimumDaysInFirstWeek: 4 ];
     
     NSCalendarUnit unit_ = NSCalendarUnitWeekOfYear | NSCalendarUnitYearForWeekOfYear;
     NSDateComponents* components_ = [ self->_cal components: unit_
