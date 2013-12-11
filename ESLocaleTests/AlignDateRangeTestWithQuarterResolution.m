@@ -1,4 +1,4 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 #import "testDateUtils.h"
 
@@ -6,7 +6,7 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-@interface AlignDateRangeTestWithQuarterResolution : SenTestCase
+@interface AlignDateRangeTestWithQuarterResolution : XCTestCase
 @end
 
 @implementation AlignDateRangeTestWithQuarterResolution
@@ -24,13 +24,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
     
-    STAssertEquals( ESHalfYearDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESHalfYearDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
 }
 
 -(void)testAlignDates_Sep20_2011_Mar31_2012
@@ -45,13 +45,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
     
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESQuarterDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
 }
 
 /////////////////// RESULT: WEEK RESOLUTION ///////////////////
@@ -75,13 +75,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
     
-    STAssertEquals( ESWeekDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESWeekDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
 }
 
 @end

@@ -1,4 +1,4 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 #import "testDateUtils.h"
 
@@ -6,7 +6,7 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-@interface AlignDateRangeTestWithWeekResolution : SenTestCase
+@interface AlignDateRangeTestWithWeekResolution : XCTestCase
 @end
 
 @implementation AlignDateRangeTestWithWeekResolution
@@ -32,13 +32,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
     
-    STAssertEquals( ESWeekDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESWeekDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
 }
 
 @end

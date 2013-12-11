@@ -43,8 +43,8 @@
         convert_.resolution = 5;
         
         result_ = [ convert_ getTimelineRange ];
-        STAssertTrue( 0 == result_.location, @"invalid range mismatch" );
-        STAssertTrue( 0 == result_.length  , @"invalid range mismatch" );
+        XCTAssertTrue( 0 == result_.location, @"invalid range mismatch" );
+        XCTAssertTrue( 0 == result_.length  , @"invalid range mismatch" );
     }
 }
 

@@ -4,9 +4,9 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface DateAlignmentTest : SenTestCase
+@interface DateAlignmentTest : XCTestCase
 @end
 
 @implementation DateAlignmentTest
@@ -31,7 +31,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-01-01", @"ok" );
 }
 
 //November 2010
@@ -50,7 +50,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2010-07-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2010-07-01", @"ok" );
 }
 
 //December 2012
@@ -70,7 +70,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2012-07-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2012-07-01", @"ok" );
 }
 
 //June 2012
@@ -89,7 +89,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2012-01-01", @"ok" );
 }
 
 //////////////////// FUTURE ////////////////////
@@ -110,7 +110,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-06-30", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-06-30", @"ok" );
 }
 
 //August 1986
@@ -130,7 +130,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"1986-12-31", @"ok" );
+    XCTAssertEqualObjects( result_, @"1986-12-31", @"ok" );
 }
 
 //July 2011
@@ -150,7 +150,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-12-31", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-12-31", @"ok" );
 }
 
 //January 1987
@@ -169,7 +169,7 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"1987-06-30", @"ok" );
+    XCTAssertEqualObjects( result_, @"1987-06-30", @"ok" );
 }
 
 @end

@@ -1,4 +1,4 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 #import "testDateUtils.h"
 
@@ -6,7 +6,7 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-@interface WeakDateAlignmentTest : SenTestCase
+@interface WeakDateAlignmentTest : XCTestCase
 @end
 
 @implementation WeakDateAlignmentTest
@@ -30,10 +30,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2010-12-26", @"ok" );
+    XCTAssertEqualObjects( result_, @"2010-12-26", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be saturday
+    XCTAssertEqual( weekday_, 1, @"ok" );//should be saturday
 }
 
 //May 2012
@@ -52,10 +52,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2012-05-20", @"ok" );
+    XCTAssertEqualObjects( result_, @"2012-05-20", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be saturday
+    XCTAssertEqual( weekday_, 1, @"ok" );//should be saturday
 }
 
 //May 2012
@@ -76,10 +76,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2012-05-21", @"ok" );
+    XCTAssertEqualObjects( result_, @"2012-05-21", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 2, @"ok" );//should be sunday
+    XCTAssertEqual( weekday_, 2, @"ok" );//should be sunday
 }
 
 //January 2012
@@ -98,10 +98,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2012-01-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2012-01-01", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be saturday
+    XCTAssertEqual( weekday_, 1, @"ok" );//should be saturday
 }
 
 //////////////////// FUTURE ////////////////////
@@ -122,10 +122,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2011-01-01", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-01-01", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 7, @"ok" );//should be sunday
+    XCTAssertEqual( weekday_, 7, @"ok" );//should be sunday
 }
 
 //December 2010
@@ -146,10 +146,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2011-01-02", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-01-02", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 1, @"ok" );//should be monday
+    XCTAssertEqual( weekday_, 1, @"ok" );//should be monday
 }
 
 //January 2011
@@ -169,10 +169,10 @@
 
     NSString* result_ = stringFromDate( date_ );
 
-    STAssertEqualObjects( result_, @"2011-01-08", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-01-08", @"ok" );
 
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 7, @"ok" );//should be sunday
+    XCTAssertEqual( weekday_, 7, @"ok" );//should be sunday
 }
 
 //December 2011
@@ -191,10 +191,10 @@
     
     NSString* result_ = stringFromDate( date_ );
     
-    STAssertEqualObjects( result_, @"2011-12-31", @"ok" );
+    XCTAssertEqualObjects( result_, @"2011-12-31", @"ok" );
     
     NSInteger weekday_ = weekdayFromDateString( result_, calendar_ );
-    STAssertEquals( weekday_, 7, @"ok" );//should be sunday
+    XCTAssertEqual( weekday_, 7, @"ok" );//should be sunday
 }
 
 @end

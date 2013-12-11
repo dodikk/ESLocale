@@ -1,9 +1,9 @@
 #import "ESLocaleFactory.h"
 #import "SqlLocalizedDateFormatter.h"
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface SqlFormatterTest : SenTestCase
+@interface SqlFormatterTest : XCTestCase
 
 @end
 
@@ -16,7 +16,7 @@
                                                                                   locale: @"en_US" ];    
     NSString* result_ = [ fmt_ getFormattedDate ];
     NSString* expected_ = @"2011-02";
-    STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+    XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
 }
 
 
@@ -28,7 +28,7 @@
                                                                                       locale: @"ru_RU" ];    
         NSString* result_ = [ fmt_ getFormattedDate ];
         NSString* expected_ = @"2011-01";
-        STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+        XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
     }
 
 
@@ -38,7 +38,7 @@
                                                                                       locale: @"ru_RU" ];    
         NSString* result_ = [ fmt_ getFormattedDate ];
         NSString* expected_ = @"2011-01";
-        STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+        XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
     }
 }
 
@@ -49,14 +49,14 @@
                                                                                   locale: @"ru_RU" ];    
     NSString* result_ = [ fmt_ getFormattedDate ];
     NSString* expected_ = @"2010-52";
-    STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+    XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
 }
 
 -(void)testFormatterRejectsInit
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-value"
-    STAssertThrows
+    XCTAssertThrows
     (
         [ [ SqlLocalizedDateFormatter alloc ] init ],
         @"Unexpected init"
@@ -72,19 +72,19 @@
     result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: nil
                                                           format: @"YYYY-ww"
                                                           locale: @"ru_RU" ];
-    STAssertNil( result_, @"nil input should not be valid" );
+    XCTAssertNil( result_, @"nil input should not be valid" );
     
     
     result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
                                                           format: nil
                                                           locale: @"ru_RU" ];
-    STAssertNil( result_, @"nil input should not be valid" );
+    XCTAssertNil( result_, @"nil input should not be valid" );
     
     
     result_ = [ [ SqlLocalizedDateFormatter alloc ] initWithDate: @"2011-01-02"
                                                           format: @"YYYY-ww"
                                                           locale: nil ];
-    STAssertNil( result_, @"nil input should not be valid" );
+    XCTAssertNil( result_, @"nil input should not be valid" );
 }
 
 @end

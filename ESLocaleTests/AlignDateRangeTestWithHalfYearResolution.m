@@ -1,4 +1,4 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 #import "testDateUtils.h"
 
@@ -6,7 +6,7 @@
 
 #import "NSCalendar+DateAlignment.h"
 
-@interface AlignDateRangeTestWithHalfYearResolution : SenTestCase
+@interface AlignDateRangeTestWithHalfYearResolution : XCTestCase
 @end
 
 @implementation AlignDateRangeTestWithHalfYearResolution
@@ -25,13 +25,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESHalfYearDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESHalfYearDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2010-01-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2011-06-30", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2010-01-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2011-06-30", @"ok" );
 }
 
 -(void)testAlignDates_Sep20_2011_Mar19_2012_toOneHalfYearResolution
@@ -46,13 +46,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESHalfYearDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESHalfYearDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
 }
 
 /////////////////// RESULT: QUARTER RESOLUTION ///////////////////
@@ -69,13 +69,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESQuarterDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2011-07-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
 }
 
 -(void)testAlignDates_Oct01_2011_Apr01_2012_toOneQuarterResolution
@@ -90,13 +90,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
     
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESQuarterDateResolution, resolution_, @"ok" );
     
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
     
-    STAssertEqualObjects( startDateStr_, @"2012-01-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-01-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-06-30", @"ok" );
 }
 
 -(void)testAlignDates_Sep20_2011_Mar31_2012_toQuarterResolution
@@ -111,13 +111,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESQuarterDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESQuarterDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2011-10-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-03-31", @"ok" );
 }
 
 //May 2012
@@ -139,13 +139,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESMonthDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESMonthDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2012-05-01", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-31", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-05-01", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-31", @"ok" );
 }
 
 /////////////////// RESULT: WEEK RESOLUTION ///////////////////
@@ -169,13 +169,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESWeekDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESWeekDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-04-29", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-26", @"ok" );
 }
 
 //May 2012
@@ -197,13 +197,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESWeekDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESWeekDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2012-05-13", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-19", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-05-13", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-19", @"ok" );
 }
 
 /////////////////// RESULT: SEVERAL DAYS ///////////////////
@@ -227,13 +227,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESDayDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESDayDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2012-05-14", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-17", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-05-14", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-17", @"ok" );
 }
 
 //May 2012
@@ -255,13 +255,13 @@
                                 toDate: &endDate_
                             resolution: resolution_ ];
 
-    STAssertEquals( ESDayDateResolution, resolution_, @"ok" );
+    XCTAssertEqual( ESDayDateResolution, resolution_, @"ok" );
 
     NSString* startDateStr_ = stringFromDate( startDate_ );
     NSString* endDateStr_   = stringFromDate( endDate_ );
 
-    STAssertEqualObjects( startDateStr_, @"2012-05-14", @"ok" );
-    STAssertEqualObjects( endDateStr_  , @"2012-05-14", @"ok" );
+    XCTAssertEqualObjects( startDateStr_, @"2012-05-14", @"ok" );
+    XCTAssertEqualObjects( endDateStr_  , @"2012-05-14", @"ok" );
 }
 
 @end

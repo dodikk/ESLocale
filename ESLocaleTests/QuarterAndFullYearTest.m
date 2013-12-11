@@ -2,9 +2,9 @@
 
 #import "testDateUtils.h"
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface QuarterAndFullYearTest : SenTestCase
+@interface QuarterAndFullYearTest : XCTestCase
 @end
 
 @implementation QuarterAndFullYearTest
@@ -21,7 +21,7 @@
 
     NSDate* date_ = dateFromString( @"2012-01-01" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q1 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q1 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testMarch31IsInFirstSeason
@@ -30,7 +30,7 @@
 
     NSDate* date_ = dateFromString( @"2012-03-31" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q1 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q1 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testApril1IsInSecondSeason
@@ -39,7 +39,7 @@
     
     NSDate* date_ = dateFromString( @"2012-04-01" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q2 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q2 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testJun30IsInSecondSeason
@@ -48,7 +48,7 @@
     
     NSDate* date_ = dateFromString( @"2011-06-30" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q2 2011" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q2 2011" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testJuly1IsInThirdSeason
@@ -57,7 +57,7 @@
     
     NSDate* date_ = dateFromString( @"2012-07-01" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q3 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q3 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testSep30IsInThirdSeason
@@ -66,7 +66,7 @@
     
     NSDate* date_ = dateFromString( @"2012-09-30" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q3 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q3 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testOct1IsInFourthSeason
@@ -75,7 +75,7 @@
     
     NSDate* date_ = dateFromString( @"2012-10-01" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q4 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q4 2012" ], @"H1 expected - %@", result_ );
 }
 
 -(void)testDec31IsInFourthSeason
@@ -84,7 +84,7 @@
 
     NSDate* date_ = dateFromString( @"2012-12-31" );
     result_ = [ [ SqlitePersistentDateFormatter instance ] getQuarterAndFullYearFromDate: date_ ];
-    STAssertTrue( [ result_ isEqualToString: @"Q4 2012" ], @"H1 expected - %@", result_ );
+    XCTAssertTrue( [ result_ isEqualToString: @"Q4 2012" ], @"H1 expected - %@", result_ );
 }
 
 @end

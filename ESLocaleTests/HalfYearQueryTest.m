@@ -2,9 +2,9 @@
 #include "SqliteFunctions.h"
 #include <sqlite3.h>
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface HalfYearQueryTest : SenTestCase
+@interface HalfYearQueryTest : XCTestCase
 @end
 
 @implementation HalfYearQueryTest
@@ -48,18 +48,18 @@
     
     [ SqlitePersistentDateFormatter freeInstance ];
     qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-    STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+    XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
     
     qResult_ = sqlite3_step( statement_ );
-    STAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
-    STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
+    XCTAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
+    XCTAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "H1 '11" ), @"raw answer mismatch" );
+    XCTAssertTrue( 0 == strcmp( (const char*)result_, "H1 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
-    STAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
+    XCTAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
     
     sqlite3_finalize( statement_ );
 }
@@ -75,18 +75,18 @@
     
     [ SqlitePersistentDateFormatter freeInstance ];
     qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-    STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+    XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
     
     qResult_ = sqlite3_step( statement_ );
-    STAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
-    STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
+    XCTAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
+    XCTAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
     
     result_ = sqlite3_column_text( statement_, 0 );
-    STAssertTrue( 0 == strcmp( (const char*)result_, "H2 '11" ), @"raw answer mismatch" );
+    XCTAssertTrue( 0 == strcmp( (const char*)result_, "H2 '11" ), @"raw answer mismatch" );
     
     
     qResult_ = sqlite3_step( statement_ );
-    STAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
+    XCTAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
     
     sqlite3_finalize( statement_ );
 }
@@ -104,10 +104,10 @@
         
         
         qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-        STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
         
         qResult_ = sqlite3_step( statement_ );
-        STAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
         
         sqlite3_finalize( statement_ );
     }
@@ -122,10 +122,10 @@
         
         
         qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-        STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
         
         qResult_ = sqlite3_step( statement_ );
-        STAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
         
         sqlite3_finalize( statement_ );
     }
@@ -145,18 +145,18 @@
         
         
         qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-        STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
         
         qResult_ = sqlite3_step( statement_ );
-        STAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
-        STAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
+        XCTAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );    
+        XCTAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
         
         result_ = sqlite3_column_text( statement_, 0 );
-        STAssertTrue( NULL == result_ , @"raw answer mismatch" );
+        XCTAssertTrue( NULL == result_ , @"raw answer mismatch" );
         
         
         qResult_ = sqlite3_step( statement_ );
-        STAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
+        XCTAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
         sqlite3_finalize( statement_ );
     }    
     
@@ -171,10 +171,10 @@
         [ SqlitePersistentDateFormatter instance ].validateLocale = YES;
         
         qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
-        STAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );    
         
         qResult_ = sqlite3_step( statement_ );
-        STAssertTrue( qResult_ == SQLITE_ERROR, @"error expected - %d", qResult_ );    
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"error expected - %d", qResult_ );    
 
         sqlite3_finalize( statement_ );
     }     

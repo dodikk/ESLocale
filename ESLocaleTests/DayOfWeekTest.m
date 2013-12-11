@@ -1,8 +1,8 @@
 #import "ESLocaleFactory.h"
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface DayOfWeekTest : SenTestCase
+@interface DayOfWeekTest : XCTestCase
 
 @end
 
@@ -15,7 +15,7 @@
 
    //(1 == Sunday and 7 == Saturday)
    // http://stackoverflow.com/questions/1106943/nscalendar-first-day-of-week
-   STAssertTrue( usCal_.firstWeekday == 1, @"US week should start on Sunday. %d", usCal_.firstWeekday ); 
+   XCTAssertTrue( usCal_.firstWeekday == 1, @"US week should start on Sunday. %d", usCal_.firstWeekday ); 
 }
 
 -(void)testRussianWeekStartsOnMonday
@@ -23,7 +23,7 @@
    NSLocale* ruLocale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"ru_RU" ];
    NSCalendar* ruCal_ = [ ESLocaleFactory gregorianCalendarWithLocale: ruLocale_ ];
    
-   STAssertTrue( ruCal_.firstWeekday == 2, @"US week should start on Monday. %d", ruCal_.firstWeekday ); 
+   XCTAssertTrue( ruCal_.firstWeekday == 2, @"US week should start on Monday. %d", ruCal_.firstWeekday ); 
 }
 
 -(void)test2011_01_02US
@@ -38,7 +38,7 @@
     
     NSString* result_ = [ df_ stringFromDate: date_ ];
     NSString* expected_ = @"2011-02";
-    STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+    XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
 }
 
 
@@ -73,7 +73,7 @@
         date_ = [ ansiFormatter_ dateFromString: @"2011-01-02" ];
         NSString* result_ = [ df_ stringFromDate: date_ ];
         NSString* expected_ = @"2011-01";
-        STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+        XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
     }
     
     
@@ -81,7 +81,7 @@
         date_ = [ ansiFormatter_ dateFromString: @"2010-12-30" ];
         NSString* result_ = [ df_ stringFromDate: date_ ];
         NSString* expected_ = @"2011-01";
-        STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+        XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
         
     }
 }
@@ -103,7 +103,7 @@
         date_ = [ ansiFormatter_ dateFromString: @"2010-12-26" ];
         NSString* result_ = [ df_ stringFromDate: date_ ];
         NSString* expected_ = @"2010-52";
-        STAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
+        XCTAssertTrue( [ result_ isEqualToString: expected_ ], @"Week mismatch. %@ != %@", result_, expected_ );
         
     }
 }
