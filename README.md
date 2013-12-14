@@ -4,11 +4,8 @@ This library contains helper classes to produce correctly formed NSLocale, NSDat
 Also it contains custom SQLite functions to perform localizef calendar computations in queries.
 
 ```
-
 Source Code License          : BSD
-
 Supplement materials license : AFL
-
 
 ```
 
