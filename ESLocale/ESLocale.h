@@ -4,6 +4,7 @@
 #import <ESLocale/StringLocalizer/ESStringLocalizer.h>
 #import <ESLocale/StringLocalizer/ESStringLocalizer_Apple.h>
 #import <ESLocale/StringLocalizer/ESDictionaryLocalizer.h>
+#import <ESLocale/StringLocalizer/ESStringLocalizerStub.h>
 
 #import <ESLocale/Calendar/NSDateComponents+Constants.h>
 

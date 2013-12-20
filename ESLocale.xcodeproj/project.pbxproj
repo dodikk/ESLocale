@@ -56,6 +56,8 @@
 		7E9F3CE2165BBC6D00014E37 /* ESDictionaryLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */; };
 		7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */; };
 		7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */; };
+		7EA623C41861DE00001DDA52 /* ESStringLocalizerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA623C21861DE00001DDA52 /* ESStringLocalizerStub.h */; };
+		7EA623C51861DE00001DDA52 /* ESStringLocalizerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA623C31861DE00001DDA52 /* ESStringLocalizerStub.m */; };
 		7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
 		7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
 		7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
@@ -141,6 +143,8 @@
 		7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDictionaryLocalizer.m; sourceTree = "<group>"; };
 		7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+Constants.h"; sourceTree = "<group>"; };
 		7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+Constants.m"; sourceTree = "<group>"; };
+		7EA623C21861DE00001DDA52 /* ESStringLocalizerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESStringLocalizerStub.h; sourceTree = "<group>"; };
+		7EA623C31861DE00001DDA52 /* ESStringLocalizerStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESStringLocalizerStub.m; sourceTree = "<group>"; };
 		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
 		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
 		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 				7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */,
 				7E9F3CDF165BBC6D00014E37 /* ESDictionaryLocalizer.h */,
 				7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */,
+				7EA623C21861DE00001DDA52 /* ESStringLocalizerStub.h */,
+				7EA623C31861DE00001DDA52 /* ESStringLocalizerStub.m */,
 			);
 			path = StringLocalizer;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */,
 				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
 				7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */,
+				7EA623C41861DE00001DDA52 /* ESStringLocalizerStub.h in Headers */,
 				7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */,
 				7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */,
 				1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */,
@@ -532,6 +539,7 @@
 				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
 				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */,
 				1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */,
+				7EA623C51861DE00001DDA52 /* ESStringLocalizerStub.m in Sources */,
 				1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */,
 				7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */,
 				1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */,
