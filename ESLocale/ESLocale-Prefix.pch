@@ -1,4 +1,13 @@
 
+#import <sqlite3.h>
+
+#ifdef __cplusplus
+    #include <algorithm>
+    #include <functional>
+    #include <cctype>
+    #include <locale>
+#endif
+
 #ifdef __OBJC__
    #import <Foundation/Foundation.h>
     #import <objc/message.h>
