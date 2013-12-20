@@ -133,7 +133,10 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
         return nil;
     }
 
-    NSDate* result_ = objc_msgSend( [ NSDate class ]
+    typedef NSDate* (*AlignMsgSendFunction)( id, SEL, BOOL, NSDate*, NSCalendar* );
+    static const AlignMsgSendFunction alignFunction = (AlignMsgSendFunction)objc_msgSend;
+    
+    NSDate* result_ = alignFunction( [ NSDate class ]
                                    , selector_
                                    , alignToFuture_
                                    , date_
@@ -258,7 +261,12 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
     size_t resolutionIndex_ = static_cast<size_t>( resolution_ );
     auto selector_ = getAddingDateComponentSelectors()[ resolutionIndex_ ];
 
-    NSDateComponents* components_ = objc_msgSend( [ NSDateComponents class ]
+    
+    typedef NSDateComponents* (*GetDateComponentsMsgSendFunction)( id, SEL, NSInteger );
+    static const GetDateComponentsMsgSendFunction GetDateComponents = (GetDateComponentsMsgSendFunction)objc_msgSend;
+    
+    
+    NSDateComponents* components_ = GetDateComponents( [ NSDateComponents class ]
                                                  , selector_
                                                  , intervals_ );
 

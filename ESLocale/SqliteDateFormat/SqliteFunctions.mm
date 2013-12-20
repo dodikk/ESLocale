@@ -4,16 +4,10 @@
 #import "SqlLocalizedDateFormatter.h"
 #import "SqlitePersistentDateFormatter.h"
 
-#include <algorithm>
-#include <functional>
-#include <cctype>
-#include <locale>
-
-#include <assert.h>
 
 void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_, int argc_, sqlite3_value** argv_ )
 {
-    assert( ctx_ );
+    NSCAssert( ctx_, @"invalid SQLite context" );
 
     @autoreleasepool 
     {
@@ -80,7 +74,7 @@ void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_, int argc_, sqlite3_va
 
 void ObjcFormatAnsiDateUsingLocale_v2( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_ )
 {
-    assert( ctx_ );
+    NSCAssert( ctx_, @"invalid SQLite context" );
     
     @autoreleasepool 
     {
@@ -157,7 +151,7 @@ void ObjcFormatAnsiDateUsingLocale_v2( sqlite3_context* ctx_,int argc_,sqlite3_v
 void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sqlite3_value** argv_, 
                                               SEL transformSelector_ )
 {
-    assert( ctx_ );
+    NSCAssert( ctx_, @"invalid SQLite context" );
     
     @autoreleasepool 
     {
@@ -209,7 +203,10 @@ void ObjcTransformDateUsingLocaleAndSelector( sqlite3_context* ctx_,int argc_,sq
                 return;
             }
 
-            result_ = objc_msgSend( fmt_, transformSelector_, strDate_ );
+            typedef NSString* (*TransformMsgSendFunction)( id, SEL, NSString* );
+            static const TransformMsgSendFunction transform = (TransformMsgSendFunction)objc_msgSend;
+            
+            result_ = transform( fmt_, transformSelector_, strDate_ );
         }
 
         if ( nil == result_ || [ result_ isEqualToString: @"" ] )
