@@ -75,3 +75,7 @@ russianFormatter.dateFormat = @"dd MM yyyy";
 ```
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dodikk/eslocale/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
