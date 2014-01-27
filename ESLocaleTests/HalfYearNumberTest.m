@@ -39,14 +39,14 @@
         result_ = [ SqlitePersistentDateFormatter halfYearForDate: nil
                                                     usingCalendar: [ NSCalendar currentCalendar ] ];
 
-        XCTAssertTrue( -1 == result_, @"valid error code expected - %d", result_ );
+        XCTAssertTrue( -1 == result_, @"valid error code expected - %@", @(result_) );
     }
 
     {
         result_ = [ SqlitePersistentDateFormatter halfYearForDate: [ NSDate new ]
                                                     usingCalendar: nil ];
 
-        XCTAssertTrue( -2 == result_, @"valid error code expected - %d", result_ );
+        XCTAssertTrue( -2 == result_, @"valid error code expected - %@", @(result_) );
     }
 }
 
