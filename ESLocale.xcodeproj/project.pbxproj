@@ -152,6 +152,7 @@
 		7EAF00251857180A00F66D6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsFactory.h; sourceTree = "<group>"; };
 		7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsFactory.m; sourceTree = "<group>"; };
+		7EC1925D188FF33800FA6E36 /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libXCode5gcovPatch.a; sourceTree = "<group>"; };
 		7ED0D587156023F70014BE2D /* DayOfWeekTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekTest.m; sourceTree = "<group>"; };
 		7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7ED3E57715400C1E008268CF /* libESLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libESLocale.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,6 +330,7 @@
 		7ED3E57915400C1E008268CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EC1925D188FF33800FA6E36 /* libXCode5gcovPatch.a */,
 				7EAF00251857180A00F66D6B /* XCTest.framework */,
 				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
 				7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */,
@@ -713,6 +715,10 @@
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/projects/lib-third-party/ESLocale",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -729,6 +735,10 @@
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/projects/lib-third-party/ESLocale",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -797,6 +807,15 @@
 				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/projects/lib-third-party/ESLocale",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-lXcode5gcovPatch",
+					"-L.",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Coverage;
