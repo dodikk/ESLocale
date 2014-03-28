@@ -1,7 +1,7 @@
 #import "SqlLocalizedDateFormatter.h"
 
 #import <ESLocale/ESLocaleFactory.h>
-#import <Foundation/Foundation.h>
+
 
 @implementation SqlLocalizedDateFormatter
 {
