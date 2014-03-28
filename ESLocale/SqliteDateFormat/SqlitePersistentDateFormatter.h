@@ -10,6 +10,10 @@
 @property ( nonatomic ) BOOL validateLocale ;
 @property ( nonatomic ) BOOL checkSameLocale;
 
+@property ( nonatomic, readonly ) NSDateFormatter* ansiFormatter  ;
+@property ( nonatomic, readonly ) NSDateFormatter* targetFormatter;
+
+
 -(BOOL)setFormat:( NSString* )dateFormat_
           locale:( NSString* )locale_;
 
