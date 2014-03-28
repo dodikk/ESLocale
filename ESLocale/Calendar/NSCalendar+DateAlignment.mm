@@ -3,8 +3,6 @@
 
 #import "ESLocaleFactory.h"
 
-#include <vector>
-
 typedef std::vector< SEL > ESDateComponentsSelectorsType;
 
 static const ESDateComponentsSelectorsType& getDateComponentSelectors()

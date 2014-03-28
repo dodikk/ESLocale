@@ -3,9 +3,11 @@
 
 #ifdef __cplusplus
     #include <algorithm>
+    #include <utility>
     #include <functional>
     #include <cctype>
     #include <locale>
+    #include <vector>
 #endif
 
 #ifdef __OBJC__
