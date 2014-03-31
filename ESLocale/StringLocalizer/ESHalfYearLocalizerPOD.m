@@ -1,7 +1,10 @@
 #import "ESHalfYearLocalizerPOD.h"
 
+#import "ESYearModeParser.h"
+
 @implementation ESHalfYearLocalizerPOD
 
+@dynamic shouldTruncateYear;
 
 -(instancetype)init
 {
@@ -24,6 +27,23 @@
     self->_yearTruncationMode      = yearTruncationMode;
     
     return self;
+}
+
+-(BOOL)shouldTruncateYear
+{
+    NSError* error = nil;
+    
+    ESYearMode result =
+    [ ESYearModeParser parseYearModeString: self->_yearTruncationMode
+                                     error: &error ];
+    
+    if ( ESYearModeUndefined == result )
+    {
+        NSLog( @"[!!!ERROR!!!] : invalud year mode [%@]", error );
+        NSAssert( NO, @"invalud year mode" );
+    }
+    
+    return ( ESYearModeShort == result );
 }
 
 #pragma mark -

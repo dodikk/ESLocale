@@ -10,7 +10,7 @@
 @property ( nonatomic, readonly ) NSString* formatForFirstHalfYear ;
 @property ( nonatomic, readonly ) NSString* formatForSecondHalfYear;
 @property ( nonatomic, readonly ) NSString* yearTruncationMode     ;
-
+@property ( nonatomic, readonly ) BOOL      shouldTruncateYear;
 
 
 +(instancetype)shortEnglishLocalizer;

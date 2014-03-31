@@ -46,4 +46,13 @@
 -(NSString*)yearTruncationMode;
 
 
+/**
+ "YES" if [ESHalfYearLocalizer yearTruncationMode] is "short".
+ "NO" if [ESHalfYearLocalizer yearTruncationMode] is "long".
+
+ Throws an exception for anything else.
+ */
+-(BOOL)shouldTruncateYear;
+
+
 @end
