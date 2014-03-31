@@ -1,11 +1,5 @@
+#import <ESLocale/SqliteDateFormat/SqlArgumentParsers/ESYearMode.h>
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM( NSInteger, ESYearMode )
-{
-    ESYearModeUndefined = -1,
-    ESYearModeShort     =  0,
-    ESYearModeLong
-};
 
 @interface ESYearModeParser : NSObject
 

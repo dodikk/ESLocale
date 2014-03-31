@@ -85,6 +85,8 @@
 		7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */; };
 		7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */; };
 		7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED61716155BBDA200DE6328 /* libc++.dylib */; };
+		7EE6A01018E9AB0B00828F1D /* ESTextHalfYearLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE6A00E18E9AB0A00828F1D /* ESTextHalfYearLocalizer.h */; };
+		7EE6A01118E9AB0B00828F1D /* ESTextHalfYearLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6A00F18E9AB0B00828F1D /* ESTextHalfYearLocalizer.m */; };
 		7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +190,9 @@
 		7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLocaleFactory.h; sourceTree = "<group>"; };
 		7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLocaleFactory.m; sourceTree = "<group>"; };
 		7ED61716155BBDA200DE6328 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7EE6A00E18E9AB0A00828F1D /* ESTextHalfYearLocalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextHalfYearLocalizer.h; sourceTree = "<group>"; };
+		7EE6A00F18E9AB0B00828F1D /* ESTextHalfYearLocalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTextHalfYearLocalizer.m; sourceTree = "<group>"; };
+		7EE6A01218E9AC4400828F1D /* ESYearMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESYearMode.h; sourceTree = "<group>"; };
 		7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest_V2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +287,7 @@
 				7E5DFBEC18E4623200EC3688 /* ESYearModeParser.m */,
 				7E5DFBEF18E4625D00EC3688 /* ESUnknownYearModeError.h */,
 				7E5DFBF018E4625D00EC3688 /* ESUnknownYearModeError.m */,
+				7EE6A01218E9AC4400828F1D /* ESYearMode.h */,
 			);
 			path = SqlArgumentParsers;
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 				7E98406718E5A85E005C0158 /* ESHalfYearLocalizer.h */,
 				7E98406818E5AA1A005C0158 /* ESHalfYearLocalizerPOD.h */,
 				7E98406918E5AA1A005C0158 /* ESHalfYearLocalizerPOD.m */,
+				7EE6A00E18E9AB0A00828F1D /* ESTextHalfYearLocalizer.h */,
+				7EE6A00F18E9AB0B00828F1D /* ESTextHalfYearLocalizer.m */,
 				7E9F3CD5165BBAAF00014E37 /* ESStringLocalizer.h */,
 				7E9F3CD7165BBAD100014E37 /* ESStringLocalizer_Apple.h */,
 				7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */,
@@ -469,6 +477,7 @@
 				7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */,
 				1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */,
 				7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */,
+				7EE6A01018E9AB0B00828F1D /* ESTextHalfYearLocalizer.h in Headers */,
 				7E9F3CD6165BBAAF00014E37 /* ESStringLocalizer.h in Headers */,
 				7E9F3CD9165BBAD100014E37 /* ESStringLocalizer_Apple.h in Headers */,
 				7E9F3CE1165BBC6D00014E37 /* ESDictionaryLocalizer.h in Headers */,
@@ -597,6 +606,7 @@
 				7E98406B18E5AA1A005C0158 /* ESHalfYearLocalizerPOD.m in Sources */,
 				7E2B9EE61670E0D500408A42 /* ESRangeToDatesConverter.mm in Sources */,
 				7E5DFBEE18E4623200EC3688 /* ESYearModeParser.m in Sources */,
+				7EE6A01118E9AB0B00828F1D /* ESTextHalfYearLocalizer.m in Sources */,
 				7E2B9EE81670E0D500408A42 /* ESDatesToRangeConverter.mm in Sources */,
 				7E015A471716A8E100F79665 /* ESNowDateMock.m in Sources */,
 				7E015ACC1716AB9300F79665 /* NSDate+ES_Now.m in Sources */,
