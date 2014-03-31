@@ -16,9 +16,12 @@
 
 
 #import <ESLocale/DatesConverter/ESHalfYearFormatter.h>
+#import <ESLocale/SqliteDateFormat/SqlArgumentParsers/ESYearMode.h>
 #import <ESLocale/SqliteDateFormat/SqlArgumentParsers/ESUnknownYearModeError.h>
 
 
+#import <ESLocale/StringLocalizer/ESTextHalfYearLocalizer.h>
 #import <ESLocale/StringLocalizer/ESHalfYearLocalizer.h>
 #import <ESLocale/StringLocalizer/ESHalfYearLocalizerPOD.h>
+
 
