@@ -32,29 +32,61 @@ Creates an instance of the gregorian calendar with "en_US_POSIX" locale.
 
 
 /**
+Creates an instance of NSDateFormatter class with [ESLocaleFactory gregorianCalendar] and [ESLocaleFactory posixLocale]
+
+@return An instance of NSDateFormatter.
 */
 +(NSDateFormatter*)posixDateFormatter;
 
+
 /**
+Creates an instance of NSDateFormatter class with [ESLocaleFactory gregorianCalendar] , [ESLocaleFactory posixLocale] and ANSI **date** format.
+
+Note : ANSI date format is "yyyy-MM-dd"
+
+@return An instance of NSDateFormatter.
 */
 +(NSDateFormatter*)ansiDateFormatter;
 
 
 /**
+Creates an instance of NSDateFormatter class with [ESLocaleFactory gregorianCalendar] , [ESLocaleFactory posixLocale] and ANSI **datetime** format.
+
+Note : ANSI date format is "yyyy-MM-dd HH:mm:ss"
+
+@return An instance of NSDateFormatter.
 */
 +(NSDateFormatter*)ansiDatetimeFormatter;
 
 
 /**
+Creates an instance of NSDateFormatter class with [ESLocaleFactory gregorianCalendar] , [ESLocaleFactory posixLocale] and ANSI **datetime** format. 
+
+Additionally to [ESLocaleFactory ansiDatetimeFormatter] it includes ticks.
+
+Note : ANSI date format is "yyyy-MM-dd HH:mm:ss.SSS"
+
+@return An instance of NSDateFormatter.
 */
 +(NSDateFormatter*)ansiTimestampFormatter;
 
+
 /**
+Creates a gregorian calendar and sets the locale with a corresponding identifier.
+
+@param localeIdentifier_ A string that will be passed to the [NSLocale initWithLocaleIdentifier:] constructor (designated initializer).
+
+@return An instance of NSCalendar.
 */
 +(NSCalendar*)gregorianCalendarWithLocaleId:( NSString* )localeIdentifier_;
 
 
 /**
+Creates a gregorian calendar and sets the corresponding locale.
+
+@param locale_ An instance of NSLocale class to set for the newly created NSCalendar object.
+
+@return An instance of NSCalendar.
 */
 +(NSCalendar*)gregorianCalendarWithLocale:( NSLocale* )locale_;
 
