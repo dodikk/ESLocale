@@ -1,10 +1,15 @@
 #import <Foundation/Foundation.h>
 
+
+/**
+A protocol to configure half year localization workflow.
+*/
 @protocol ESHalfYearLocalizer <NSObject>
 
 
 /**
- Only year should be parametrized.
+Format for the first half of the year.
+Only year should be parametrized.
  
  @"%@ 年 上半期"  --> @"2014 年 上半期"
  @"H1 '%@"      --> @"H1 '14"
@@ -24,6 +29,7 @@
 
 
 /**
+Format for the second half of the year.
  Only year should be parametrized.
  
   @"%@ 年 下半期"  --> @"2014 年 下半期"
@@ -44,13 +50,18 @@
 
 
 /**
- "short" or "long". 
- The value is case insensitive.
+Year truncation mode to use in SQL functions.
+The value is case insensitive.
+
+@return "short" or "long".
  */
 -(NSString*)yearTruncationMode;
 
 
 /**
+A boolean value for [ESHalfYearLocalizer yearTruncationMode]
+
+@return
  "YES" if [ESHalfYearLocalizer yearTruncationMode] is "short".
  "NO" if [ESHalfYearLocalizer yearTruncationMode] is "long".
 
@@ -60,3 +71,7 @@
 
 
 @end
+
+
+
+
