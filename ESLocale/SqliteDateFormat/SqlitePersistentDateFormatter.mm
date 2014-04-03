@@ -2,7 +2,6 @@
 
 #import "ESLocaleFactory.h"
 
-#include <utility>
 
 typedef std::pair<NSInteger, NSInteger> ESDateComponentsPair;
 typedef ESDateComponentsPair(^ESComponentsForDate)( NSDate* );

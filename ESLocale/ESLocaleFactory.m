@@ -4,7 +4,15 @@
 
 +(NSLocale*)posixLocale
 {
-    return [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    static NSLocale* result = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^void()
+    {
+        result = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    });
+
+    return result;
 }
 
 +(NSCalendar*)gregorianCalendar

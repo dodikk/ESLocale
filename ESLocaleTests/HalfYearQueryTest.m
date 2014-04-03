@@ -21,7 +21,7 @@
 
     sqlite3_open( [ dbPath_ cStringUsingEncoding: NSUTF8StringEncoding ] , &self->_db );
 
-    sqlite3_create_function( self->_db, "ObjcGetYearAndHalfYearUsingLocale", 2, 
+    sqlite3_create_function( self->_db, "ObjcGetYearAndHalfYearUsingLocale", 5,
                             SQLITE_UTF8, NULL, 
                             &ObjcGetYearAndHalfYearUsingLocale,
                             NULL, NULL );
@@ -42,7 +42,7 @@
     int qResult_ = 0;
     const unsigned char* result_ = NULL;
     
-    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-06-30', 'en_US' )";
+    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-06-30', 'en_US', 'H1 ''%@', 'H2 ''%@', 'short' )";
     
     sqlite3_stmt* statement_ = NULL;
     
@@ -64,12 +64,13 @@
     sqlite3_finalize( statement_ );
 }
 
+
 -(void)testJuly1
 {
     int qResult_ = 0;
     const unsigned char* result_ = NULL;
     
-    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-07-01', 'en_US' );";
+    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-07-01', 'en_US', 'H1 ''%@', 'H2 ''%@', 'short' );";
     
     sqlite3_stmt* statement_ = NULL;
     
@@ -92,6 +93,61 @@
 }
 
 
+-(void)testJune30_Japanese
+{
+    int qResult_ = 0;
+    const unsigned char* result_ = NULL;
+    
+    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-06-30', 'ja_JP', '%@ 年 上半期', '%@ 年 下半期', 'long' )";
+    
+    sqlite3_stmt* statement_ = NULL;
+    
+    [ SqlitePersistentDateFormatter freeInstance ];
+    qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+    XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+    
+    qResult_ = sqlite3_step( statement_ );
+    XCTAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );
+    XCTAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
+    
+    result_ = sqlite3_column_text( statement_, 0 );
+    XCTAssertTrue( 0 == strcmp( (const char*)result_, "2011 年 上半期" ), @"raw answer mismatch" );
+    
+    
+    qResult_ = sqlite3_step( statement_ );
+    XCTAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
+    
+    sqlite3_finalize( statement_ );
+}
+
+-(void)testJuly1_Japanese
+{
+    int qResult_ = 0;
+    const unsigned char* result_ = NULL;
+    
+    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-07-01', 'ja_JP', '%@ 年 上半期', '%@ 年 下半期', 'long' );";
+    
+    sqlite3_stmt* statement_ = NULL;
+    
+    [ SqlitePersistentDateFormatter freeInstance ];
+    qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+    XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+    
+    qResult_ = sqlite3_step( statement_ );
+    XCTAssertTrue( qResult_ == SQLITE_ROW, @"query must have only one record - %d", qResult_ );
+    XCTAssertTrue( 1 == sqlite3_column_count( statement_ ), @"column count mismatch" );
+    
+    result_ = sqlite3_column_text( statement_, 0 );
+    XCTAssertTrue( 0 == strcmp( (const char*)result_, "2011 年 下半期" ), @"raw answer mismatch" );
+    
+    
+    qResult_ = sqlite3_step( statement_ );
+    XCTAssertTrue( SQLITE_DONE == qResult_, @"query must have only one record" );
+    
+    sqlite3_finalize( statement_ );
+}
+
+
 -(void)testNullArgsResultInError
 {
     {
@@ -99,7 +155,7 @@
         sqlite3_stmt* statement_ = NULL;
         [ SqlitePersistentDateFormatter freeInstance ];
         
-        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( null, 'en_US' );";
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( null, 'en_US', 'H1 ''%@', 'H2 ''%@', 'short' );";
         
         
         
@@ -117,7 +173,7 @@
         sqlite3_stmt* statement_ = NULL;
         [ SqlitePersistentDateFormatter freeInstance ];
         
-        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', null );";
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', null, 'H1 ''%@', 'H2 ''%@', 'short' );";
         
         
         
@@ -129,8 +185,64 @@
         
         sqlite3_finalize( statement_ );
     }
+    
+    
+    {
+        int qResult_ = 0;
+        sqlite3_stmt* statement_ = NULL;
+        [ SqlitePersistentDateFormatter freeInstance ];
+        
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'en_US', null, 'H2 ''%@', 'short' );";
+        
+        
+        
+        qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+        
+        qResult_ = sqlite3_step( statement_ );
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
+        
+        sqlite3_finalize( statement_ );
+    }
+    
+    
+    {
+        int qResult_ = 0;
+        sqlite3_stmt* statement_ = NULL;
+        [ SqlitePersistentDateFormatter freeInstance ];
+        
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'en_US', 'H1 ''%@', null, 'short' );";
+        
+        
+        
+        qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+        
+        qResult_ = sqlite3_step( statement_ );
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
+        
+        sqlite3_finalize( statement_ );
+    }
+    
+    
+    {
+        int qResult_ = 0;
+        sqlite3_stmt* statement_ = NULL;
+        [ SqlitePersistentDateFormatter freeInstance ];
+        
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'en_US', 'H1 ''%@', 'H2 ''%@', null );";
+        
+        
+        
+        qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+        XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+        
+        qResult_ = sqlite3_step( statement_ );
+        XCTAssertTrue( qResult_ == SQLITE_ERROR, @"sqlite error expected - %d", qResult_ );
+        
+        sqlite3_finalize( statement_ );
+    }
 }
-
 
 -(void)testInvalidDataResultsInNull
 {   
@@ -140,7 +252,7 @@
         const unsigned char* result_ = NULL;
         [ SqlitePersistentDateFormatter freeInstance ];
         
-        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( 'date should have been here', 'en_US' );";
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( 'date should have been here', 'en_US', 'H1 ''%@', 'H2 ''%@', 'short' );";
         
         
         
@@ -165,7 +277,7 @@
         int qResult_ = 0;
         sqlite3_stmt* statement_ = NULL;       
 
-        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'locale should have been here' );";
+        const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'locale should have been here', 'H1 ''%@', 'H2 ''%@', 'short' );";
         
         [ SqlitePersistentDateFormatter freeInstance ];
         [ SqlitePersistentDateFormatter instance ].validateLocale = YES;
@@ -178,6 +290,25 @@
 
         sqlite3_finalize( statement_ );
     }     
+}
+
+-(void)testBadYearFormatLeadsToError
+{
+    int qResult_ = 0;
+    sqlite3_stmt* statement_ = NULL;
+    
+    const char* query_ = "SELECT ObjcGetYearAndHalfYearUsingLocale( '2011-01-02', 'en_US', 'H1 ''%@', 'H2 ''%@', 'avada kedavra!' );";
+    
+    [ SqlitePersistentDateFormatter freeInstance ];
+    [ SqlitePersistentDateFormatter instance ].validateLocale = YES;
+    
+    qResult_ = sqlite3_prepare( self->_db, query_, (int)strlen( (char*)query_ ), &statement_, NULL );
+    XCTAssertTrue( qResult_ == SQLITE_OK, @"unexpected sqlite3_prepare failure" );
+    
+    qResult_ = sqlite3_step( statement_ );
+    XCTAssertTrue( qResult_ == SQLITE_ERROR, @"error expected - %d", qResult_ );
+    
+    sqlite3_finalize( statement_ );
 }
 
 @end

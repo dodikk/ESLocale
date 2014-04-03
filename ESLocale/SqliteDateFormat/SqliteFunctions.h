@@ -54,6 +54,13 @@ EXTERN_BEGIN
     /**
      @param argv_[0] - Date in ANSI format "yyyy-MM-dd"
      @param argv_[1] - locale identifier "en_US"
+     @param argv_[2] - format string for first half year 
+     @param argv_[3] - format string for first half year 
+     @param argv_[4] - defines whether the year should be truncated
+     |short|long|
+     ------------
+     |'14  |2014|
+     
      
      @return sqlite3_result_text with formatted date 
      "H1 yyyy" 
