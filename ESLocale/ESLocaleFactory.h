@@ -93,6 +93,11 @@ Creates a gregorian calendar and sets the corresponding locale.
 
 
 /**
+Creates a properly configured instance of NSDateFormatter object with the gregorian calendar and a given NSLocale object.
+
+@param locale_ An instance of NSLocale class to set for the newly created NSCalendar object.
+
+@return An instance of NSDateFormatter.
 */
 +(NSDateFormatter*)gregorianDateFormatterWithLocale:( NSLocale* )locale_;
 
