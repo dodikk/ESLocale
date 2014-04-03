@@ -2,7 +2,7 @@
 
 
 /**
-This class implements the ESStringLocalizer protocol bu invoking the NSLocalizedString() macro.
+This class implements the ESStringLocalizer protocol by invoking the NSLocalizedString() macro.
 */
 @interface ESStringLocalizer_Apple : NSObject< ESStringLocalizer >
 
