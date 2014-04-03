@@ -1,8 +1,27 @@
 #import <ESLocale/StringLocalizer/ESHalfYearLocalizer.h>
 #import <Foundation/Foundation.h>
 
+
+/**
+A **plain old data** structure that implements the ESHalfYearLocalizer protocol.
+*/
 @interface ESHalfYearLocalizerPOD : NSObject<ESHalfYearLocalizer>
 
+/**
+Unsupported initializer. 
+*/
+-(instancetype)init;
+
+
+/**
+A designated initializer.
+
+@param
+@param
+@param
+
+@return
+*/
 -(instancetype)initWithFirstHalfFormat:( NSString* )firstHalfFormat
                       secondHalfFormat:( NSString* )secondHalfFormat
                     yearTruncationMode:( NSString* )yearTruncationMode;
@@ -17,3 +36,10 @@
 +(instancetype)longJapaneseLocalizer;
 
 @end
+
+
+
+
+
+
+
