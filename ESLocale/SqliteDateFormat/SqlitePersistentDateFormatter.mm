@@ -11,8 +11,10 @@ typedef std::pair<NSInteger, NSInteger> ESYearAndHalfYear;
 
 #define QUARTER_UNIT_DOES_NOT_WORK
 
+#ifndef QUARTER_UNIT_DOES_NOT_WORK
 static const NSInteger yearAndQuarterMask_ = NSQuarterCalendarUnit | 
                                              NSYearCalendarUnit    ;
+#endif
 
 static const NSInteger yearMonthMask_ = NSYearCalendarUnit  | 
                                         NSMonthCalendarUnit ;
