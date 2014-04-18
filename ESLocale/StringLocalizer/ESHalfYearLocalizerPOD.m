@@ -16,6 +16,10 @@
                       secondHalfFormat:( NSString* )secondHalfFormat
                     yearTruncationMode:( NSString* )yearTruncationMode
 {
+    NSParameterAssert( nil != firstHalfFormat    );
+    NSParameterAssert( nil != secondHalfFormat   );
+    NSParameterAssert( nil != yearTruncationMode );
+    
     self = [ super init ];
     if ( nil == self )
     {

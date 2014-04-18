@@ -15,16 +15,23 @@
 {
     [ super setUp ];
     
-    self->_englishFormatter =
-    [ [ ESHalfYearFormatter alloc ] initWithFirstHalfFormat: @"H1 '%@"
-                                           secondHalfFormat: @"H2 '%@"
-                                         shouldTruncateYear: YES ];
+    {
+        ESHalfYearLocalizerPOD* hYearConfigEn = [ ESHalfYearLocalizerPOD shortEnglishLocalizer ];
+        
+        self->_englishFormatter =
+        [ [ ESHalfYearFormatter alloc ] initWithFirstHalfFormat: hYearConfigEn.formatForFirstHalfYear
+                                               secondHalfFormat: hYearConfigEn.formatForSecondHalfYear
+                                             shouldTruncateYear: hYearConfigEn.shouldTruncateYear ];
+    }
 
-    
-    self->_japaneseFormatter =
-    [ [ ESHalfYearFormatter alloc ] initWithFirstHalfFormat: @"%@ 年 上半期"
-                                           secondHalfFormat: @"%@ 年 下半期"
-                                         shouldTruncateYear: NO ];
+    {
+        ESHalfYearLocalizerPOD* hYearConfigJa = [ ESHalfYearLocalizerPOD longJapaneseLocalizer ];
+        
+        self->_japaneseFormatter =
+        [ [ ESHalfYearFormatter alloc ] initWithFirstHalfFormat: hYearConfigJa.formatForFirstHalfYear
+                                               secondHalfFormat: hYearConfigJa.formatForSecondHalfYear
+                                             shouldTruncateYear: hYearConfigJa.shouldTruncateYear ];
+    }
 }
 
 -(void)tearDown
