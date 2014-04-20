@@ -3,6 +3,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+A pure C "Plain Old Data" structure for year and quarter.
+*/
 typedef struct ESYearAndQuarterPOD
 {
     NSInteger year;
@@ -10,6 +14,9 @@ typedef struct ESYearAndQuarterPOD
 } ESYearAndQuarterPOD;
 
 
+/**
+A pure C "Plain Old Data" structure for year and half year.
+*/
 typedef struct ESYearAndHalfYearPOD
 {
     NSInteger year;
@@ -17,3 +24,5 @@ typedef struct ESYearAndHalfYearPOD
 } ESYearAndHalfYearPOD;
 
 #endif
+
+
