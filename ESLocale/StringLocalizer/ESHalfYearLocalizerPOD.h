@@ -8,7 +8,9 @@ A **plain old data** structure that implements the ESHalfYearLocalizer protocol.
 @interface ESHalfYearLocalizerPOD : NSObject<ESHalfYearLocalizer>
 
 /**
-Unsupported initializer. 
+Unsupported initializer. Throws an exception.
+
+@return nil if asserts are disabled.
 */
 -(instancetype)init;
 
