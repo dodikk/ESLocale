@@ -3,6 +3,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+Resolution object to convert date to NSRange back and forth.
+Not using NSDateComponents since some units are non-standard and other ones are not needed
+*/
 enum ESDateResolutionEnum
 {
     ESDateResolutionUndefined = 0
@@ -16,3 +21,5 @@ enum ESDateResolutionEnum
 typedef NSInteger ESDateResolution;
 
 #endif //ESLocale_ESDateResolutionType_h
+
+
