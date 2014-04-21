@@ -33,6 +33,28 @@
 		7E015ACB1716AB9300F79665 /* NSDate+ES_Now.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */; };
 		7E015ACC1716AB9300F79665 /* NSDate+ES_Now.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */; };
 		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E2B23AC19055E7300D39904 /* NSDateComponents+DateAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */; };
+		7E2B23AD19055E7300D39904 /* NSDateComponents+AddingTimeIntervals.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */; };
+		7E2B23AE19055E7300D39904 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
+		7E2B23AF19055E7300D39904 /* NSDateComponents+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */; };
+		7E2B23B019055E7300D39904 /* ESHalfYearFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBE318E4505500EC3688 /* ESHalfYearFormatter.m */; };
+		7E2B23B119055E7300D39904 /* ESRangeToDatesConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */; };
+		7E2B23B219055E7300D39904 /* ESDatesToRangeConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */; };
+		7E2B23B319055E7300D39904 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
+		7E2B23B419055E7300D39904 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
+		7E2B23B519055E7300D39904 /* NSDate+ES_Now.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */; };
+		7E2B23B619055E7300D39904 /* ESNowDateMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015A451716A8E100F79665 /* ESNowDateMock.m */; };
+		7E2B23B719055E7300D39904 /* ESHalfYearLocalizerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98406918E5AA1A005C0158 /* ESHalfYearLocalizerPOD.m */; };
+		7E2B23B819055E7300D39904 /* ESTextHalfYearLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6A00F18E9AB0B00828F1D /* ESTextHalfYearLocalizer.m */; };
+		7E2B23B919055E7300D39904 /* ESStringLocalizer_Apple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3CD8165BBAD100014E37 /* ESStringLocalizer_Apple.m */; };
+		7E2B23BA19055E7300D39904 /* ESDictionaryLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F3CE0165BBC6D00014E37 /* ESDictionaryLocalizer.m */; };
+		7E2B23BB19055E7300D39904 /* ESStringLocalizerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA623C31861DE00001DDA52 /* ESStringLocalizerStub.m */; };
+		7E2B23BC19055E7300D39904 /* ESYearModeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBEC18E4623200EC3688 /* ESYearModeParser.m */; };
+		7E2B23BD19055E7300D39904 /* ESUnknownYearModeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBF018E4625D00EC3688 /* ESUnknownYearModeError.m */; };
+		7E2B23BE19055E7300D39904 /* SqliteFunctions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.mm */; };
+		7E2B23BF19055E7300D39904 /* SqlLocalizedDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */; };
+		7E2B23C019055E7300D39904 /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
+		7E2B23C119055E7300D39904 /* ESLocaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */; };
 		7E2B9EE51670E0D500408A42 /* ESRangeToDatesConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */; };
 		7E2B9EE61670E0D500408A42 /* ESRangeToDatesConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */; };
 		7E2B9EE71670E0D500408A42 /* ESDatesToRangeConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */; };
@@ -78,6 +100,25 @@
 		7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
 		7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
 		7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7ED0E30E19055ACE008F4702 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
+		7ED0E31419055ACE008F4702 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED0E31219055ACE008F4702 /* InfoPlist.strings */; };
+		7ED0E33319055B6F008F4702 /* ESDateResolutionType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33419055B6F008F4702 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33519055B6F008F4702 /* NSDateComponents+Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33619055B6F008F4702 /* ESHalfYearFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5DFBE218E4505500EC3688 /* ESHalfYearFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33719055B6F008F4702 /* ESRangeToDatesConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33819055B6F008F4702 /* ESDatesToRangeConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33919055B6F008F4702 /* NSDate+ES_Now.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33A19055B6F008F4702 /* ESNowDateMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E015A441716A8E100F79665 /* ESNowDateMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33B19055B6F008F4702 /* ESYearModeParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5DFBEB18E4623200EC3688 /* ESYearModeParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33C19055B6F008F4702 /* ESUnknownYearModeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5DFBEF18E4625D00EC3688 /* ESUnknownYearModeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33D19055B6F008F4702 /* ESYearMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE6A01218E9AC4400828F1D /* ESYearMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33E19055B6F008F4702 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E33F19055B6F008F4702 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E34019055B6F008F4702 /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E34119055B6F008F4702 /* ESDateComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3EE0F1176B47F100798A2E /* ESDateComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E34219055B6F008F4702 /* ESLocale.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED3E57F15400C1E008268CF /* ESLocale.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED0E34319055B6F008F4702 /* ESLocaleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
 		7ED3E58F15400C1E008268CF /* libESLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57715400C1E008268CF /* libESLocale.a */; };
@@ -131,6 +172,7 @@
 		7E015AC91716AB9300F79665 /* NSDate+ES_Now.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ES_Now.h"; sourceTree = "<group>"; };
 		7E015ACA1716AB9300F79665 /* NSDate+ES_Now.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ES_Now.m"; sourceTree = "<group>"; };
 		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E2B23AA19055DD900D39904 /* StubFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StubFile.c; sourceTree = "<group>"; };
 		7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRangeToDatesConverter.h; sourceTree = "<group>"; };
 		7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESRangeToDatesConverter.mm; sourceTree = "<group>"; };
 		7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesToRangeConverter.h; sourceTree = "<group>"; };
@@ -180,6 +222,8 @@
 		7EC1925D188FF33800FA6E36 /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libXCode5gcovPatch.a; sourceTree = "<group>"; };
 		7ED0D587156023F70014BE2D /* DayOfWeekTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekTest.m; sourceTree = "<group>"; };
 		7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7ED0E31119055ACE008F4702 /* ESLocale-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ESLocale-Framework-Info.plist"; sourceTree = "<group>"; };
+		7ED0E31319055ACE008F4702 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7ED3E57715400C1E008268CF /* libESLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libESLocale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED3E57A15400C1E008268CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7ED3E57E15400C1E008268CF /* ESLocale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESLocale-Prefix.pch"; sourceTree = "<group>"; };
@@ -199,6 +243,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7ED0E30919055ACE008F4702 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED0E30E19055ACE008F4702 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ED3E57415400C1E008268CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,12 +406,31 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		7ED0E30F19055ACE008F4702 /* ESLocale-Framework */ = {
+			isa = PBXGroup;
+			children = (
+				7ED0E31019055ACE008F4702 /* Supporting Files */,
+				7E2B23AA19055DD900D39904 /* StubFile.c */,
+			);
+			path = "ESLocale-Framework";
+			sourceTree = "<group>";
+		};
+		7ED0E31019055ACE008F4702 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED0E31119055ACE008F4702 /* ESLocale-Framework-Info.plist */,
+				7ED0E31219055ACE008F4702 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7ED3E56C15400C1E008268CF = {
 			isa = PBXGroup;
 			children = (
 				7ED3E57C15400C1E008268CF /* ESLocale */,
 				7ED3E59015400C1E008268CF /* ESLocaleTests */,
 				7E92BE6A15611E9D0088E369 /* TestData */,
+				7ED0E30F19055ACE008F4702 /* ESLocale-Framework */,
 				7ED3E57915400C1E008268CF /* Frameworks */,
 				7ED3E57815400C1E008268CF /* Products */,
 				7ED3E5B615400C8F008268CF /* ESLocaleTests copy-Info.plist */,
@@ -462,6 +533,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7ED0E30A19055ACE008F4702 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED0E33319055B6F008F4702 /* ESDateResolutionType.h in Headers */,
+				7ED0E33419055B6F008F4702 /* NSCalendar+DateAlignment.h in Headers */,
+				7ED0E33519055B6F008F4702 /* NSDateComponents+Constants.h in Headers */,
+				7ED0E33619055B6F008F4702 /* ESHalfYearFormatter.h in Headers */,
+				7ED0E33719055B6F008F4702 /* ESRangeToDatesConverter.h in Headers */,
+				7ED0E33819055B6F008F4702 /* ESDatesToRangeConverter.h in Headers */,
+				7ED0E33919055B6F008F4702 /* NSDate+ES_Now.h in Headers */,
+				7ED0E33A19055B6F008F4702 /* ESNowDateMock.h in Headers */,
+				7ED0E33B19055B6F008F4702 /* ESYearModeParser.h in Headers */,
+				7ED0E33C19055B6F008F4702 /* ESUnknownYearModeError.h in Headers */,
+				7ED0E33D19055B6F008F4702 /* ESYearMode.h in Headers */,
+				7ED0E33E19055B6F008F4702 /* SqliteFunctions.h in Headers */,
+				7ED0E33F19055B6F008F4702 /* SqlLocalizedDateFormatter.h in Headers */,
+				7ED0E34019055B6F008F4702 /* SqlitePersistentDateFormatter.h in Headers */,
+				7ED0E34119055B6F008F4702 /* ESDateComponents.h in Headers */,
+				7ED0E34219055B6F008F4702 /* ESLocale.h in Headers */,
+				7ED0E34319055B6F008F4702 /* ESLocaleFactory.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ED3E57515400C1E008268CF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +590,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7ED0E30D19055ACE008F4702 /* ESLocale-Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED0E31C19055ACE008F4702 /* Build configuration list for PBXNativeTarget "ESLocale-Framework" */;
+			buildPhases = (
+				7ED0E30819055ACE008F4702 /* Sources */,
+				7ED0E30919055ACE008F4702 /* Frameworks */,
+				7ED0E30A19055ACE008F4702 /* Headers */,
+				7ED0E30B19055ACE008F4702 /* Resources */,
+				7ED0E30C19055ACE008F4702 /* Fix Headers */,
+				7E11788519056693003EA628 /* Build Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ESLocale-Framework";
+			productName = "ESLocale-Framework";
+			productType = "com.apple.product-type.framework.static";
+		};
 		7ED3E57615400C1E008268CF /* ESLocale */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7ED3E59B15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocale" */;
@@ -554,11 +668,20 @@
 			targets = (
 				7ED3E57615400C1E008268CF /* ESLocale */,
 				7ED3E58615400C1E008268CF /* ESLocaleTests */,
+				7ED0E30D19055ACE008F4702 /* ESLocale-Framework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7ED0E30B19055ACE008F4702 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED0E31419055ACE008F4702 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ED3E58415400C1E008268CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,6 +694,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7E11788519056693003EA628 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\necho \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n";
+		};
+		7ED0E30C19055ACE008F4702 /* Fix Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fix Headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "INLINED_PYHON_SCRIPT=\"import sys; import os.path; headerPathFromFind = sys.argv[2]; srcRoot = sys.argv[1]; headerPathFromFindWithoutFilename = os.path.dirname( headerPathFromFind ); relatedPathForDirectory = os.path.relpath( headerPathFromFindWithoutFilename, srcRoot ); print( relatedPathForDirectory );\"\n\n\nFIXED_SRC_ROOT=$SRCROOT\n\n# echo \"====SRCROOT : $SRCROOT=======\"\n# echo \"====FIXED_SRC_ROOT : $FIXED_SRC_ROOT=======\"\n\nHEADERS_ROOT=$FIXED_SRC_ROOT/ESLocale\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$( ls -1 \"$FRAMEWORK_HEADERS_DIR\" )\n\n\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n\nFIND_RESULT=$( find \"$HEADERS_ROOT\" -name \"$PUBLIC_HEADER\" )\nRELATIVE_PATH=$( python -c \"$INLINED_PYHON_SCRIPT\" \"$HEADERS_ROOT\" \"$FIND_RESULT\" )\n\nmkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\nmv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\ndone\n";
+			showEnvVarsInLog = 0;
+		};
 		7ED3E58515400C1E008268CF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,6 +739,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7ED0E30819055ACE008F4702 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E2B23AC19055E7300D39904 /* NSDateComponents+DateAlignment.m in Sources */,
+				7E2B23AD19055E7300D39904 /* NSDateComponents+AddingTimeIntervals.m in Sources */,
+				7E2B23AE19055E7300D39904 /* NSCalendar+DateAlignment.mm in Sources */,
+				7E2B23AF19055E7300D39904 /* NSDateComponents+Constants.m in Sources */,
+				7E2B23B019055E7300D39904 /* ESHalfYearFormatter.m in Sources */,
+				7E2B23B119055E7300D39904 /* ESRangeToDatesConverter.mm in Sources */,
+				7E2B23B219055E7300D39904 /* ESDatesToRangeConverter.mm in Sources */,
+				7E2B23B319055E7300D39904 /* NSDateComponentsFactory.m in Sources */,
+				7E2B23B419055E7300D39904 /* NSDateFormatter+MultiThreading.m in Sources */,
+				7E2B23B519055E7300D39904 /* NSDate+ES_Now.m in Sources */,
+				7E2B23B619055E7300D39904 /* ESNowDateMock.m in Sources */,
+				7E2B23B719055E7300D39904 /* ESHalfYearLocalizerPOD.m in Sources */,
+				7E2B23B819055E7300D39904 /* ESTextHalfYearLocalizer.m in Sources */,
+				7E2B23B919055E7300D39904 /* ESStringLocalizer_Apple.m in Sources */,
+				7E2B23BA19055E7300D39904 /* ESDictionaryLocalizer.m in Sources */,
+				7E2B23BB19055E7300D39904 /* ESStringLocalizerStub.m in Sources */,
+				7E2B23BC19055E7300D39904 /* ESYearModeParser.m in Sources */,
+				7E2B23BD19055E7300D39904 /* ESUnknownYearModeError.m in Sources */,
+				7E2B23BE19055E7300D39904 /* SqliteFunctions.mm in Sources */,
+				7E2B23BF19055E7300D39904 /* SqlLocalizedDateFormatter.m in Sources */,
+				7E2B23C019055E7300D39904 /* SqlitePersistentDateFormatter.mm in Sources */,
+				7E2B23C119055E7300D39904 /* ESLocaleFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ED3E57315400C1E008268CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -662,6 +843,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7ED0E31219055ACE008F4702 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED0E31319055ACE008F4702 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		7ED3E59315400C1E008268CF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -673,6 +862,99 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7ED0E31919055ACE008F4702 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "ESLocale-Framework/ESLocale-Framework-Info.plist";
+				PRODUCT_NAME = ESLocale;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		7ED0E31A19055ACE008F4702 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "ESLocale-Framework/ESLocale-Framework-Info.plist";
+				PRODUCT_NAME = ESLocale;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Coverage;
+		};
+		7ED0E31B19055ACE008F4702 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "ESLocale-Framework/ESLocale-Framework-Info.plist";
+				PRODUCT_NAME = ESLocale;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		7ED3E59915400C1E008268CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -914,6 +1196,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7ED0E31C19055ACE008F4702 /* Build configuration list for PBXNativeTarget "ESLocale-Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED0E31919055ACE008F4702 /* Debug */,
+				7ED0E31A19055ACE008F4702 /* Coverage */,
+				7ED0E31B19055ACE008F4702 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7ED3E57115400C1E008268CF /* Build configuration list for PBXProject "ESLocale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

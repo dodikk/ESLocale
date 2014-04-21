@@ -115,19 +115,6 @@ Warning : the format is **hard coded**
 
 
 /**
-Applies quarter and **short year** formatting.
-For example, "Q4 '14"
-
-Warning : the format is **hard coded**
-
-@param strDate_ A date in ANSI format.
-
-@return A formatted date.
-*/
--(NSString*)getYearAndQuarter:( NSString* )strDate_;  //throw()
-
-
-/**
 Applies half year and **long year** formatting.
 For example, "H2 '2014"
 

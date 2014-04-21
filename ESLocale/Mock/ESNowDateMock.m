@@ -1,6 +1,7 @@
 #import "ESNowDateMock.h"
 
 #import "ESLocaleFactory.h"
+#import "NSDate+ES_Now.h"
 
 static NSString* MOCK_ANSI_DATE = nil;
 static NSDate* MOCK_ANSI_DATE_DATETYPE = nil;
