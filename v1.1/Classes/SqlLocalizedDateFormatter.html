@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ESDictionaryLocalizer Class Reference</title>
+		<title>SqlLocalizedDateFormatter Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ESDictionaryLocalizer Class Reference</h1>
+				<h1 class="hideInXcode">SqlLocalizedDateFormatter Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,11 +43,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	<option value="//api/name/getFormattedDate">&nbsp;&nbsp;&nbsp;&nbsp;- getFormattedDate</option>
 	
-	<option value="//api/name/initWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDictionary:</option>
-	
-	<option value="//api/name/localizedStringForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- localizedStringForKey:</option>
+	<option value="//api/name/initWithDate:format:locale:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDate:format:locale:</option>
 	
 	
 	
@@ -77,11 +75,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getFormattedDate">getFormattedDate</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDictionary:">initWithDictionary:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localizedStringForKey:">localizedStringForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDate:format:locale:">initWithDate:format:locale:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ESDictionaryLocalizer Class Reference" name="top"></a>
+				<a title="SqlLocalizedDateFormatter Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ESDictionaryLocalizer Class Reference</h1>
+						<h1 class="title title-header">SqlLocalizedDateFormatter Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -109,11 +105,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ESDictionaryLocalizer.h<br />ESDictionaryLocalizer.m</td>
+	<td class="specification-value">SqlLocalizedDateFormatter.h<br />SqlLocalizedDateFormatter.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -123,7 +116,10 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class implements the <a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a> protocol by searching the value in the given dictionary.</p>
+						<p>A class that ensures correct conversion of the ANSI date format to any given format.
+The locale is used to convert the target date.</p>
+
+<p>This class implements the &ldquo;command&rdquo; pattern and caches its results.</p>
 					</div>
 					
 					
@@ -141,19 +137,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+		<code><a href="#//api/name/initWithDate:format:locale:">&ndash;&nbsp;initWithDate:format:locale:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/localizedStringForKey:">&ndash;&nbsp;localizedStringForKey:</a></code>
+		<code><a href="#//api/name/getFormattedDate">&ndash;&nbsp;getFormattedDate</a></code>
 	</span>
 	
 	
@@ -175,18 +165,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
+	<a name="//api/name/getFormattedDate" title="getFormattedDate"></a>
+	<h3 class="subsubtitle method-title">getFormattedDate</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializer not supported. Throws an exception when invoked.</p>
+		<p>Returns a formatted date.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)getFormattedDate</code></div>
 
     
 	
@@ -194,7 +184,8 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>nil. It should not return unless assertions are disabled.</p>
+		<p>A string of a date in the given format.
+Note : If localeIdentifier_ is invalid then &ldquo;nil&rdquo; is returned.</p>
 	</div>
 	
 	
@@ -209,25 +200,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">SqlLocalizedDateFormatter.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="subsubtitle method-title">initWithDictionary:</h3>
+	<a name="//api/name/initWithDate:format:locale:" title="initWithDate:format:locale:"></a>
+	<h3 class="subsubtitle method-title">initWithDate:format:locale:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A designated initializer.</p>
+		<p>Creates an instance of the formatter object and populates it with parameters for lazy evaluation.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithDictionary:(NSDictionary *)<em>rawLocalization_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithDate:(NSString *)<em>strDate_</em> format:(NSString *)<em>format_</em> locale:(NSString *)<em>localeIdentifier_</em></code></div>
 
     
 	
@@ -235,8 +226,19 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>rawLocalization_</em></dt>
-			<dd><p>A dictionary for mock localized strings lookup.</p></dd>
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date string in ANSI format : &ldquo;yyyy-MM-dd&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>format_</em></dt>
+			<dd><p>A target format</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>localeIdentifier_</em></dt>
+			<dd><p>an identifier of the target locale for formatting.
+Note : The &ldquo;en_US_POSIX&rdquo; locale will be used to convert &ldquo;strDate_&rdquo; from NSString to NSDate</p></dd>
 		</dl>
 		
 	</div>
@@ -245,7 +247,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The localizer object.</p>
+		<p>SqlLocalizedDateFormatter instance.</p>
 	</div>
 	
 	
@@ -260,58 +262,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/localizedStringForKey:" title="localizedStringForKey:"></a>
-	<h3 class="subsubtitle method-title">localizedStringForKey:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Finds the localized value for the given key in the dictionary specified in <a href="#//api/name/initWithDictionary:">[ESDictionaryLocalizer initWithDictionary:]</a></p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)localizedStringForKey:(NSString *)<em>key_</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key_</em></dt>
-			<dd><p>A localization key string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>rawLocalization<em>[key</em>]</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">SqlLocalizedDateFormatter.h</code><br />
 	</div>				
 	
 	

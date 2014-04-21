@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ESDictionaryLocalizer Class Reference</title>
+		<title>ESNowDateMock Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ESDictionaryLocalizer Class Reference</h1>
+				<h1 class="hideInXcode">ESNowDateMock Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,11 +43,13 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	<option value="//api/name/disableMock">&nbsp;&nbsp;&nbsp;&nbsp;- disableMock</option>
 	
-	<option value="//api/name/initWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDictionary:</option>
+	<option value="//api/name/enableMock">&nbsp;&nbsp;&nbsp;&nbsp;- enableMock</option>
 	
-	<option value="//api/name/localizedStringForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- localizedStringForKey:</option>
+	<option value="//api/name/initWithAnsiDate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAnsiDate:</option>
+	
+	<option value="//api/name/initWithAnsiDateString:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAnsiDateString:</option>
 	
 	
 	
@@ -77,11 +79,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableMock">disableMock</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDictionary:">initWithDictionary:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableMock">enableMock</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localizedStringForKey:">localizedStringForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAnsiDate:">initWithAnsiDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAnsiDateString:">initWithAnsiDateString:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +94,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ESDictionaryLocalizer Class Reference" name="top"></a>
+				<a title="ESNowDateMock Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +103,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ESDictionaryLocalizer Class Reference</h1>
+						<h1 class="title title-header">ESNowDateMock Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -109,11 +113,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ESDictionaryLocalizer.h<br />ESDictionaryLocalizer.m</td>
+	<td class="specification-value">ESNowDateMock.h<br />ESNowDateMock.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -123,7 +124,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class implements the <a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a> protocol by searching the value in the given dictionary.</p>
+						<p>A class to safely mock the [NSDate nowDate] method in unit tests.</p>
 					</div>
 					
 					
@@ -141,19 +142,25 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+		<code><a href="#//api/name/initWithAnsiDateString:">&ndash;&nbsp;initWithAnsiDateString:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+		<code><a href="#//api/name/initWithAnsiDate:">&ndash;&nbsp;initWithAnsiDate:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/localizedStringForKey:">&ndash;&nbsp;localizedStringForKey:</a></code>
+		<code><a href="#//api/name/enableMock">&ndash;&nbsp;enableMock</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableMock">&ndash;&nbsp;disableMock</a></code>
 	</span>
 	
 	
@@ -175,27 +182,23 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
+	<a name="//api/name/disableMock" title="disableMock"></a>
+	<h3 class="subsubtitle method-title">disableMock</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializer not supported. Throws an exception when invoked.</p>
+		<p>Removes the swizzling.
+Note : Safe to invoke multiple times.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)disableMock</code></div>
 
     
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>nil. It should not return unless assertions are disabled.</p>
-	</div>
 	
 	
 	
@@ -209,25 +212,62 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESNowDateMock.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="subsubtitle method-title">initWithDictionary:</h3>
+	<a name="//api/name/enableMock" title="enableMock"></a>
+	<h3 class="subsubtitle method-title">enableMock</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A designated initializer.</p>
+		<p>Activates the mock.
+Note : Safe to invoke multiple times.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithDictionary:(NSDictionary *)<em>rawLocalization_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)enableMock</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESNowDateMock.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAnsiDate:" title="initWithAnsiDate:"></a>
+	<h3 class="subsubtitle method-title">initWithAnsiDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs the mock that will always return the specified date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAnsiDate:(NSDate *)<em>date_</em></code></div>
 
     
 	
@@ -235,8 +275,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>rawLocalization_</em></dt>
-			<dd><p>A dictionary for mock localized strings lookup.</p></dd>
+			<dt><em>date_</em></dt>
+			<dd><p>A date to return in the [NSDate nowDate] method.</p></dd>
 		</dl>
 		
 	</div>
@@ -245,7 +285,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The localizer object.</p>
+		<p>A properly initialized mock object.</p>
 	</div>
 	
 	
@@ -260,25 +300,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESNowDateMock.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/localizedStringForKey:" title="localizedStringForKey:"></a>
-	<h3 class="subsubtitle method-title">localizedStringForKey:</h3>
+	<a name="//api/name/initWithAnsiDateString:" title="initWithAnsiDateString:"></a>
+	<h3 class="subsubtitle method-title">initWithAnsiDateString:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Finds the localized value for the given key in the dictionary specified in <a href="#//api/name/initWithDictionary:">[ESDictionaryLocalizer initWithDictionary:]</a></p>
+		<p>Constructs the mock that will always return the specified date.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSString *)localizedStringForKey:(NSString *)<em>key_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithAnsiDateString:(NSString *)<em>dateStr_</em></code></div>
 
     
 	
@@ -286,8 +326,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key_</em></dt>
-			<dd><p>A localization key string.</p></dd>
+			<dt><em>dateStr_</em></dt>
+			<dd><p>An ANSI formatted date to return in the [NSDate nowDate] method.</p></dd>
 		</dl>
 		
 	</div>
@@ -296,7 +336,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>rawLocalization<em>[key</em>]</p>
+		<p>A properly initialized mock object.</p>
 	</div>
 	
 	
@@ -311,7 +351,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESNowDateMock.h</code><br />
 	</div>				
 	
 	

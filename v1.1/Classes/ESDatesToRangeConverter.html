@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ESDictionaryLocalizer Class Reference</title>
+		<title>ESDatesToRangeConverter Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ESDictionaryLocalizer Class Reference</h1>
+				<h1 class="hideInXcode">ESDatesToRangeConverter Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,17 +37,24 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/endDate">&nbsp;&nbsp;&nbsp;&nbsp;endDate</option>
+	
+	<option value="//api/name/resolution">&nbsp;&nbsp;&nbsp;&nbsp;resolution</option>
+	
+	<option value="//api/name/startDate">&nbsp;&nbsp;&nbsp;&nbsp;startDate</option>
+	
+	
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	<option value="//api/name/getTimelineRange">&nbsp;&nbsp;&nbsp;&nbsp;- getTimelineRange</option>
 	
-	<option value="//api/name/initWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDictionary:</option>
-	
-	<option value="//api/name/localizedStringForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- localizedStringForKey:</option>
+	<option value="//api/name/initWithTimelineStartDate:timelineEndDate:locale:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTimelineStartDate:timelineEndDate:locale:</option>
 	
 	
 	
@@ -71,17 +78,25 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endDate">endDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resolution">resolution</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startDate">startDate</a></span></li>
+	
+</ul></li>
+
 
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTimelineRange">getTimelineRange</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDictionary:">initWithDictionary:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localizedStringForKey:">localizedStringForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTimelineStartDate:timelineEndDate:locale:">initWithTimelineStartDate:timelineEndDate:locale:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +105,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ESDictionaryLocalizer Class Reference" name="top"></a>
+				<a title="ESDatesToRangeConverter Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +114,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ESDictionaryLocalizer Class Reference</h1>
+						<h1 class="title title-header">ESDatesToRangeConverter Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -109,11 +124,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ESDictionaryLocalizer.h<br />ESDictionaryLocalizer.m</td>
+	<td class="specification-value">ESDatesToRangeConverter.h<br />ESDatesToRangeConverter.mm</td>
 </tr>
 						</tbody></table></div>
 					
@@ -123,7 +135,21 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class implements the <a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a> protocol by searching the value in the given dictionary.</p>
+						<p>A class to convert the date to NSRange. It can be useful to build timeline selection GUI components.</p>
+
+<p>It supports the following resolutions</p>
+
+<ul>
+<li>day</li>
+<li>week</li>
+<li>month</li>
+<li>quarter</li>
+<li>half year</li>
+<li>year</li>
+</ul>
+
+
+<p>Note : The dates must be aligned to a given <a href="#//api/name/resolution">resolution</a></p>
 					</div>
 					
 					
@@ -141,19 +167,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+		<code><a href="#//api/name/initWithTimelineStartDate:timelineEndDate:locale:">&ndash;&nbsp;initWithTimelineStartDate:timelineEndDate:locale:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+		<code><a href="#//api/name/startDate">&nbsp;&nbsp;startDate</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/localizedStringForKey:">&ndash;&nbsp;localizedStringForKey:</a></code>
+		<code><a href="#//api/name/endDate">&nbsp;&nbsp;endDate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resolution">&nbsp;&nbsp;resolution</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTimelineRange">&ndash;&nbsp;getTimelineRange</a></code>
 	</span>
 	
 	
@@ -166,6 +204,120 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/endDate" title="endDate"></a>
+	<h3 class="subsubtitle method-title">endDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An end date of the selected timeline range.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSDate *endDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESDatesToRangeConverter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resolution" title="resolution"></a>
+	<h3 class="subsubtitle method-title">resolution</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Resolution to scale dates against.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) ESDateResolution resolution</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESDatesToRangeConverter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startDate" title="startDate"></a>
+	<h3 class="subsubtitle method-title">startDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A start date of the selected timeline range.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSDate *startDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESDatesToRangeConverter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 					
 					
@@ -175,18 +327,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
+	<a name="//api/name/getTimelineRange" title="getTimelineRange"></a>
+	<h3 class="subsubtitle method-title">getTimelineRange</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializer not supported. Throws an exception when invoked.</p>
+		<p>Calculates the sub-range of the start and end date in given units.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSRange)getTimelineRange</code></div>
 
     
 	
@@ -194,12 +346,19 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>nil. It should not return unless assertions are disabled.</p>
+		<p>A sub-range for the given dates and <a href="#//api/name/resolution">resolution</a>.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>result.location = (<a href="#//api/name/startDate">startDate</a> - globalBegin_) / <a href="#//api/name/resolution">resolution</a></p>
+
+<p>result.length = (<a href="#//api/name/endDate">endDate</a> - <a href="#//api/name/startDate">startDate</a>) / <a href="#//api/name/resolution">resolution</a></p>
+	</div>
 	
 	
 	
@@ -209,25 +368,26 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESDatesToRangeConverter.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="subsubtitle method-title">initWithDictionary:</h3>
+	<a name="//api/name/initWithTimelineStartDate:timelineEndDate:locale:" title="initWithTimelineStartDate:timelineEndDate:locale:"></a>
+	<h3 class="subsubtitle method-title">initWithTimelineStartDate:timelineEndDate:locale:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A designated initializer.</p>
+		<p>A designated initializer.
+Note : dates must be aligned to a given <a href="#//api/name/resolution">resolution</a></p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithDictionary:(NSDictionary *)<em>rawLocalization_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithTimelineStartDate:(NSDate *)<em>globalBegin_</em> timelineEndDate:(NSDate *)<em>globalEnd_</em> locale:(NSLocale *)<em>locale_</em></code></div>
 
     
 	
@@ -235,8 +395,19 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>rawLocalization_</em></dt>
-			<dd><p>A dictionary for mock localized strings lookup.</p></dd>
+			<dt><em>globalBegin_</em></dt>
+			<dd><p>The beginning of a timeline range.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>globalEnd_</em></dt>
+			<dd><p>The end of a timeline range.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locale_</em></dt>
+			<dd><p>The locale for calendar computations.
+Note : It will have the highest impact on week calculations.</p></dd>
 		</dl>
 		
 	</div>
@@ -245,7 +416,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The localizer object.</p>
+		<p>A properly initialized ESDatesToRangeConverter object.</p>
 	</div>
 	
 	
@@ -260,58 +431,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/localizedStringForKey:" title="localizedStringForKey:"></a>
-	<h3 class="subsubtitle method-title">localizedStringForKey:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Finds the localized value for the given key in the dictionary specified in <a href="#//api/name/initWithDictionary:">[ESDictionaryLocalizer initWithDictionary:]</a></p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)localizedStringForKey:(NSString *)<em>key_</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key_</em></dt>
-			<dd><p>A localization key string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>rawLocalization<em>[key</em>]</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESDatesToRangeConverter.h</code><br />
 	</div>				
 	
 	

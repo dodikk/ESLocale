@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ESDictionaryLocalizer Class Reference</title>
+		<title>ESHalfYearFormatter Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ESDictionaryLocalizer Class Reference</h1>
+				<h1 class="hideInXcode">ESHalfYearFormatter Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,6 +37,15 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/firstHalfFormat">&nbsp;&nbsp;&nbsp;&nbsp;firstHalfFormat</option>
+	
+	<option value="//api/name/isShortYear">&nbsp;&nbsp;&nbsp;&nbsp;isShortYear</option>
+	
+	<option value="//api/name/secondHalfFormat">&nbsp;&nbsp;&nbsp;&nbsp;secondHalfFormat</option>
+	
+	
 	
 	
 	
@@ -45,9 +54,9 @@
 	
 	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
 	
-	<option value="//api/name/initWithDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDictionary:</option>
+	<option value="//api/name/initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:</option>
 	
-	<option value="//api/name/localizedStringForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- localizedStringForKey:</option>
+	<option value="//api/name/stringFromYearAndHalfYear:">&nbsp;&nbsp;&nbsp;&nbsp;- stringFromYearAndHalfYear:</option>
 	
 	
 	
@@ -71,6 +80,16 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstHalfFormat">firstHalfFormat</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isShortYear">isShortYear</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondHalfFormat">secondHalfFormat</a></span></li>
+	
+</ul></li>
+
 
 
 
@@ -79,9 +98,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDictionary:">initWithDictionary:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:">initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localizedStringForKey:">localizedStringForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromYearAndHalfYear:">stringFromYearAndHalfYear:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +109,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ESDictionaryLocalizer Class Reference" name="top"></a>
+				<a title="ESHalfYearFormatter Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +118,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ESDictionaryLocalizer Class Reference</h1>
+						<h1 class="title title-header">ESHalfYearFormatter Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -109,11 +128,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ESDictionaryLocalizer.h<br />ESDictionaryLocalizer.m</td>
+	<td class="specification-value">ESHalfYearFormatter.h<br />ESHalfYearFormatter.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -123,7 +139,12 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class implements the <a href="../Protocols/ESStringLocalizer.html">ESStringLocalizer</a> protocol by searching the value in the given dictionary.</p>
+						<p>A class to format first and second half year strings separately.
+This is the case for the Japanese language.</p>
+
+<p>H1 &lsquo;14 ===> @&ldquo;2014 年 上半期&rdquo;</p>
+
+<p>H2 &lsquo;14 ===> @&ldquo;2014 年 下半期&rdquo;</p>
 					</div>
 					
 					
@@ -141,19 +162,37 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/localizedStringForKey:">&ndash;&nbsp;localizedStringForKey:</a></code>
+		<code><a href="#//api/name/initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:">&ndash;&nbsp;initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstHalfFormat">&nbsp;&nbsp;firstHalfFormat</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondHalfFormat">&nbsp;&nbsp;secondHalfFormat</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isShortYear">&nbsp;&nbsp;isShortYear</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromYearAndHalfYear:">&ndash;&nbsp;stringFromYearAndHalfYear:</a></code>
 	</span>
 	
 	
@@ -165,6 +204,148 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/firstHalfFormat" title="firstHalfFormat"></a>
+	<h3 class="subsubtitle method-title">firstHalfFormat</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>  A value passed in the constructor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *firstHalfFormat</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>  First half year format string. For example,</p>
+
+<ul>
+<li>@&ldquo;%@ 年 上半期&rdquo;</li>
+<li>@&ldquo;H1 &lsquo;%@&rdquo;</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isShortYear" title="isShortYear"></a>
+	<h3 class="subsubtitle method-title">isShortYear</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A value passed in the constructor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isShortYear</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>YES for two digit year.
+NO for four digit year.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondHalfFormat" title="secondHalfFormat"></a>
+	<h3 class="subsubtitle method-title">secondHalfFormat</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A value passed in the constructor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *secondHalfFormat</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Second half year format string. For example,</p>
+
+<ul>
+<li>@&ldquo;%@ 年 下半期&rdquo;</li>
+<li>@&ldquo;H2 &lsquo;%@&rdquo;</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -181,12 +362,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializer not supported. Throws an exception when invoked.</p>
+		<p>Unsupported initializer. Throws an exception.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
     
 	
@@ -194,7 +375,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>nil. It should not return unless assertions are disabled.</p>
+		<p>nil if asserts are disabled.</p>
 	</div>
 	
 	
@@ -209,15 +390,15 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="subsubtitle method-title">initWithDictionary:</h3>
+	<a name="//api/name/initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:" title="initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:"></a>
+	<h3 class="subsubtitle method-title">initWithFirstHalfFormat:secondHalfFormat:shouldTruncateYear:</h3>
 	
 	
 	
@@ -227,7 +408,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithDictionary:(NSDictionary *)<em>rawLocalization_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFirstHalfFormat:(NSString *)<em>firstHalfFormat</em> secondHalfFormat:(NSString *)<em>secondHalfFormat</em> shouldTruncateYear:(BOOL)<em>isShortYear</em></code></div>
 
     
 	
@@ -235,8 +416,31 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>rawLocalization_</em></dt>
-			<dd><p>A dictionary for mock localized strings lookup.</p></dd>
+			<dt><em>firstHalfFormat</em></dt>
+			<dd><p>First half year format string. For example,</p>
+
+<ul>
+<li>@&ldquo;%@ 年 上半期&rdquo;</li>
+<li>@&ldquo;H1 &lsquo;%@&rdquo;</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondHalfFormat</em></dt>
+			<dd><p>Second half year format string. For example,</p>
+
+<ul>
+<li>@&ldquo;%@ 年 下半期&rdquo;</li>
+<li>@&ldquo;H2 &lsquo;%@&rdquo;</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isShortYear</em></dt>
+			<dd><p>YES for two digit year.
+NO for four digit year.</p></dd>
 		</dl>
 		
 	</div>
@@ -245,7 +449,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The localizer object.</p>
+		<p>A properly initialized ESHalfYearFormatter object.</p>
 	</div>
 	
 	
@@ -260,25 +464,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/localizedStringForKey:" title="localizedStringForKey:"></a>
-	<h3 class="subsubtitle method-title">localizedStringForKey:</h3>
+	<a name="//api/name/stringFromYearAndHalfYear:" title="stringFromYearAndHalfYear:"></a>
+	<h3 class="subsubtitle method-title">stringFromYearAndHalfYear:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Finds the localized value for the given key in the dictionary specified in <a href="#//api/name/initWithDictionary:">[ESDictionaryLocalizer initWithDictionary:]</a></p>
+		<p>Converts a struct into a proper half year representation.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSString *)localizedStringForKey:(NSString *)<em>key_</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringFromYearAndHalfYear:(ESYearAndHalfYearPOD)<em>dateInfo</em></code></div>
 
     
 	
@@ -286,8 +490,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key_</em></dt>
-			<dd><p>A localization key string.</p></dd>
+			<dt><em>dateInfo</em></dt>
+			<dd><p>A structure with parsed year and half year.</p></dd>
 		</dl>
 		
 	</div>
@@ -296,7 +500,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>rawLocalization<em>[key</em>]</p>
+		<p>A formatted string</p>
 	</div>
 	
 	
@@ -311,7 +515,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ESDictionaryLocalizer.h</code><br />
+		<code class="declared-in-ref">ESHalfYearFormatter.h</code><br />
 	</div>				
 	
 	

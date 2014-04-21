@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -33,6 +35,11 @@
 	
 	
 	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/halfYearLocalizer">&nbsp;&nbsp;&nbsp;&nbsp;halfYearLocalizer</option>
 	
 	
 	
@@ -44,6 +51,10 @@
 	<option value="//api/name/formatForFirstHalfYear">&nbsp;&nbsp;&nbsp;&nbsp;- formatForFirstHalfYear</option>
 	
 	<option value="//api/name/formatForSecondHalfYear">&nbsp;&nbsp;&nbsp;&nbsp;- formatForSecondHalfYear</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:</option>
 	
 	<option value="//api/name/localizedStringForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- localizedStringForKey:</option>
 	
@@ -60,6 +71,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -71,6 +84,12 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/halfYearLocalizer">halfYearLocalizer</a></span></li>
+	
+</ul></li>
+
 
 
 
@@ -80,6 +99,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatForFirstHalfYear">formatForFirstHalfYear</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatForSecondHalfYear">formatForSecondHalfYear</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:">initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localizedStringForKey:">localizedStringForKey:</a></span></li>
 	
@@ -124,6 +147,15 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A half year localizer that gets format strings from a given text localizer.
+Typically, the source is NSLocalizedString() macro.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -132,7 +164,33 @@
 						
 						
 						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:">&ndash;&nbsp;initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/halfYearLocalizer">&nbsp;&nbsp;halfYearLocalizer</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
@@ -174,6 +232,48 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/halfYearLocalizer" title="halfYearLocalizer"></a>
+	<h3 class="subsubtitle method-title">halfYearLocalizer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The storage of the half year format strings.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ESHalfYearLocalizerPOD *halfYearLocalizer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESTextHalfYearLocalizer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 					
 					
@@ -207,8 +307,9 @@ Only year should be parametrized.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>@&ldquo;%@ 年 上半期&rdquo;  &ndash;> @&ldquo;2014 年 上半期&rdquo;
-@&ldquo;H1 &lsquo;%@&rdquo;      &ndash;> @&ldquo;H1 '14&rdquo;</p>
+		<p>@&ldquo;%@ 年 上半期&rdquo;  &ndash;> @&ldquo;2014 年 上半期&rdquo;</p>
+
+<p>@&ldquo;H1 &lsquo;%@&rdquo;      &ndash;> @&ldquo;H1 '14&rdquo;</p>
 
 <p>Symbols are not escaped.
 They should be escaped manually prior to using in sqlite queries.</p>
@@ -256,8 +357,9 @@ Only year should be parametrized.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>  @&ldquo;%@ 年 下半期&rdquo;  &ndash;> @&ldquo;2014 年 下半期&rdquo;
-  @&ldquo;H2 &lsquo;%@&rdquo;      &ndash;> @&ldquo;H2 '14&rdquo;</p>
+		<p>  @&ldquo;%@ 年 下半期&rdquo;  &ndash;> @&ldquo;2014 年 下半期&rdquo;</p>
+
+<p>  @&ldquo;H2 &lsquo;%@&rdquo;      &ndash;> @&ldquo;H2 '14&rdquo;</p>
 
 <p>Symbols are not escaped.
 They should be escaped manually prior to using in sqlite queries.</p>
@@ -275,6 +377,113 @@ They should be escaped manually prior to using in sqlite queries.</p>
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
 		<code class="declared-in-ref">ESHalfYearLocalizer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unsupported initializer. Throws an exception.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>nil if asserts are disabled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESTextHalfYearLocalizer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:" title="initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:"></a>
+	<h3 class="subsubtitle method-title">initWithStringLocalizer:firstHalfYearKey:secondHalfYearKey:yearMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A designated initializer</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithStringLocalizer:(id&lt;ESStringLocalizer&gt;)<em>localizer</em> firstHalfYearKey:(NSString *)<em>firstHalfKey</em> secondHalfYearKey:(NSString *)<em>secondHalfKey</em> yearMode:(ESYearMode)<em>yearMode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>localizer</em></dt>
+			<dd><p>A key-value storage for localized strings.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>firstHalfKey</em></dt>
+			<dd><p>a key for the localized first half year format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondHalfKey</em></dt>
+			<dd><p>a key for the localized second half year format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>yearMode</em></dt>
+			<dd><p>ESYearModeShort or ESYearModeLong</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A properly initialized ESTextHalfYearLocalizer object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ESTextHalfYearLocalizer.h</code><br />
 	</div>				
 	
 	
@@ -433,7 +642,7 @@ The value is case insensitive.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 dodikk. All rights reserved. (Last updated: 2014-04-05)</span><br />
+						<p><span class="copyright">&copy; 2014 dodikk. All rights reserved. (Last updated: 2014-04-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

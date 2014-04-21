@@ -1,0 +1,1312 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SqlitePersistentDateFormatter Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">ESLocale </a></h1>
+				<a id="developerHome" href="../index.html">dodikk</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SqlitePersistentDateFormatter Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/ansiFormatter">&nbsp;&nbsp;&nbsp;&nbsp;ansiFormatter</option>
+	
+	<option value="//api/name/checkSameLocale">&nbsp;&nbsp;&nbsp;&nbsp;checkSameLocale</option>
+	
+	<option value="//api/name/targetFormatter">&nbsp;&nbsp;&nbsp;&nbsp;targetFormatter</option>
+	
+	<option value="//api/name/validateLocale">&nbsp;&nbsp;&nbsp;&nbsp;validateLocale</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/freeInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ freeInstance</option>
+	
+	<option value="//api/name/halfYearForDate:usingCalendar:">&nbsp;&nbsp;&nbsp;&nbsp;+ halfYearForDate:usingCalendar:</option>
+	
+	<option value="//api/name/instance">&nbsp;&nbsp;&nbsp;&nbsp;+ instance</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getFormattedDate:">&nbsp;&nbsp;&nbsp;&nbsp;- getFormattedDate:</option>
+	
+	<option value="//api/name/getFullYearAndHalfYear:">&nbsp;&nbsp;&nbsp;&nbsp;- getFullYearAndHalfYear:</option>
+	
+	<option value="//api/name/getHalfYearAndFullYearFromDate:">&nbsp;&nbsp;&nbsp;&nbsp;- getHalfYearAndFullYearFromDate:</option>
+	
+	<option value="//api/name/getQuarterAndFullYear:">&nbsp;&nbsp;&nbsp;&nbsp;- getQuarterAndFullYear:</option>
+	
+	<option value="//api/name/getQuarterAndFullYearFromDate:">&nbsp;&nbsp;&nbsp;&nbsp;- getQuarterAndFullYearFromDate:</option>
+	
+	<option value="//api/name/getYearAndHalfYear:">&nbsp;&nbsp;&nbsp;&nbsp;- getYearAndHalfYear:</option>
+	
+	<option value="//api/name/getYearAndHalfYearPOD:">&nbsp;&nbsp;&nbsp;&nbsp;- getYearAndHalfYearPOD:</option>
+	
+	<option value="//api/name/getYearAndQuarter:">&nbsp;&nbsp;&nbsp;&nbsp;- getYearAndQuarter:</option>
+	
+	<option value="//api/name/getYearAndQuarterPOD:">&nbsp;&nbsp;&nbsp;&nbsp;- getYearAndQuarterPOD:</option>
+	
+	<option value="//api/name/setFormat:locale:">&nbsp;&nbsp;&nbsp;&nbsp;- setFormat:locale:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ansiFormatter">ansiFormatter</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkSameLocale">checkSameLocale</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/targetFormatter">targetFormatter</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateLocale">validateLocale</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/freeInstance">freeInstance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/halfYearForDate:usingCalendar:">halfYearForDate:usingCalendar:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instance">instance</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getFormattedDate:">getFormattedDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getFullYearAndHalfYear:">getFullYearAndHalfYear:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getHalfYearAndFullYearFromDate:">getHalfYearAndFullYearFromDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getQuarterAndFullYear:">getQuarterAndFullYear:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getQuarterAndFullYearFromDate:">getQuarterAndFullYearFromDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getYearAndHalfYear:">getYearAndHalfYear:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getYearAndHalfYearPOD:">getYearAndHalfYearPOD:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getYearAndQuarter:">getYearAndQuarter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getYearAndQuarterPOD:">getYearAndQuarterPOD:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFormat:locale:">setFormat:locale:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SqlitePersistentDateFormatter Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SqlitePersistentDateFormatter Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SqlitePersistentDateFormatter.h<br />SqlitePersistentDateFormatter.mm</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A core class for ObjcFormatAnsiDateUsingLocale_v2() function.
+Caches an <a href="#//api/name/instance">instance</a> of NSDateFormatter and updates its settings if params change since the previous call.</p>
+
+<p>Implemented as a singleton to be custom SQLite function friendly.
+Still, you can instantiate it directly.</p>
+
+<p>Warning: The methods are <strong>not thread safe</strong> unless explicitly documented.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/freeInstance">+&nbsp;freeInstance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateLocale">&nbsp;&nbsp;validateLocale</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/checkSameLocale">&nbsp;&nbsp;checkSameLocale</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ansiFormatter">&nbsp;&nbsp;ansiFormatter</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/targetFormatter">&nbsp;&nbsp;targetFormatter</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFormat:locale:">&ndash;&nbsp;setFormat:locale:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getFormattedDate:">&ndash;&nbsp;getFormattedDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getYearAndQuarter:">&ndash;&nbsp;getYearAndQuarter:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getYearAndHalfYear:">&ndash;&nbsp;getYearAndHalfYear:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getHalfYearAndFullYearFromDate:">&ndash;&nbsp;getHalfYearAndFullYearFromDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/halfYearForDate:usingCalendar:">+&nbsp;halfYearForDate:usingCalendar:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getQuarterAndFullYearFromDate:">&ndash;&nbsp;getQuarterAndFullYearFromDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getQuarterAndFullYear:">&ndash;&nbsp;getQuarterAndFullYear:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getFullYearAndHalfYear:">&ndash;&nbsp;getFullYearAndHalfYear:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getYearAndQuarterPOD:">&ndash;&nbsp;getYearAndQuarterPOD:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getYearAndHalfYearPOD:">&ndash;&nbsp;getYearAndHalfYearPOD:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/ansiFormatter" title="ansiFormatter"></a>
+	<h3 class="subsubtitle method-title">ansiFormatter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An instance of the ANSI date formatter. See <a href="../Classes/ESLocaleFactory.html#//api/name/ansiDateFormatter">[ESLocaleFactory ansiDateFormatter]</a> for details.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDateFormatter *ansiFormatter</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/checkSameLocale" title="checkSameLocale"></a>
+	<h3 class="subsubtitle method-title">checkSameLocale</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A boolean flag to enable/disable the locale identifier <strong>change</strong> check in the  <a href="#//api/name/setFormat:locale:">[SqlitePersistentDateFormatter setFormat:locale:]</a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL checkSameLocale</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>YES - locale identifier validation is performed only on locale change.
+NO  - locale identifier validation is performed at each locale object assignment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/targetFormatter" title="targetFormatter"></a>
+	<h3 class="subsubtitle method-title">targetFormatter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An instance of the target formatter configured by the <a href="#//api/name/setFormat:locale:">[SqlitePersistentDateFormatter setFormat:locale:]</a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDateFormatter *targetFormatter</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateLocale" title="validateLocale"></a>
+	<h3 class="subsubtitle method-title">validateLocale</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A boolean flag to enable/disable locale identifier validation in the  <a href="#//api/name/setFormat:locale:">[SqlitePersistentDateFormatter setFormat:locale:]</a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL validateLocale</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>YES - safe but slow.
+NO  - fast but requires correct input.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/freeInstance" title="freeInstance"></a>
+	<h3 class="subsubtitle method-title">freeInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deallocates a shared <a href="#//api/name/instance">instance</a> of the SqlitePersistentDateFormatter singleton.
+The method is thread-safe.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)freeInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/halfYearForDate:usingCalendar:" title="halfYearForDate:usingCalendar:"></a>
+	<h3 class="subsubtitle method-title">halfYearForDate:usingCalendar:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An utility function to get a half year from a given date.
+This method does not throw any exceptions.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)halfYearForDate:(NSDate *)<em>date_</em> usingCalendar:(NSCalendar *)<em>calendar_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date_</em></dt>
+			<dd><p>A date to retrieve the half year.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>calendar_</em></dt>
+			<dd><p>A properly configured calendar for splitting the date into components.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>&ldquo;1&rdquo; or &ldquo;2&rdquo; for valid input.
+-1 - for nil date<em> object
+-2 - for nil calendar</em> object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="subsubtitle method-title">instance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A preferred initializer to use in SQL functions.
+The method is thread-safe.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (SqlitePersistentDateFormatter *)instance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A shared instance of the SqlitePersistentDateFormatter singleton.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getFormattedDate:" title="getFormattedDate:"></a>
+	<h3 class="subsubtitle method-title">getFormattedDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies the specified date format to a given ANSI date string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getFormattedDate:(NSString *)<em>strDate_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A date in the target format specified in the <a href="#//api/name/setFormat:locale:">[SqlitePersistentDateFormatter setFormat:locale:]</a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getFullYearAndHalfYear:" title="getFullYearAndHalfYear:"></a>
+	<h3 class="subsubtitle method-title">getFullYearAndHalfYear:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A sorting friendly representation of the half year information.
+For example : &ldquo;2014-2&rdquo;  (For &ldquo;H2 &lsquo;2014&rdquo;)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getFullYearAndHalfYear:(NSString *)<em>strDate_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getHalfYearAndFullYearFromDate:" title="getHalfYearAndFullYearFromDate:"></a>
+	<h3 class="subsubtitle method-title">getHalfYearAndFullYearFromDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies half year and <strong>long year</strong> formatting.
+For example, &ldquo;H2 &lsquo;2014&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getHalfYearAndFullYearFromDate:(NSDate *)<em>date_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Warning : the format is <strong>hard coded</strong></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getQuarterAndFullYear:" title="getQuarterAndFullYear:"></a>
+	<h3 class="subsubtitle method-title">getQuarterAndFullYear:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies quarter and <strong>long year</strong> formatting.
+For example, &ldquo;Q4 &lsquo;2014&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getQuarterAndFullYear:(NSString *)<em>strDate_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Warning : the format is <strong>hard coded</strong></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getQuarterAndFullYearFromDate:" title="getQuarterAndFullYearFromDate:"></a>
+	<h3 class="subsubtitle method-title">getQuarterAndFullYearFromDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies quarter and <strong>long year</strong> formatting.
+For example, &ldquo;Q4 &lsquo;2014&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getQuarterAndFullYearFromDate:(NSDate *)<em>date_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date_</em></dt>
+			<dd><p>An NSDate object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Warning : the format is <strong>hard coded</strong></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getYearAndHalfYear:" title="getYearAndHalfYear:"></a>
+	<h3 class="subsubtitle method-title">getYearAndHalfYear:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies half year and <strong>short year</strong> formatting.
+For example, &ldquo;H2 &lsquo;14&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getYearAndHalfYear:(NSString *)<em>strDate_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Warning : the format is <strong>hard coded</strong></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getYearAndHalfYearPOD:" title="getYearAndHalfYearPOD:"></a>
+	<h3 class="subsubtitle method-title">getYearAndHalfYearPOD:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Parses year and half year information into a C structure that can be formatted in any format supported by this class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ESYearAndHalfYearPOD)getYearAndHalfYearPOD:(NSDate *)<em>date_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date_</em></dt>
+			<dd><p>An NSDate object to format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A POD structure with parsed info.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getYearAndQuarter:" title="getYearAndQuarter:"></a>
+	<h3 class="subsubtitle method-title">getYearAndQuarter:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies quarter and short year formatting.
+For example, &ldquo;Q4 &lsquo;14&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getYearAndQuarter:(NSString *)<em>strDate_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>strDate_</em></dt>
+			<dd><p>A date in ANSI format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Warning : the format is <strong>hard coded</strong></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getYearAndQuarterPOD:" title="getYearAndQuarterPOD:"></a>
+	<h3 class="subsubtitle method-title">getYearAndQuarterPOD:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Parses year and quarter information into a C structure that can be formatted in any format supported by this class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ESYearAndQuarterPOD)getYearAndQuarterPOD:(NSDate *)<em>date_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date_</em></dt>
+			<dd><p>An NSDate object to format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A POD structure with parsed info.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFormat:locale:" title="setFormat:locale:"></a>
+	<h3 class="subsubtitle method-title">setFormat:locale:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Configures the <a href="#//api/name/targetFormatter">[SqlitePersistentDateFormatter targetFormatter]</a> object.
+Performs locale validation as specified by the flags below :</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)setFormat:(NSString *)<em>dateFormat_</em> locale:(NSString *)<em>locale_</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dateFormat_</em></dt>
+			<dd><p>Format string for the <a href="#//api/name/targetFormatter">[SqlitePersistentDateFormatter targetFormatter]</a> object. It should follow the same rules as [NSDateFormatter dateFormat] property.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locale_</em></dt>
+			<dd><p>A locale identifier for the <a href="#//api/name/targetFormatter">[SqlitePersistentDateFormatter targetFormatter]</a> object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES for successfull NSDateFormatter initialization.
+NO in case locale identifier validation failed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li><a href="#//api/name/validateLocale">[SqlitePersistentDateFormatter validateLocale]</a></li>
+<li><a href="#//api/name/checkSameLocale">[SqlitePersistentDateFormatter checkSameLocale]</a></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SqlitePersistentDateFormatter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 dodikk. All rights reserved. (Last updated: 2014-04-21)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
