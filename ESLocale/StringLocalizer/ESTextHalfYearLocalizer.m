@@ -8,6 +8,13 @@
     ESHalfYearLocalizerPOD* _halfYearLocalizer;
 }
 
+-(instancetype)init
+{
+    [ self doesNotRecognizeSelector: _cmd ];
+
+    return nil;
+}
+
 -(instancetype)initWithStringLocalizer:( id<ESStringLocalizer> )localizer
                       firstHalfYearKey:( NSString* )firstHalfKey
                      secondHalfYearKey:( NSString* )secondHalfKey

@@ -9,6 +9,19 @@ Supplement materials license : AFL
 
 ```
 
+## Documentation
+The reference of the API exposed by this library can be found at [github pages](http://dodikk.github.io/ESLocale/v1.1/) of this repository.
+
+
+## Distribution
+The library supports all ways of distribution :
+
+* cocoapods
+* static library for iOS
+* static framework for iOS (will be implemented soon)
+
+
+
 ## Parsing Dates From Network
 
 Typically in order to parse a date string one uses something like the code below :

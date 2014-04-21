@@ -24,11 +24,12 @@ mkdir -p "$DEPLOYMENT_DIR"
 cd "$DEPLOYMENT_DIR"
 	which appledoc
 
-	${APPLEDOC_EXE}                                         \
+	${APPLEDOC_EXE}                                     \
 	 	--project-name "ESLocale"                       \
 		--project-company "dodikk"                      \
 		--company-id org.dodikk                         \
-                --no-repeat-first-par                           \
+        --no-repeat-first-par                           \
+        --exclude $SDK_LIBRARIES_ROOT/Calendar/Details  \
  		--output .                                      \
 		"$SDK_LIBRARIES_ROOT"                           \
         | tee appledoc-log.txt
