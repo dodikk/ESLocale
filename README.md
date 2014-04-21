@@ -18,7 +18,7 @@ The library supports all ways of distribution :
 
 * cocoapods
 * static library for iOS
-* static framework for iOS (will be implemented soon)
+* static framework for iOS
 
 
 
