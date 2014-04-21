@@ -133,7 +133,7 @@ For example, "H2 '2014"
 
 Warning : the format is **hard coded**
 
-@param strDate_ A date in ANSI format.
+@param date_ A date in ANSI format.
 
 @return A formatted date.
 */
@@ -161,7 +161,7 @@ For example, "Q4 '2014"
 
 Warning : the format is **hard coded**
 
-@param strDate_ An NSDate object.
+@param date_ An NSDate object.
 
 @return A formatted date.
 */

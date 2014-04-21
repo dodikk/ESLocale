@@ -2,14 +2,14 @@
 
 
 /**
-A class to safely mock the [NSDate nowDate] method in unit tests.
+A class to safely mock the +[NSDate nowDate] method in unit tests.
 */
 @interface ESNowDateMock : NSObject
 
 /**
 Constructs the mock that will always return the specified date.
 
-@param dateStr_ An ANSI formatted date to return in the [NSDate nowDate] method.
+@param dateStr_ An ANSI formatted date to return in the +[NSDate nowDate] method.
 
 @return A properly initialized mock object.
 */
@@ -19,7 +19,7 @@ Constructs the mock that will always return the specified date.
 /**
 Constructs the mock that will always return the specified date.
 
-@param date_ A date to return in the [NSDate nowDate] method.
+@param date_ A date to return in the +[NSDate nowDate] method.
 
 @return A properly initialized mock object.
 */

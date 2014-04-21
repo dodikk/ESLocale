@@ -29,8 +29,7 @@ A designated initializer.
 * @"%@ 年 下半期"
 * @"H2 '%@"
 
-@param isShortYear 
-YES for two digit year.
+@param isShortYear YES for two digit year.
 NO for four digit year.
 
 @return A properly initialized ESHalfYearFormatter object.
