@@ -11,9 +11,11 @@ A protocol to configure half year localization workflow.
 Format for the first half of the year.
 Only year should be parametrized.
  
+```
  @"%@ 年 上半期"  --> @"2014 年 上半期"
- @"H1 '%@"      --> @"H1 '14"
  
+ @"H1 '%@"      --> @"H1 '14"
+```
  
  
  Symbols are not escaped. 
@@ -32,9 +34,11 @@ Only year should be parametrized.
 Format for the second half of the year.
  Only year should be parametrized.
  
+```
   @"%@ 年 下半期"  --> @"2014 年 下半期"
-  @"H2 '%@"      --> @"H2 '14"
  
+  @"H2 '%@"      --> @"H2 '14"
+```
  
  
  Symbols are not escaped.

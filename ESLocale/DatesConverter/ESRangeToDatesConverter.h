@@ -8,6 +8,7 @@
 A class to convert the NSRange a pair of NSDate ofjects. It can be useful to build timeline selection GUI components.
 
 It supports the following resolutions
+ 
 * day
 * week
 * month

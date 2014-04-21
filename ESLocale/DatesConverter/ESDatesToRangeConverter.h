@@ -6,6 +6,7 @@
 A class to convert the date to NSRange. It can be useful to build timeline selection GUI components.
 
 It supports the following resolutions
+ 
 * day
 * week
 * month
@@ -53,6 +54,7 @@ Calculates the sub-range of the start and end date in given units.
 
 ```
 result.location = (startDate - globalBegin_) / resolution
+
 result.length = (endDate - startDate) / resolution
 ```
 

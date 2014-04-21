@@ -6,8 +6,11 @@
 A class to format first and second half year strings separately.
 This is the case for the Japanese language.
 
+```
 H1 '14 ===> @"2014 年 上半期"
+
 H2 '14 ===> @"2014 年 下半期"
+```
 */
 @interface ESHalfYearFormatter : NSObject
 
@@ -22,10 +25,12 @@ Unsupported initializer. Throws an exception.
 A designated initializer.
 
 @param firstHalfFormat  First half year format string. For example, 
+ 
 * @"%@ 年 上半期"
 * @"H1 '%@"
 
 @param secondHalfFormat Second half year format string. For example, 
+ 
 * @"%@ 年 下半期"
 * @"H2 '%@"
 
@@ -46,6 +51,7 @@ NO for four digit year.
   A value passed in the constructor.
 
   First half year format string. For example, 
+ 
 * @"%@ 年 上半期"
 * @"H1 '%@"
 
@@ -56,6 +62,7 @@ NO for four digit year.
 A value passed in the constructor.
 
 Second half year format string. For example, 
+ 
 * @"%@ 年 下半期"
 * @"H2 '%@"
 

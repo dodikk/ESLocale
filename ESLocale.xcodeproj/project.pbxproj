@@ -270,9 +270,9 @@
 		7E2B9EE01670E0D400408A42 /* DatesConverter */ = {
 			isa = PBXGroup;
 			children = (
-				7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */,
 				7E5DFBE218E4505500EC3688 /* ESHalfYearFormatter.h */,
 				7E5DFBE318E4505500EC3688 /* ESHalfYearFormatter.m */,
+				7E2B9EE11670E0D400408A42 /* ESRangeToDatesConverter.h */,
 				7E2B9EE21670E0D400408A42 /* ESRangeToDatesConverter.mm */,
 				7E2B9EE31670E0D400408A42 /* ESDatesToRangeConverter.h */,
 				7E2B9EE41670E0D400408A42 /* ESDatesToRangeConverter.mm */,

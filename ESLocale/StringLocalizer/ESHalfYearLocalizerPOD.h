@@ -18,10 +18,12 @@ Unsupported initializer. Throws an exception.
 
 /**
 @param firstHalfFormat  First half year format string. For example, 
+ 
 * @"%@ 年 上半期"
 * @"H1 '%@"
 
 @param secondHalfFormat Second half year format string. For example, 
+ 
 * @"%@ 年 下半期"
 * @"H2 '%@"
 
@@ -39,6 +41,7 @@ Note : year mode is **case insensitive**
   A value passed in the constructor.
 
   First half year format string. For example, 
+ 
 * @"%@ 年 上半期"
 * @"H1 '%@"
 
@@ -49,6 +52,7 @@ Note : year mode is **case insensitive**
 A value passed in the constructor.
 
 Second half year format string. For example, 
+ 
 * @"%@ 年 下半期"
 * @"H2 '%@"
 
@@ -72,17 +76,19 @@ Throws an exception for the invalid format.
 
 /**
 @return A default english formatter
-
-H1 '14
-H2 '14
+ Result example :
+ 
+* H1 '14
+* H2 '14
 */
 +(instancetype)shortEnglishLocalizer;
 
 /**
 @return A default Japanese formatter.
-
-@"2014 年 下半期"
-@"2014 年 下半期"
+ Result example :
+ 
+* @"2014 年 下半期"
+* @"2014 年 下半期"
 */
 +(instancetype)longJapaneseLocalizer;
 
