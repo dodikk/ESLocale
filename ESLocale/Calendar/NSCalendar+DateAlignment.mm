@@ -1,5 +1,8 @@
 #import "NSCalendar+DateAlignment.h"
+
 #import "NSDateComponents+Constants.h"
+#import "NSDateComponents+DateAlignment.h"
+#import "NSDateComponents+AddingTimeIntervals.h"
 
 #import "ESLocaleFactory.h"
 
