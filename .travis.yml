@@ -1,2 +1,2 @@
 language : objective-c
-script   : xcodebuild -target ESLocaleTests-CI -configuration Coverage -sdk iphonesimulator
+script   : xcodebuild test -workspace "$PWD/ESLocale.xcodeproj/project.xcworkspace" -scheme ESLocale-DynamicTests -configuration Coverage -sdk iphonesimulator
