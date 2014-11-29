@@ -144,6 +144,10 @@
 		7E4719D91A2A19220069EDC5 /* HalfYearFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBE018E44F9D00EC3688 /* HalfYearFormatterTest.m */; };
 		7E4719DA1A2A19220069EDC5 /* YearModeParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFC8818E4819A00EC3688 /* YearModeParserTest.m */; };
 		7E4719DB1A2A19220069EDC5 /* HalfYearLocalizerConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2FE21A1901493900A67BF6 /* HalfYearLocalizerConfigTest.m */; };
+		7E4719DC1A2A34170069EDC5 /* ESHalfYearFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBE318E4505500EC3688 /* ESHalfYearFormatter.m */; };
+		7E4719DD1A2A342B0069EDC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7E4719DE1A2A34820069EDC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7E4719DF1A2A363A0069EDC5 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
 		7E5DFBE118E44F9D00EC3688 /* HalfYearFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBE018E44F9D00EC3688 /* HalfYearFormatterTest.m */; };
 		7E5DFBE418E4505500EC3688 /* ESHalfYearFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5DFBE218E4505500EC3688 /* ESHalfYearFormatter.h */; };
 		7E5DFBE518E4505500EC3688 /* ESHalfYearFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DFBE318E4505500EC3688 /* ESHalfYearFormatter.m */; };
@@ -342,6 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4719DD1A2A342B0069EDC5 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4719DE1A2A34820069EDC5 /* libsqlite3.dylib in Frameworks */,
 				7E4719791A2A166C0069EDC5 /* ESLocale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -917,6 +923,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4719DF1A2A363A0069EDC5 /* 2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1016,7 @@
 				7E4719B51A2A18BF0069EDC5 /* ESUnknownYearModeError.m in Sources */,
 				7E4719B61A2A18BF0069EDC5 /* SqliteFunctions.mm in Sources */,
 				7E4719B71A2A18BF0069EDC5 /* SqlLocalizedDateFormatter.m in Sources */,
+				7E4719DC1A2A34170069EDC5 /* ESHalfYearFormatter.m in Sources */,
 				7E4719B81A2A18BF0069EDC5 /* SqlitePersistentDateFormatter.mm in Sources */,
 				7E4719B91A2A18BF0069EDC5 /* ESLocaleFactory.m in Sources */,
 			);
@@ -1198,6 +1206,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1242,6 +1252,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -1281,6 +1293,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
