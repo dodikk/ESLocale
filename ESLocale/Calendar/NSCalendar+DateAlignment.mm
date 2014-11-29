@@ -196,7 +196,7 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
     {
         return ESMonthDateResolution;
     }
-    else if ( components_.week > 0 )
+    else if ( components_.weekOfYear > 0 )
     {
         return ESWeekDateResolution;
     }

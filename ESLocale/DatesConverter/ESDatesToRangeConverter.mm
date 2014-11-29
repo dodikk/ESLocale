@@ -179,7 +179,7 @@ static NSCalendarUnit FAKE_CAL_UNIT = static_cast<NSCalendarUnit>( -1 );
         }
         case ESWeekDateResolution:
         {
-            return cPosition_.week;
+            return cPosition_.weekOfYear;
             break;
         }
         case ESMonthDateResolution:
