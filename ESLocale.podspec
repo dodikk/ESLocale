@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
   s.name         = "ESLocale"
-  s.version      = "1.1"
+  s.version      = "1.2.0"
   s.summary      = "ESLocale"
   s.description  = "A library that helps configuring NSDateFormatter, NSCalendar and NSLocale correctly. It also contains locale aware date-time functions for SQLite."
   s.homepage     = "https://github.com/dodikk/ESLocale"
   s.license      = 'BSD'
-  s.source       = { :git => "https://github.com/dodikk/ESLocale.git", :tag => 'v1.1'}
+  s.source       = { :git => "https://github.com/dodikk/ESLocale.git", :tag => 'v1.2'}
   s.authors       =  {'Alexander Dodatko' => 'dodikk88.tutor@gmail.com'}
   
-  s.ios.platform          = :ios, '6.0'
-  s.ios.deployment_target = '6.0'
+  s.ios.platform          = :ios, '7.0'
+  s.ios.deployment_target = '7.0'
 
 
   s.ios.header_mappings_dir = 'ESLocale'
