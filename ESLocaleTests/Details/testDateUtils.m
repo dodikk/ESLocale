@@ -19,7 +19,7 @@ NSInteger weekdayFromDateString( NSString* string_, NSCalendar* calendar_ )
     NSDateFormatter* dateFormatter_ = [ ESLocaleFactory ansiDateFormatter ];
     NSDate* date_ = [ dateFormatter_ dateFromString: string_ ];
 
-    NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYearForWeekOfYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfYear | NSCalendarUnitWeekday;
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 

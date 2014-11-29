@@ -179,7 +179,7 @@ static NSCalendarUnit FAKE_CAL_UNIT = static_cast<NSCalendarUnit>( -1 );
         }
         case ESWeekDateResolution:
         {
-            return cPosition_.week;
+            return cPosition_.weekOfYear;
             break;
         }
         case ESMonthDateResolution:
@@ -223,12 +223,12 @@ static NSCalendarUnit FAKE_CAL_UNIT = static_cast<NSCalendarUnit>( -1 );
     static const NSCalendarUnit units_[] =
     {
         FAKE_CAL_UNIT, // stub
-        NSDayCalendarUnit,
-        NSWeekCalendarUnit,
-        NSMonthCalendarUnit,
-        NSMonthCalendarUnit, // quarter
-        NSMonthCalendarUnit, // hYear
-        NSYearCalendarUnit
+        NSCalendarUnitDay,
+        NSCalendarUnitWeekOfYear,
+        NSCalendarUnitMonth,
+        NSCalendarUnitMonth, // quarter
+        NSCalendarUnitMonth, // hYear
+        NSCalendarUnitYear
     };
 
     return units_[ resolution_ ];

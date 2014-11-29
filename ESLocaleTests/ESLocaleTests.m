@@ -17,13 +17,13 @@
 -(void)testGregCalendarIdentifier
 {
    NSCalendar* result_ = [ ESLocaleFactory gregorianCalendar ];
-   XCTAssertTrue( [ result_.calendarIdentifier isEqualToString: NSGregorianCalendar ], @"greg calendar mismatch" );
+   XCTAssertTrue( [ result_.calendarIdentifier isEqualToString: NSCalendarIdentifierGregorian ], @"greg calendar mismatch" );
 }
 
 -(void)testPosixCalendarIsGregCalendar
 {
    NSCalendar* result_ = [ ESLocaleFactory posixCalendar ];
-   XCTAssertTrue( [ result_.calendarIdentifier isEqualToString: NSGregorianCalendar ], @"greg calendar mismatch" );
+   XCTAssertTrue( [ result_.calendarIdentifier isEqualToString: NSCalendarIdentifierGregorian ], @"greg calendar mismatch" );
 }
 
 -(void)testPosixCalendarHasPosixLocale
@@ -43,7 +43,7 @@
    NSDateFormatter* result_ = [ ESLocaleFactory posixDateFormatter ];
 
    XCTAssertTrue( [ result_.calendar.locale.localeIdentifier isEqualToString: @"en_US_POSIX" ], @"posix formatter calendar locale mismatch" );
-   XCTAssertTrue( [ result_.calendar.calendarIdentifier isEqualToString: NSGregorianCalendar ], @"posix formatter calendar mismatch" );
+   XCTAssertTrue( [ result_.calendar.calendarIdentifier isEqualToString: NSCalendarIdentifierGregorian ], @"posix formatter calendar mismatch" );
 }
 
 @end

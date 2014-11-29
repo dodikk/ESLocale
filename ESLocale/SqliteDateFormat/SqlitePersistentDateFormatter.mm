@@ -16,8 +16,8 @@ static const NSInteger yearAndQuarterMask_ = NSQuarterCalendarUnit |
                                              NSYearCalendarUnit    ;
 #endif
 
-static const NSInteger yearMonthMask_ = NSYearCalendarUnit  | 
-                                        NSMonthCalendarUnit ;
+static const NSInteger yearMonthMask_ = NSCalendarUnitYear  |
+                                        NSCalendarUnitMonth ;
 
 static SqlitePersistentDateFormatter* instance_ = nil;
 
@@ -193,7 +193,7 @@ static SqlitePersistentDateFormatter* instance_ = nil;
     NSInteger hYear_ = [ [ self class ] halfYearForDate: date_ 
                                           usingCalendar: self->_targetCalendar ];
 
-    NSDateComponents* result_ = [ self->_targetCalendar components: NSYearCalendarUnit 
+    NSDateComponents* result_ = [ self->_targetCalendar components: NSCalendarUnitYear
                                                           fromDate: date_ ];
 
     ESYearAndHalfYear ret_;

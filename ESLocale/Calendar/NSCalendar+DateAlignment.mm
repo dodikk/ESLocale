@@ -175,7 +175,12 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
                                      toDate: toDate_
                                     options: 0 ];
 
-    NSDateComponents* components_ = [ self components: NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit
+    NSCalendarUnit dateComponentFlags =
+        NSCalendarUnitYear      |
+        NSCalendarUnitMonth     |
+        NSCalendarUnitWeekOfYear;
+    
+    NSDateComponents* components_ = [ self components: dateComponentFlags
                                              fromDate: fromDate_
                                                toDate: toDate_
                                               options: 0 ];
@@ -196,7 +201,7 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
     {
         return ESMonthDateResolution;
     }
-    else if ( components_.week > 0 )
+    else if ( components_.weekOfYear > 0 )
     {
         return ESWeekDateResolution;
     }

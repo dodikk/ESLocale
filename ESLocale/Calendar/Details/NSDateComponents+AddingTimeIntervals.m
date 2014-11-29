@@ -14,7 +14,7 @@
 +(id)weekComponentsWithTimeInterval:( NSInteger )interval_
 {
     NSDateComponents* result_ = [ self new ];
-    result_.week = interval_;
+    result_.weekOfYear = interval_;
     return result_;
 }
 

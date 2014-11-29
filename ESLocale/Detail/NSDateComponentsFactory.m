@@ -13,7 +13,7 @@
 +(NSDateComponents*)addSomeWeeks:( NSInteger )weekCount_
 {
     NSDateComponents* result_ = [ NSDateComponents new ];
-    result_.week = weekCount_;
+    result_.weekOfYear = weekCount_;
 
     return result_;    
 }
