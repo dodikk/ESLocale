@@ -25,7 +25,7 @@
                             date:( NSDate* )date_
                         calendar:( NSCalendar* )calendar_
 {
-    NSCalendarUnit unit_ = NSYearForWeekOfYearCalendarUnit | NSWeekOfYearCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYearForWeekOfYear | NSCalendarUnitWeekOfYear;
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
 
@@ -44,7 +44,7 @@
                              date:( NSDate* )date_
                          calendar:( NSCalendar* )calendar_
 {
-    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYear | NSCalendarUnitMonth;
 
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
@@ -65,7 +65,7 @@
     //so own range calulation used here
     //TODO: try to use NSQuarterCalendarUnit
 
-    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYear | NSCalendarUnitMonth;
 
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
@@ -85,7 +85,7 @@
                                 date:( NSDate* )date_
                             calendar:( NSCalendar* )calendar_
 {
-    NSCalendarUnit unit_ = NSYearCalendarUnit | NSMonthCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYear | NSCalendarUnitMonth;
 
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];
@@ -104,7 +104,7 @@
                             date:( NSDate* )date_
                         calendar:( NSCalendar* )calendar_
 {
-    NSCalendarUnit unit_ = NSYearCalendarUnit;
+    NSCalendarUnit unit_ = NSCalendarUnitYear;
 
     NSDateComponents* components_ = [ calendar_ components: unit_
                                                   fromDate: date_ ];

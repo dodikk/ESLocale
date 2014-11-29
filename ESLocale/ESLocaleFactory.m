@@ -17,7 +17,7 @@
 
 +(NSCalendar*)gregorianCalendar
 {
-    NSCalendar* result_ = [ [ NSCalendar alloc ] initWithCalendarIdentifier: NSGregorianCalendar ];
+    NSCalendar* result_ = [ [ NSCalendar alloc ] initWithCalendarIdentifier: NSCalendarIdentifierGregorian ];
     [ result_ setTimeZone: [ [ NSTimeZone alloc ] initWithName: @"GMT" ] ];
     return result_;
 }

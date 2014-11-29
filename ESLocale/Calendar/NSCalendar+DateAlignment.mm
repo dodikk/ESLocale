@@ -175,7 +175,12 @@ static const ESDateComponentsSelectorsType& getAddingDateComponentSelectors()
                                      toDate: toDate_
                                     options: 0 ];
 
-    NSDateComponents* components_ = [ self components: NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit
+    NSCalendarUnit dateComponentFlags =
+        NSCalendarUnitYear      |
+        NSCalendarUnitMonth     |
+        NSCalendarUnitWeekOfYear;
+    
+    NSDateComponents* components_ = [ self components: dateComponentFlags
                                              fromDate: fromDate_
                                                toDate: toDate_
                                               options: 0 ];
