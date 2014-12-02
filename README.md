@@ -19,7 +19,7 @@ The library supports all ways of distribution :
 * cocoapods
 * static library for iOS
 * static framework for iOS
-
+* [Carthage](https://github.com/Carthage/Carthage) package manager (since ESLocale v1.2.1) 
 
 
 ## Parsing Dates From Network
