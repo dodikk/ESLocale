@@ -1,4 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/dodikk/ESLocale.png?branch=master)](http://travis-ci.org/dodikk/ESLocale)
+[![Carthage Support](https://img.shields.io/badge/Carthage-✓-5f7cae.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Pod Version](http://img.shields.io/cocoapods/v/ESLocale.svg?style=flat)](http://cocoadocs.org/docsets/ESLocale/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/ESLocale.svg?style=flat)](http://cocoadocs.org/docsets/ESLocale/)
 
