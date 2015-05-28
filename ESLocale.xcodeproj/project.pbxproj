@@ -161,6 +161,7 @@
 		7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
 		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
 		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
+		7E928A901B17059F009931DB /* CalendarAlignmentConstants.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */; };
 		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
 		7E92BE541560FB360088E369 /* SqliteFunctions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.mm */; };
 		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
@@ -1067,6 +1068,7 @@
 				7E2B23AF19055E7300D39904 /* NSDateComponents+Constants.m in Sources */,
 				7E2B23B019055E7300D39904 /* ESHalfYearFormatter.m in Sources */,
 				7E2B23B119055E7300D39904 /* ESRangeToDatesConverter.mm in Sources */,
+				7E928A901B17059F009931DB /* CalendarAlignmentConstants.c in Sources */,
 				7E2B23B219055E7300D39904 /* ESDatesToRangeConverter.mm in Sources */,
 				7E2B23B319055E7300D39904 /* NSDateComponentsFactory.m in Sources */,
 				7E2B23B419055E7300D39904 /* NSDateFormatter+MultiThreading.m in Sources */,
